@@ -456,8 +456,7 @@ a:hover {
 
 /* Footer */
 .footer {
-  background-color: var(--text-color);
-  color: white;
+  color: var(--text-color);
   padding: 3rem 0;
   text-align: center;
 }
