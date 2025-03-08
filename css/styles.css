@@ -31,6 +31,9 @@
   --card-bg: #1f2937;
   --border-color: #374151;
   --light-text: #9ca3af;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --link-color: #bb86fc;
+  --link-hover-color: #3700b3;
 }
 
 /* Base Styles */
@@ -51,6 +54,16 @@ body {
   line-height: 1.6;
   padding-top: 80px;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
 }
 
 .container {
