@@ -274,6 +274,10 @@ a:hover {
   color: var(--color-primary);
 }
 
+.hero-buttons {
+  margin-top: 2rem; /* Add this line to increase the spacing above the hero buttons */
+}
+
 /* Section Headers */
 .section-header {
   text-align: center;
