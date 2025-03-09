@@ -92,6 +92,7 @@ a:hover {
   transition: all 0.3s ease;
   text-decoration: none;
   border: 2px solid transparent;
+  margin-top: 1rem;
 }
 
 .btn-primary {
@@ -437,6 +438,19 @@ a:hover {
 
 /* Contact Section */
 .contact-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.contact-card .card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-card .card-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
@@ -446,12 +460,40 @@ a:hover {
   display: flex;
   gap: 1rem;
   align-items: start;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-item:hover {
+  background-color: rgba(198, 40, 40, 0.1);
 }
 
 .contact-icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--color-primary);
   margin-top: 0.5rem;
+}
+
+.contact-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-value {
+  font-size: 1rem;
+  color: var(--light-text);
+}
+
+.contact-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--color-primary-hover);
 }
 
 /* Footer */
