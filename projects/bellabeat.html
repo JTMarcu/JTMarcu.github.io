@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Title - Jonathan Marcu</title>
-  <meta name="description" content="Detailed description of the project.">
+  <title>Bellabeat Smart Device Usage Analysis - Jonathan Marcu</title>
+  <meta name="description" content="Detailed analysis of Bellabeat smart device usage.">
   <link rel="stylesheet" href="../css/styles.css">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,15 +15,15 @@
   <!-- Navigation -->
   <header class="navbar" id="navbar">
     <nav class="container">
-      <a href="index.html" class="logo">Jonathan Marcu</a>
+      <a href="../index.html" class="logo">Jonathan Marcu</a>
       <!-- Desktop Navigation -->
       <div class="nav-links">
-        <a href="index.html#about" class="nav-item">About</a>
-        <a href="index.html#projects" class="nav-item">Projects</a>
-        <a href="index.html#skills" class="nav-item">Skills</a>
-        <a href="index.html#experience" class="nav-item">Experience</a>
-        <a href="index.html#education" class="nav-item">Education</a>
-        <a href="index.html#contact" class="nav-item">Contact</a>
+        <a href="../index.html#about" class="nav-item">About</a>
+        <a href="../index.html#projects" class="nav-item">Projects</a>
+        <a href="../index.html#skills" class="nav-item">Skills</a>
+        <a href="../index.html#experience" class="nav-item">Experience</a>
+        <a href="../index.html#education" class="nav-item">Education</a>
+        <a href="../index.html#contact" class="nav-item">Contact</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
           <i class="fas fa-moon"></i>
         </button>
@@ -41,39 +41,87 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu">
       <div class="container">
-        <a href="index.html#about" class="mobile-nav-item">About</a>
-        <a href="index.html#projects" class="mobile-nav-item">Projects</a>
-        <a href="index.html#skills" class="mobile-nav-item">Skills</a>
-        <a href="index.html#experience" class="mobile-nav-item">Experience</a>
-        <a href="index.html#education" class="mobile-nav-item">Education</a>
-        <a href="index.html#contact" class="mobile-nav-item">Contact</a>
+        <a href="../index.html#about" class="mobile-nav-item">About</a>
+        <a href="../index.html#projects" class="mobile-nav-item">Projects</a>
+        <a href="../index.html#skills" class="mobile-nav-item">Skills</a>
+        <a href="../index.html#experience" class="mobile-nav-item">Experience</a>
+        <a href="../index.html#education" class="mobile-nav-item">Education</a>
+        <a href="../index.html#contact" class="mobile-nav-item">Contact</a>
       </div>
     </div>
   </header>
   <main>
     <!-- Project Section -->
-    <section class="project-detail">
+    <section class="project-detail section">
       <div class="container">
-        <div class="project-header">
-          <h1 class="project-title">Project Title</h1>
-          <p class="project-description">Detailed description of the project.</p>
-        </div>
         <div class="project-image">
-          <img src="project-image-url" alt="Project Title">
+          <img src="https://play-lh.googleusercontent.com/1DEgw7f-f8Dtp7r0lZ3qn7FfsNb_zYGWVkrAdf5ht8eDFEnRi1HX5Qk-NRTJ9cwbzUg" alt="Bellabeat Analysis" style="display: block; margin: 0 auto; width: 10%; height: auto;">
         </div>
+        <div class="project-header section-header" style="margin-top: 20px;">
+          <h1 class="project-title section-title">Bellabeat Smart Device Usage Analysis</h1>
+          <p class="project-description">Analysis of Fitbit user data to uncover health behavior patterns and provide actionable insights for Bellabeat's product development and marketing strategies.</p>
+        </div>
+
         <div class="project-content">
-          <h2>Overview</h2>
-          <p>Overview of the project.</p>
-          <h2>Technologies Used</h2>
-          <ul>
-            <li>Technology 1</li>
-            <li>Technology 2</li>
-            <li>Technology 3</li>
-          </ul>
-          <h2>Challenges</h2>
-          <p>Challenges faced during the project.</p>
-          <h2>Outcome</h2>
-          <p>Outcome of the project.</p>
+          <!-- Overview Section -->
+          <div class="section-header">
+            <h2 class="section-title">Overview</h2>
+            <div class="section-divider"></div>
+          </div>
+          <section id="overview" class="section card">
+            <p>This analysis examined fitness tracker data from 30 Fitbit users to understand patterns in physical activity, sleep, and health metrics. The goal was to identify opportunities for Bellabeat to improve their women's health products and marketing strategies.</p>
+          </section>
+
+          <!-- Technologies Used Section -->
+          <div class="section-header">
+            <h2 class="section-title">Technologies Used</h2>
+            <div class="section-divider"></div>
+          </div>
+          <section id="technologies" class="section section-alt card">  
+            <ul>
+              <li>R Programming</li>
+              <li>Tidyverse (dplyr, ggplot2)</li>
+              <li>Janitor for data cleaning</li>
+              <li>reshape2 & corrplot for data visualization</li>
+              <li>Kaggle Data Platform</li>
+            </ul>
+          </section>
+
+          <!-- Challenges Section -->
+          <div class="section-header">
+            <h2 class="section-title">Challenges</h2>
+            <div class="section-divider"></div>
+          </div>
+          <section id="challenges" class="section card">  
+            <p>Key challenges included merging datasets from different time periods, handling inconsistent sleep monitoring data, and working with limitations of the sample size (only 30 users). Special handling was required for heart rate data measured every 5 seconds and weight logs with missing values.</p>
+          </section>
+
+          <!-- Outcome Section -->
+          <div class="section-header">
+            <h2 class="section-title">Outcome</h2>
+            <div class="section-divider"></div>
+          </div>
+          <section id="outcome" class="section section-alt card">  
+            <p>Analysis revealed significant correlations between activity intensity and calorie burn (+0.79), and between sleep duration and reduced sedentary time. Key recommendations included:
+              <ul>
+                <li>Implement personalized activity goal setting features</li>
+                <li>Develop intelligent movement reminders for sedentary users</li>
+                <li>Enhance sleep tracking with stress management insights</li>
+                <li>Create social features for community motivation</li>
+              </ul>
+            </p>
+          </section>
+
+          <!-- Embed Kaggle Notebook -->
+          <iframe src="https://www.kaggle.com/embed/jonmarcu/bellabeat-analysis?kernelSessionId=168761520" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="BellaBeat Analysis"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+          <!-- Embed Kaggle Notebook -->
+          <iframe src="https://www.kaggle.com/embed/jonmarcu/bellabeat-analysis?kernelSessionId=168761520" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="BellaBeat Analysis"></iframe>
         </div>
       </div>
     </section>
@@ -105,6 +153,34 @@
       </div>
     </div>
   </footer>
-  <script src="js/main.js" type="module"></script>
+  <script src="../js/main.js" type="module"></script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      themeToggleMobile.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+
+    themeToggleMobile.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  </script>
 </body>
 </html>
