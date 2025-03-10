@@ -1,5 +1,13 @@
 export const projects = [
   {
+    title: "BellaBeat Capstone Project",
+    description:
+      "Analyzing user data from a fitness tracker to understand activity levels, sleep patterns, and heart rate variability.",
+    image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=400&h=200",
+    tags: ["Data Analysis", "Health Tech", "Python"],
+    link: "projects/bellabeat.html"
+  },
+  {
     title: "Shinkansen Bullet Train Passenger Satisfaction Prediction",
     description:
       "Predicting passenger satisfaction based on various parameters. Achieved a 94.35% accuracy rating on the test data.",
@@ -31,14 +39,7 @@ export const projects = [
     tags: ["Data Analysis", "Python", "Visualization"],
     link: "projects/foodhub.html"
   },
-  {
-    title: "BellaBeat Capstone Project",
-    description:
-      "Analyzing user data from a fitness tracker to understand activity levels, sleep patterns, and heart rate variability.",
-    image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=400&h=200",
-    tags: ["Data Analysis", "Health Tech", "Python"],
-    link: "projects/bellabeat.html"
-  },
+  
   {
     title: "Common Core Math Worksheet Generator",
     description:
