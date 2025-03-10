@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title - Jonathan Marcu</title>
+  <meta name="description" content="Detailed description of the project.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <nav class="container">
+      <a href="index.html" class="logo">Jonathan Marcu</a>
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a href="index.html#about" class="nav-item">About</a>
+        <a href="index.html#projects" class="nav-item">Projects</a>
+        <a href="index.html#skills" class="nav-item">Skills</a>
+        <a href="index.html#experience" class="nav-item">Experience</a>
+        <a href="index.html#education" class="nav-item">Education</a>
+        <a href="index.html#contact" class="nav-item">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="container">
+        <a href="index.html#about" class="mobile-nav-item">About</a>
+        <a href="index.html#projects" class="mobile-nav-item">Projects</a>
+        <a href="index.html#skills" class="mobile-nav-item">Skills</a>
+        <a href="index.html#experience" class="mobile-nav-item">Experience</a>
+        <a href="index.html#education" class="mobile-nav-item">Education</a>
+        <a href="index.html#contact" class="mobile-nav-item">Contact</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Project Section -->
+    <section class="project-detail">
+      <div class="container">
+        <div class="project-header">
+          <h1 class="project-title">Project Title</h1>
+          <p class="project-description">Detailed description of the project.</p>
+        </div>
+        <div class="project-image">
+          <img src="project-image-url" alt="Project Title">
+        </div>
+        <div class="project-content">
+          <h2>Overview</h2>
+          <p>Overview of the project.</p>
+          <h2>Technologies Used</h2>
+          <ul>
+            <li>Technology 1</li>
+            <li>Technology 2</li>
+            <li>Technology 3</li>
+          </ul>
+          <h2>Challenges</h2>
+          <p>Challenges faced during the project.</p>
+          <h2>Outcome</h2>
+          <p>Outcome of the project.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h2 class="footer-title">Jonathan Marcu</h2>
+          <p class="footer-subtitle">Data Scientist & Machine Learning Enthusiast</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:JonMarcu@live.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://github.com/JTMarcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="current-year"></span> Jonathan Marcu. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
