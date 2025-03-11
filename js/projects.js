@@ -4,7 +4,7 @@ export const projects = [
     description:
       "Analyzing user data from a fitness tracker to understand activity levels, sleep patterns, and heart rate variability.",
     image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=400&h=200",
-    tags: ["Data Analysis", "Health Tech", "Python"],
+    tags: ["Data Analysis", "Health Tech", "R Programming", "Tidyverse (dplyr, ggplot2)", "Janitor for data cleaning", "reshape2 & corrplot for data visualization", "Kaggle Data Platform"],
     link: "projects/bellabeat.html"
   },
   {
