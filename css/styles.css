@@ -33,7 +33,7 @@
   --light-text: #9ca3af;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   --link-color: #bb86fc;
-  --link-hover-color: #3700b3;
+  --link-hover-color: #bda2fe;
 }
 
 /* Base Styles */
@@ -503,6 +503,20 @@ a:hover {
 
 .contact-link:hover {
   color: var(--color-primary-hover);
+}
+
+.contact-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--nav-text);
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.contact-location i {
+  color: var(--color-primary);
 }
 
 /* Footer */
