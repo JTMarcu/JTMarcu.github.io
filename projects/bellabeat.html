@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bellabeat Smart Device Usage Analysis - Jonathan Marcu</title>
   <meta name="description" content="Detailed analysis of Bellabeat smart device usage.">
+  <meta name="author" content="Jonathan Marcu">
+  <meta property="og:title" content="Bellabeat Smart Device Usage Analysis - Jonathan Marcu">
+  <meta property="og:description" content="Detailed analysis of Bellabeat smart device usage.">
+  <meta property="og:image" content="https://play-lh.googleusercontent.com/1DEgw7f-f8Dtp7r0lZ3qn7FfsNb_zYGWVkrAdf5ht8eDFEnRi1HX5Qk-NRTJ9cwbzUg">
+  <meta property="og:url" content="https://yourwebsite.com/projects/bellabeat.html">
   <link rel="stylesheet" href="../css/styles.css">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,9 +20,9 @@
   <!-- Navigation -->
   <header class="navbar" id="navbar">
     <nav class="container">
-      <a href="../index.html" class="logo">Jonathan Marcu</a>
+      <a href="../index.html" class="logo" aria-label="Jonathan Marcu Home">Jonathan Marcu</a>
       <div class="contact-location">
-        <i class="fas fa-map-marker-alt"></i>
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
         <span>San Diego, CA</span>
       </div>
       <!-- Desktop Navigation -->
@@ -29,16 +34,16 @@
         <a href="../index.html#education" class="nav-item">Education</a>
         <a href="../index.html#contact" class="nav-item">Contact</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <i class="fas fa-moon"></i>
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
       </div>
       <!-- Mobile Navigation -->
       <div class="mobile-nav">
         <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle theme">
-          <i class="fas fa-moon"></i>
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
         <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
-          <i class="fas fa-bars"></i>
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
       </div>
     </nav>
@@ -116,12 +121,12 @@
             </p>
           </section>
 
-            <!-- Embed Kaggle Notebook -->
-            <iframe src="https://www.kaggle.com/embed/jonmarcu/bellabeat-analysis?kernelSessionId=168761520" height="800" style="display: block; margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="BellaBeat Analysis"></iframe>
-          </div>
-          </div>
-        </section>
-        </main>
+          <!-- Embed Kaggle Notebook -->
+          <iframe src="https://www.kaggle.com/embed/jonmarcu/bellabeat-analysis?kernelSessionId=168761520" height="800" style="display: block; margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="BellaBeat Analysis"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -132,13 +137,13 @@
         </div>
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
           </a>
           <a href="mailto:JonMarcu@live.com" class="social-link" aria-label="Email">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
           </a>
           <a href="https://github.com/JTMarcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -158,25 +163,20 @@
 
     if (currentTheme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      themeToggleMobile.innerHTML = '<i class="fas fa-sun"></i>';
+      themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+      themeToggleMobile.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
     }
 
-    themeToggle.addEventListener('click', () => {
+    const toggleTheme = () => {
       const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
-      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    });
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    };
 
-    themeToggleMobile.addEventListener('click', () => {
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    });
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggleMobile.addEventListener('click', toggleTheme);
   </script>
 </body>
 </html>
