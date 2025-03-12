@@ -1,11 +1,34 @@
 export const projects = [
   {
+    title: "FoodHub Order Analysis",
+    description:
+      "Analyzing data to understand the demand of different restaurants and enhance business and customer experience.",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=200",
+    tags: ["Data Analysis", "Python", "Visualization"],
+    link: "projects/foodhub.html"
+  },
+  {
     title: "BellaBeat Capstone Project",
     description:
       "Analyzing user data from a fitness tracker to understand activity levels, sleep patterns, and heart rate variability.",
     image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=400&h=200",
     tags: ["Data Analysis", "Health Tech", "R Programming", "Tidyverse (dplyr, ggplot2)", "Janitor for data cleaning", "reshape2 & corrplot for data visualization", "Kaggle Data Platform"],
     link: "projects/bellabeat.html"
+  },
+  {
+    title: "ATS Resume Generator",
+    description:
+      "Developed a Python-based tool that converts structured CSV data into a formatted ATS-friendly PDF resume. Uses pandas for data parsing and ReportLab for PDF generation.",
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
+    tags: ["Python", "pandas", "ReportLab", "PDF Generation"],
+    link: "projects/ats-resume.html"
+  },
+  {
+    title: "NCAA March Madness Prediction Model",
+    description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
+    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
+    tags: ["Python", "Machine Learning", "Sports Analytics"],
+    link: "projects/march-madness.html"
   },
   {
     title: "Shinkansen Bullet Train Passenger Satisfaction Prediction",
@@ -30,16 +53,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&h=200",
     tags: ["Python", "Machine Learning", "Random Forest"],
     link: "projects/customers.html"
-  },
-  {
-    title: "FoodHub Order Analysis",
-    description:
-      "Analyzing data to understand the demand of different restaurants and enhance business and customer experience.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=200",
-    tags: ["Data Analysis", "Python", "Visualization"],
-    link: "projects/foodhub.html"
-  },
-  
+  },  
   {
     title: "Common Core Math Worksheet Generator",
     description:
@@ -49,14 +63,6 @@ export const projects = [
     link: "projects/math-worksheet.html"
   },
   {
-    title: "ATS Resume Generator",
-    description:
-      "Developed a Python-based tool that converts structured CSV data into a formatted ATS-friendly PDF resume. Uses pandas for data parsing and ReportLab for PDF generation.",
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "pandas", "ReportLab", "PDF Generation"],
-    link: "projects/ats-resume.html"
-  },
-  {
     title: "RAG AI Agent",
     description:
       "Developing an AI-driven tool that uses retrieval-augmented generation to draft personalized emails for small businesses.",
@@ -64,13 +70,7 @@ export const projects = [
     tags: ["Python", "NLP", "Flask", "AI"],
     link: "projects/rag-ai.html"
   },
-  {
-    title: "NCAA March Madness Prediction Model",
-    description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Machine Learning", "Sports Analytics"],
-    link: "projects/march-madness.html"
-  },
+
   // ... other projects ...
 ];
 
