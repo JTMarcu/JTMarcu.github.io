@@ -566,3 +566,10 @@ a:hover {
 .section {
   animation: fadeIn 0.6s ease-out;
 }
+
+/* Centered Image */
+.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
