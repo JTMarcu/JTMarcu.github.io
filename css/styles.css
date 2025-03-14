@@ -398,6 +398,23 @@ a:hover {
   transition: width 1s ease-in-out;
 }
 
+.skill-bubbles {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.bubble {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd; /* Default color for unfilled bubbles */
+}
+
+.bubble.filled {
+  background-color: var(--color-primary); /* Color for filled bubbles, uses your primary color */
+}
+
 /* Experience Timeline */
 .experience-timeline {
   display: grid;
