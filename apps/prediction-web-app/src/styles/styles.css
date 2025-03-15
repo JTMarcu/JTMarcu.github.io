@@ -1,0 +1,116 @@
+:root {
+  /* Color Scheme */
+  --color-primary: #c62828;
+  --color-primary-hover: #b71c1c;
+  --text-color: #1f2937;
+  --light-text: #6b7280;
+  --background: #ffffff;
+  --card-bg: #f9fafb;
+  --border-color: #e5e7eb;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  /* Navigation Colors - Light */
+  --nav-bg-light: rgba(255, 255, 255, 0.98);
+  --text-light: #1f2937;
+  
+  /* Navigation Colors - Dark */
+  --nav-bg-dark: rgba(17, 24, 39, 0.98);
+  --text-dark: #f9fafb;
+  
+  /* Dynamic Variables */
+  --nav-bg: var(--nav-bg-light);
+  --nav-text: var(--text-light);
+}
+
+[data-theme="dark"] {
+  --nav-bg: var(--nav-bg-dark);
+  --nav-text: var(--text-dark);
+  --background: #111827;
+  --text-color: #f9fafb;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --light-text: #9ca3af;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --link-color: #bb86fc;
+  --link-hover-color: #bda2fe;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background);
+  line-height: 1.6;
+  padding-top: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  color: var(--color-primary);
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}

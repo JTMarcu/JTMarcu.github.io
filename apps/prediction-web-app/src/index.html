@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction App</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Match Prediction</h1>
+        <select id="team1">
+            <!-- Options will be populated by JavaScript -->
+        </select>
+        <select id="team2">
+            <!-- Options will be populated by JavaScript -->
+        </select>
+        <button id="predictButton">Predict Winner</button>
+        <div class="result" id="result"></div>
+        <div class="error" id="error"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
