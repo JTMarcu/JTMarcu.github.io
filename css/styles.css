@@ -398,14 +398,20 @@ a:hover {
   transition: width 1s ease-in-out;
 }
 
+.skill-info {
+  text-align: center;
+}
+
 .skill-bubbles {
   display: flex;
-  gap: 4px;
-  margin-top: 8px;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px; /* Reduced the margin-top to decrease the gap */
+  margin-bottom: 8px; 
 }
 
 .bubble {
-  width: 12px;
+  width: 20px;
   height: 12px;
   border-radius: 50%;
   background-color: #ddd; /* Default color for unfilled bubbles */
@@ -413,6 +419,11 @@ a:hover {
 
 .bubble.filled {
   background-color: var(--color-primary); /* Color for filled bubbles, uses your primary color */
+}
+
+.skill-list {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 /* Experience Timeline */
