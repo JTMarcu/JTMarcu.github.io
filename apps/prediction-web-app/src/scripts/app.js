@@ -6,20 +6,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const predictButton = document.getElementById('predictButton');
     const resultDiv = document.getElementById('result');
     const errorDiv = document.getElementById('error');
+    const csvVersionSelect = document.getElementById('csvVersion');
 
     let matchData = [];
 
-    // Load and parse the CSV file
-    Papa.parse('data/madness_pred.csv', {
-        download: true,
-        header: true,
-        complete: function(results) {
-            matchData = results.data;
-            populateTeams();
-        }
+    // Function to load and parse the CSV file
+    function loadCSV(file) {
+        Papa.parse(`data/${file}`, {
+            download: true,
+            header: true,
+            complete: function(results) {
+                matchData = results.data;
+                populateTeams();
+            }
+        });
+    }
+
+    // Load the default CSV file
+    loadCSV(csvVersionSelect.value);
+
+    // Event listener for CSV version change
+    csvVersionSelect.addEventListener('change', () => {
+        loadCSV(csvVersionSelect.value);
     });
 
     function populateTeams() {
+        team1Select.innerHTML = '';
+        team2Select.innerHTML = '';
         const teams = new Set();
         matchData.forEach(match => {
             teams.add(match.Team1Name);
