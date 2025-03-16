@@ -117,3 +117,21 @@ button:hover {
   color: red;
   text-align: center;
 }
+
+/* Model Info */
+.model-info {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--card-bg);
+  border-radius: 4px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.model-info h2 {
+  color: var(--color-primary);
+}
+
+.model-info p {
+  color: var(--light-text);
+}
