@@ -105,7 +105,7 @@ button:hover {
 }
 
 .result {
-  margin-top: 20px;
+  margin-top: 10px; /* Reduced the margin-top to decrease the gap */
   padding: 10px;
   background-color: var(--card-bg);
   border-radius: 4px;
@@ -120,7 +120,7 @@ button:hover {
 
 /* Model Info */
 .model-info {
-  margin-top: 20px;
+  margin-top: 10px; /* Reduced the margin-top to decrease the gap */
   padding: 10px;
   background-color: var(--card-bg);
   border-radius: 4px;
