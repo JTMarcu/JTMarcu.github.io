@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "NCAA March Madness Prediction Model",
+    description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
+    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
+    tags: ["Python", "Machine Learning", "Sports Analytics"],
+    link: "projects/march-madness.html"
+  },
+  {
     title: "FoodHub Order Analysis",
     description:
       "Analyzing data to understand the demand of different restaurants and enhance business and customer experience.",
@@ -23,13 +30,7 @@ export const projects = [
     tags: ["Python", "pandas", "ReportLab", "PDF Generation"],
     link: "projects/ats-resume.html"
   },
-  {
-    title: "NCAA March Madness Prediction Model",
-    description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Machine Learning", "Sports Analytics"],
-    link: "projects/march-madness.html"
-  },
+  
   {
     title: "Shinkansen Bullet Train Passenger Satisfaction Prediction",
     description:
