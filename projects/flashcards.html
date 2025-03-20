@@ -55,33 +55,80 @@
     </div>
   </header>
   <main>
-    <!-- Project Section -->
-    <section class="project-detail">
+    <!-- Flashcard App Section -->
+    <section class="flashcard-detail section">
       <div class="container">
-        <div class="project-header">
-          <h1 class="project-title">Project Title</h1>
-          <p class="project-description">Detailed description of the project.</p>
-        </div>
-        <div class="project-image">
-          <img src="project-image-url" alt="Project Title">
-        </div>
-        <div class="project-content">
-          <h2>Overview</h2>
-          <p>Overview of the project.</p>
-          <h2>Technologies Used</h2>
-          <ul>
-            <li>Technology 1</li>
-            <li>Technology 2</li>
-            <li>Technology 3</li>
-          </ul>
-          <h2>Challenges</h2>
-          <p>Challenges faced during the project.</p>
-          <h2>Outcome</h2>
-          <p>Outcome of the project.</p>
+        <header class="flashcard-header section-header">
+          <h1 class="flashcard-title section-title">AWS Flashcard App - Flask Framework</h1>
+          <p class="flashcard-description">A Flask-based flashcard app designed to help users study AWS concepts effectively. This project showcases my ability to build dynamic web applications using Flask, with a focus on interactivity and responsive design.</p>
+        </header>
+        <div class="flashcard-content">
+          <div class="flashcard-image">
+            <img src="../images/flashcards.png" alt="Flashcard App Demo Image" class="image-shadow" style="max-width: 50%; height: auto; display: block; margin: 0 auto;">
+          </div>
+          <!-- Overview Section -->
+          <header class="section-header">
+            <h2 class="section-title" style="margin-top: 40px;">Overview</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section id="overview" class="section card">
+            <p>This project is a Flask-based flashcard app that allows users to study AWS concepts interactively. The app reads flashcard data from CSV files and dynamically renders them on the front end. Users can filter flashcards by category, flip cards to view definitions, and reset or randomize the cards for better engagement. It was a valuable learning experience in building dynamic web applications and managing data efficiently.</p>
+          </section>
+  
+          <!-- Technologies Used Section -->
+          <header class="section-header">
+            <h2 class="section-title" style="margin-top: 40px;">Technologies Used</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section id="technologies" class="section section-alt card">
+            <ul style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; justify-content: center;">
+              <li>Flask</li> |
+              <li>Python</li> |
+              <li>HTML</li> |
+              <li>CSS</li> |
+              <li>JavaScript</li> |
+              <li>CSV</li>
+            </ul>
+          </section>
+  
+          <!-- Features Section -->
+          <header class="section-header">
+            <h2 class="section-title" style="margin-top: 40px;">Features</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section id="features" class="section section-alt card">
+            <ul>
+              <li><strong>Dynamic Flashcards:</strong> Flashcards are dynamically loaded from CSV files and rendered on the front end.</li>
+              <li><strong>Interactive UI:</strong> Users can flip cards, filter by category, and randomize or reset all cards.</li>
+              <li><strong>Responsive Design:</strong> The app is styled with CSS to ensure a clean and user-friendly interface.</li>
+            </ul>
+          </section>
+  
+          <!-- Challenges Section -->
+          <header class="section-header">
+            <h2 class="section-title" style="margin-top: 40px; text-align: center;">Challenges</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section id="challenges" class="section section-alt card">
+            <ul>
+              <li><strong>Data Management:</strong> Reading and parsing data from CSV files while ensuring compatibility with the front-end structure.</li>
+              <li><strong>Front-End Integration:</strong> Synchronizing the Flask back end with JavaScript for dynamic rendering and interactivity.</li>
+              <li><strong>CSS Animations:</strong> Implementing smooth card flip animations using CSS transitions and 3D transforms.</li>
+            </ul>
+          </section>
+  
+          <!-- Outcome Section -->
+          <header class="section-header">
+            <h2 class="section-title outcome-title">Outcome</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section id="outcome" class="section card">
+            <p>This project strengthened my skills in Flask development, front-end and back-end integration, and creating interactive user experiences. The app serves as a practical tool for studying AWS concepts and can be extended with features like user authentication, progress tracking, and database integration for persistent storage.</p>
+          </section>
         </div>
       </div>
     </section>
-  </main>
+</main>
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
