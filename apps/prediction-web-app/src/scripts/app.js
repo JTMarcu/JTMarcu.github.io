@@ -28,6 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener for CSV version change
     csvVersionSelect.addEventListener('change', () => {
         loadCSV(csvVersionSelect.value);
+
+        // Update model info dynamically
+        const modelInfoDiv = document.querySelector('.model-info');
+        if (csvVersionSelect.value === 'w_madness_pred.csv') {
+            modelInfoDiv.innerHTML = `
+                <h2>Women's Madness Model</h2>
+                <p>Trained on historical women's tournament data and includes predictions for the 2025 season.</p>
+            `;
+        } else if (csvVersionSelect.value === 'madness_pred.csv') {
+            modelInfoDiv.innerHTML = `
+                <h2>Madness Model 3.0</h2>
+                <p>Trained on 2010-2023 data, validated on 2024 stats, and includes partial 2025 season data.</p>
+            `;
+        } else if (csvVersionSelect.value === 'madness_pred1.csv') {
+            modelInfoDiv.innerHTML = `
+                <h2>Madness Model 1.0</h2>
+                <p>Initial model trained on 2010-2020 data.</p>
+            `;
+        } else if (csvVersionSelect.value === 'madness_pred2.csv') {
+            modelInfoDiv.innerHTML = `
+                <h2>Madness Model 2.0</h2>
+                <p>Improved model trained on 2010-2022 data.</p>
+            `;
+        }
     });
 
     function populateTeams() {
