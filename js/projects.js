@@ -30,7 +30,14 @@ export const projects = [
     tags: ["Python", "pandas", "ReportLab", "PDF Generation"],
     link: "projects/ats-resume.html"
   },
-  
+  {
+    title: "AWS Flashcards",
+    description:
+      "Flashcards app to help study for AWS exams. Built with Flask and Python, it provides an interactive way to learn AWS concepts.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&h=200",
+    tags: ["Python", "Flask", "AWS", "Education"],
+    link: "projects/flashcards.html"
+  },
   {
     title: "Shinkansen Bullet Train Passenger Satisfaction Prediction",
     description:
