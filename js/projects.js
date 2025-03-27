@@ -71,15 +71,13 @@ export const projects = [
     link: "projects/math-worksheet.html"
   },
   {
-    title: "RAG AI Agent",
+    title: "RAG Gandalf Chatbot",
     description:
-      "Developing an AI-driven tool that uses retrieval-augmented generation to draft personalized emails for small businesses.",
-    image: "https://images.unsplash.com/photo-1485796826113-174aa68fd81b?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "NLP", "Flask", "AI"],
+      "A 'Lord of the Rings' expert chatbot built using Retrieval-Augmented Generation (RAG) techniques, LangChain, and Hugging Face.",
+    image: "https://i.pinimg.com/474x/d0/a4/66/d0a4666833bad03c01a24b52c02a2aca--gandalf-the-hobbit.jpg",
+    tags: ["Python", "LangChain", "Hugging Face", "Gradio", "AI"],
     link: "projects/rag-ai.html"
   },
-
-  // ... other projects ...
 ];
 
 export function generateProjects() {
