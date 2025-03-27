@@ -39,6 +39,14 @@ export const projects = [
     link: "projects/flashcards.html"
   },
   {
+    title: "RAG Gandalf Chatbot",
+    description:
+      "A 'Lord of the Rings' expert chatbot built using Retrieval-Augmented Generation (RAG) techniques, LangChain, and Hugging Face.",
+    image: "https://i.pinimg.com/474x/d0/a4/66/d0a4666833bad03c01a24b52c02a2aca--gandalf-the-hobbit.jpg",
+    tags: ["Python", "LangChain", "Hugging Face", "Gradio", "AI"],
+    link: "projects/rag-ai.html"
+  },
+  {
     title: "Shinkansen Bullet Train Passenger Satisfaction Prediction",
     description:
       "Predicting passenger satisfaction based on various parameters. Achieved a 94.35% accuracy rating on the test data.",
@@ -69,14 +77,6 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1509869175650-a1d97972541a?auto=format&fit=crop&w=400&h=200",
     tags: ["Flask", "Python", "PDF Generation", "Education"],
     link: "projects/math-worksheet.html"
-  },
-  {
-    title: "RAG Gandalf Chatbot",
-    description:
-      "A 'Lord of the Rings' expert chatbot built using Retrieval-Augmented Generation (RAG) techniques, LangChain, and Hugging Face.",
-    image: "https://i.pinimg.com/474x/d0/a4/66/d0a4666833bad03c01a24b52c02a2aca--gandalf-the-hobbit.jpg",
-    tags: ["Python", "LangChain", "Hugging Face", "Gradio", "AI"],
-    link: "projects/rag-ai.html"
   },
 ];
 
