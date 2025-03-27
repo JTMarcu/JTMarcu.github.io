@@ -43,7 +43,7 @@ export const projects = [
     description:
       "A 'Lord of the Rings' expert chatbot built using Retrieval-Augmented Generation (RAG) techniques, LangChain, and Hugging Face.",
     image: "https://i.pinimg.com/474x/d0/a4/66/d0a4666833bad03c01a24b52c02a2aca--gandalf-the-hobbit.jpg",
-    tags: ["Python", "LangChain", "Hugging Face", "Gradio", "AI"],
+    tags: ["Python", "LangChain", "FAISS", "Hugging Face", "Gradio", "AI"],
     link: "projects/rag-ai.html"
   },
   {
