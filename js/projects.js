@@ -3,81 +3,72 @@ export const projects = [
     title: "NCAA March Madness Prediction Model",
     description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
     image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Machine Learning", "Sports Analytics"],
+    tags: ["Python", "Machine Learning", "Sports Analytics", "Scikit-learn", "Data Visualization"],
     link: "projects/march-madness.html"
   },
   {
     title: "FoodHub Order Analysis",
-    description:
-      "Analyzing data to understand the demand of different restaurants and enhance business and customer experience.",
+    description: "Analyzing data to understand the demand of different restaurants and enhance business and customer experience.",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=200",
-    tags: ["Data Analysis", "Python", "Visualization"],
+    tags: ["Python", "Pandas", "Seaborn", "Data Analysis", "Visualization"],
     link: "projects/foodhub.html"
   },
   {
     title: "BellaBeat Capstone Project",
-    description:
-      "Analyzing user data from a fitness tracker to understand activity levels, sleep patterns, and heart rate variability.",
+    description: "Analyzing user data from a fitness tracker to understand activity levels, sleep patterns, and heart rate variability.",
     image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=400&h=200",
-    tags: ["Data Analysis", "Health Tech", "R Programming", "Tidyverse (dplyr, ggplot2)", "Janitor for data cleaning", "reshape2 & corrplot for data visualization", "Kaggle Data Platform"],
+    tags: ["R Programming", "Tidyverse", "Data Cleaning", "Visualization"],
     link: "projects/bellabeat.html"
   },
   {
     title: "ATS Resume Generator",
-    description:
-      "Developed a Python-based tool that converts structured CSV data into a formatted ATS-friendly PDF resume. Uses pandas for data parsing and ReportLab for PDF generation.",
+    description: "Developed a Python-based tool that converts structured CSV data into a formatted ATS-friendly PDF resume.",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "pandas", "ReportLab", "PDF Generation"],
+    tags: ["Python", "pandas", "ReportLab", "PDF Generation", "Automation"],
     link: "projects/ats-resume.html"
   },
   {
     title: "AWS Flashcards",
-    description:
-      "Flashcards app to help study for AWS exams. Built with Flask and Python, it provides an interactive way to learn AWS concepts.",
+    description: "Flashcards app to help study for AWS exams. Built with Flask and Python, it provides an interactive way to learn AWS concepts.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Flask", "AWS", "Education"],
+    tags: ["Python", "Flask", "AWS", "Education", "Interactive UI"],
     link: "projects/flashcards.html"
   },
   {
     title: "RAG Gandalf Chatbot",
-    description:
-      "A 'Lord of the Rings' expert chatbot built using Retrieval-Augmented Generation (RAG) techniques, LangChain, and Hugging Face.",
+    description: "A 'Lord of the Rings' expert chatbot built using Retrieval-Augmented Generation (RAG) techniques, LangChain, and Hugging Face.",
     image: "https://i.pinimg.com/474x/d0/a4/66/d0a4666833bad03c01a24b52c02a2aca--gandalf-the-hobbit.jpg",
     tags: ["Python", "LangChain", "FAISS", "Hugging Face", "Gradio", "AI"],
     link: "projects/gandalf-bot.html"
   },
   {
     title: "Shinkansen Bullet Train Passenger Satisfaction Prediction",
-    description:
-      "Predicting passenger satisfaction based on various parameters. Achieved a 94.35% accuracy rating on the test data.",
+    description: "Predicting passenger satisfaction based on various parameters. Achieved a 94.35% accuracy rating on the test data.",
     image: "https://img.freepik.com/premium-photo/shinkansen-bullet-train-japan_729113-4820.jpg",
-    tags: ["Python", "Machine Learning", "Classification"],
+    tags: ["Python", "Machine Learning", "Classification", "Data Analysis"],
     link: "projects/shinkansen.html"
   },
   {
     title: "Amazon Product Recommendation System",
-    description:
-      "Recommending the best Amazon products using rank-based, similarity-based, and matrix factorization methods.",
+    description: "Recommending the best Amazon products using rank-based, similarity-based, and matrix factorization methods.",
     image: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Recommendation Systems", "Data Analysis"],
+    tags: ["Python", "Recommendation Systems", "Data Analysis", "Matrix Factorization"],
     link: "projects/amazon.html"
   },
   {
     title: "Predicting Potential Customers",
-    description:
-      "Identifying leads likely to convert to paid customers using decision trees, random forests, and hyperparameter tuning.",
+    description: "Identifying leads likely to convert to paid customers using decision trees, random forests, and hyperparameter tuning.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Machine Learning", "Random Forest"],
+    tags: ["Python", "Machine Learning", "Random Forest", "Customer Analytics"],
     link: "projects/customers.html"
-  },  
+  },
   {
     title: "Common Core Math Worksheet Generator",
-    description:
-      "Flask app generating K-5 math worksheets (Python, pandas, ReportLab). Dynamically creates PDFs aligned with Common Core standards using automation.",
+    description: "Flask app generating K-5 math worksheets (Python, pandas, ReportLab). Dynamically creates PDFs aligned with Common Core standards.",
     image: "https://images.unsplash.com/photo-1509869175650-a1d97972541a?auto=format&fit=crop&w=400&h=200",
-    tags: ["Flask", "Python", "PDF Generation", "Education"],
+    tags: ["Flask", "Python", "PDF Generation", "Education", "Automation"],
     link: "projects/math-worksheet.html"
-  },
+  }
 ];
 
 export function generateProjects() {
