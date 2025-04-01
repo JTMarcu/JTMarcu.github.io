@@ -4,10 +4,11 @@ export const skillCategories = [
     description: "Core programming and data manipulation skills",
     skills: [
       { name: "Python", level: 5 },
-      { name: "Pandas", level: 4 },
+      { name: "Pandas", level: 5 },
       { name: "NumPy", level: 4 },
-      { name: "Scikit-learn", level: 3 },
+      { name: "Scikit-learn", level: 4 },
       { name: "SQL", level: 4 },
+      { name: "R Programming", level: 3 },
     ],
   },
   {
@@ -16,6 +17,8 @@ export const skillCategories = [
     skills: [
       { name: "Tableau", level: 4 },
       { name: "ReportLab", level: 4 },
+      { name: "Seaborn", level: 4 },
+      { name: "Matplotlib", level: 4 },
       { name: "Data Visualization", level: 5 },
       { name: "Dashboard Design", level: 4 },
     ],
@@ -26,6 +29,7 @@ export const skillCategories = [
     skills: [
       { name: "Google Cloud", level: 3 },
       { name: "BigQuery", level: 4 },
+      { name: "AWS", level: 3 },
       { name: "Data Pipelines", level: 3 },
       { name: "Git", level: 4 },
     ],
@@ -38,9 +42,31 @@ export const skillCategories = [
       { name: "JavaScript", level: 3 },
       { name: "REST APIs", level: 3 },
       { name: "Flask", level: 4 },
+      { name: "Gradio", level: 3 },
     ],
   },
-  // ... other skill categories ...
+  {
+    title: "Machine Learning & AI",
+    description: "Machine learning frameworks and AI tools",
+    skills: [
+      { name: "TensorFlow", level: 3 },
+      { name: "Keras", level: 3 },
+      { name: "LangChain", level: 3 },
+      { name: "FAISS", level: 3 },
+      { name: "Hugging Face", level: 3 },
+    ],
+  },
+  {
+    title: "Other Tools & Technologies",
+    description: "Additional tools and technologies",
+    skills: [
+      { name: "ReportLab", level: 4 },
+      { name: "CSV", level: 5 },
+      { name: "PDF Generation", level: 4 },
+      { name: "Data Cleaning", level: 4 },
+      { name: "Automation", level: 4 },
+    ],
+  },
 ];
 
 export function generateSkills() {
@@ -58,7 +84,7 @@ export function generateSkills() {
               </div>
               <div class="skill-bubbles">
                 ${Array(5).fill().map((_, index) => `
-                  <span class="bubble ${index < skill.level? 'filled' : ''}"></span>
+                  <span class="bubble ${index < skill.level ? 'filled' : ''}"></span>
                 `).join('')}
               </div>
             </li>
