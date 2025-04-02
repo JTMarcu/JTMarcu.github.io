@@ -21,6 +21,13 @@ export const projects = [
     link: "projects/bellabeat.html"
   },
   {
+    title: "Brain Tumor Detection",
+    description: "Using machine learning to detect brain tumors from MRI scans.",
+    image: "https://th.bing.com/th/id/OIP.fxmPWbURYvhYPuqPKFMRegHaDt?w=326&h=174&c=7&r=0&o=5&pid=1.7",
+    tags: ["Python", "TensorFlow", "Deep Learning", "Medical Imaging", "Data Science"],
+    link: "projects/brain-tumor.html"
+  },
+  {
     title: "ATS Resume Generator",
     description: "Developed a Python-based tool that converts structured CSV data into a formatted ATS-friendly PDF resume.",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
@@ -69,6 +76,7 @@ export const projects = [
     tags: ["Flask", "Python", "PDF Generation", "Education", "Automation"],
     link: "projects/math-worksheet.html"
   }
+
 ];
 
 export function generateProjects() {
