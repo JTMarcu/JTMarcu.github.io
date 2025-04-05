@@ -28,6 +28,13 @@ export const projects = [
     link: "projects/brain-tumor.html"
   },
   {
+    title: "Skin Cancer Detection",
+    description: "Using machine learning to detect melonoma from images of skin.",
+    image: "https://www.vuassistance.com/wp-content/uploads/2021/10/IMG-20211008-WA0009-800x500.jpg",
+    tags: ["Python", "PyTorch", "Deep Learning", "Medical Imaging", "Data Science"],
+    link: "projects/dermatology.html"
+  }, 
+  {
     title: "ATS Resume Generator",
     description: "Developed a Python-based tool that converts structured CSV data into a formatted ATS-friendly PDF resume.",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
