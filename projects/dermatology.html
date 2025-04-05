@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melanoma Cancer Image Classification - Jonathan Marcu</title>
+  <meta name="description" content="Deep learning project for melanoma cancer image classification using PyTorch and transfer learning.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <nav class="container">
+      <a href="../index.html" class="logo">Jonathan Marcu</a>
+      <div class="contact-location">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <span>San Diego, CA</span>
+      </div>
+      <div class="nav-links">
+        <a href="../index.html#about" class="nav-item">About</a>
+        <a href="../index.html#projects" class="nav-item">Projects</a>
+        <a href="../index.html#skills" class="nav-item">Skills</a>
+        <a href="../index.html#experience" class="nav-item">Experience</a>
+        <a href="../index.html#education" class="nav-item">Education</a>
+        <a href="../index.html#contact" class="nav-item">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Project Header -->
+    <section class="project-section">
+      <div class="container">
+        <header class="project-header">
+          <h1 class="project-title">Melanoma Cancer Image Classification</h1>
+          <p class="project-description">
+            Deep learning project to classify high-resolution dermoscopic images of skin lesions as Benign or Malignant (Melanoma).
+          </p>
+          <a href="#jupyter-notebook" class="button button-primary">View Jupyter Notebook</a>
+        </header>
+
+        <!-- Project Image -->
+        <div class="project-image centered-image">
+          <img src="https://www.vuassistance.com/wp-content/uploads/2021/10/IMG-20211008-WA0009-800x500.jpg" alt="Melanoma Classification Visualization" class="image-shadow">
+        </div>
+
+        <!-- Overview Section -->
+        <section class="project-overview">
+          <header class="section-header">
+            <h2 class="section-title">Overview</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <p>
+              This project applies deep learning and transfer learning to classify high-resolution dermoscopic images of skin lesions as either Benign or Malignant (Melanoma). Using a curated dataset of over 13,000 images from Kaggle, we trained a convolutional neural network to support early melanoma detection — a critical step in improving cancer outcomes through computer-aided diagnostics.
+            </p>
+          </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section class="project-technologies">
+          <header class="section-header">
+            <h2 class="section-title">Technologies Used</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <ul>
+              <li><strong>PyTorch</strong> – for model building, training, and evaluation.</li>
+              <li><strong>Torchvision</strong> – for dataset handling, image transforms, and pretrained models (ResNet18).</li>
+              <li><strong>Scikit-learn</strong> – for evaluation metrics (classification report, confusion matrix).</li>
+              <li><strong>Matplotlib & Seaborn</strong> – for data and result visualization.</li>
+              <li><strong>Jupyter Notebook</strong> – for development and experimentation in an interactive environment.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="project-process">
+          <header class="section-header">
+            <h2 class="section-title">Process</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <ul>
+              <li><strong>Data Loading:</strong> Structured image dataset organized into train and test folders by class (Benign vs Malignant).</li>
+              <li><strong>Data Preprocessing:</strong> Images resized, normalized, and augmented for improved generalization.</li>
+              <li><strong>Model Selection:</strong> Transfer learning using pretrained ResNet18, customized for binary classification.</li>
+              <li><strong>Training:</strong> Initially trained only the final layer, then introduced weighted loss to penalize false negatives more heavily.</li>
+              <li><strong>Evaluation:</strong> Assessed performance with accuracy, precision, recall, F1-score, and confusion matrix.</li>
+              <li><strong>Visualization:</strong> Displayed correct and incorrect predictions for interpretability and analysis.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Challenges Section -->
+        <section class="project-challenges">
+          <header class="section-header">
+            <h2 class="section-title">Challenges</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <ul>
+              <li>Balancing sensitivity vs specificity in a medical context where false negatives are especially dangerous.</li>
+              <li>Training on CPU, which increased iteration time and required careful model design and efficiency tuning.</li>
+              <li>Handling real-world image variability through data augmentation and transfer learning fine-tuning.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Outcome Section -->
+        <section class="project-outcome">
+          <header class="section-header">
+            <h2 class="section-title">Outcome</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <ul>
+              <li>Achieved over 86% accuracy, with strong recall for benign and improved recall for malignant lesions using weighted loss.</li>
+              <li>Built a fully functioning image classification pipeline that can serve as a base for clinical decision support tools in dermatology.</li>
+              <li>Gained practical experience in model optimization, interpretability, and dataset preprocessing within a healthcare context.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Jupyter Notebook Section -->
+        <section class="project-notebook">
+          <header class="section-header" id="jupyter-notebook">
+            <h2 class="section-title">Jupyter Notebook</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <p>Explore the complete analysis in the interactive notebook below:</p>
+            <iframe src="../notebooks/dermatology-notebook.html" width="100%" height="600px" frameborder="0"></iframe>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h2 class="footer-title">Jonathan Marcu</h2>
+          <p class="footer-subtitle">Data Scientist & Machine Learning Enthusiast</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:JonMarcu@live.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://github.com/JTMarcu" target="_blank" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Jonathan Marcu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" type="module"></script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    });
+  </script>
+</body>
+</html>
