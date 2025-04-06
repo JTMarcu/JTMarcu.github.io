@@ -79,8 +79,8 @@
           </header>
           <div class="card">
             <p>
-              This project applies deep learning and transfer learning to classify high-resolution dermoscopic images of skin lesions as either Benign or Malignant (Melanoma). Using a curated dataset of over 13,000 images from Kaggle, we trained a convolutional neural network to support early melanoma detection — a critical step in improving cancer outcomes through computer-aided diagnostics.
-            </p>
+              This project applies deep learning and transfer learning to classify high-resolution dermoscopic images of skin lesions as either Benign or Malignant (Melanoma). Using a curated dataset of over 13,000 images from Kaggle, we fine-tuned a convolutional neural network to support early melanoma detection — a critical step in improving cancer outcomes through computer-aided diagnostics. The final model achieved 94% accuracy and over 91% recall on malignant cases, demonstrating strong generalization and clinical relevance.
+            </p>          
           </div>
         </section>
 
@@ -93,11 +93,11 @@
           <div class="card">
             <ul>
               <li><strong>PyTorch</strong> – for model building, training, and evaluation.</li>
-              <li><strong>Torchvision</strong> – for dataset handling, image transforms, and pretrained models (ResNet18).</li>
-              <li><strong>Scikit-learn</strong> – for evaluation metrics (classification report, confusion matrix).</li>
-              <li><strong>Matplotlib & Seaborn</strong> – for data and result visualization.</li>
-              <li><strong>Jupyter Notebook</strong> – for development and experimentation in an interactive environment.</li>
-            </ul>
+              <li><strong>Torchvision</strong> – for dataset handling, image transforms, and pretrained ResNet18 model.</li>
+              <li><strong>Scikit-learn</strong> – for classification reports, precision/recall/F1 metrics, and confusion matrix analysis.</li>
+              <li><strong>Matplotlib & Seaborn</strong> – for visualizing sample predictions and performance metrics.</li>
+              <li><strong>Jupyter Notebook</strong> – for experimentation, analysis, and iterative development.</li>
+            </ul>            
           </div>
         </section>
 
@@ -109,13 +109,13 @@
           </header>
           <div class="card">
             <ul>
-              <li><strong>Data Loading:</strong> Structured image dataset organized into train and test folders by class (Benign vs Malignant).</li>
-              <li><strong>Data Preprocessing:</strong> Images resized, normalized, and augmented for improved generalization.</li>
-              <li><strong>Model Selection:</strong> Transfer learning using pretrained ResNet18, customized for binary classification.</li>
-              <li><strong>Training:</strong> Initially trained only the final layer, then introduced weighted loss to penalize false negatives more heavily.</li>
-              <li><strong>Evaluation:</strong> Assessed performance with accuracy, precision, recall, F1-score, and confusion matrix.</li>
-              <li><strong>Visualization:</strong> Displayed correct and incorrect predictions for interpretability and analysis.</li>
-            </ul>
+              <li><strong>Data Loading:</strong> Structured dataset split into training and test folders with subdirectories for Benign and Malignant classes.</li>
+              <li><strong>Data Preprocessing:</strong> Resized and normalized all images, with augmentation planned for future robustness improvements.</li>
+              <li><strong>Model Selection:</strong> Applied transfer learning using ResNet18 pretrained on ImageNet; final layer customized for binary output.</li>
+              <li><strong>Training:</strong> Started with the classifier head, then applied weighted loss to reduce false negatives, followed by fine-tuning of the final ResNet block.</li>
+              <li><strong>Evaluation:</strong> Assessed model performance using accuracy, confusion matrix, and detailed classification metrics (precision, recall, F1-score).</li>
+              <li><strong>Visualization:</strong> Displayed prediction examples and heatmaps to interpret model behavior and identify misclassifications.</li>
+            </ul>            
           </div>
         </section>
 
@@ -127,10 +127,10 @@
           </header>
           <div class="card">
             <ul>
-              <li>Balancing sensitivity vs specificity in a medical context where false negatives are especially dangerous.</li>
-              <li>Training on CPU, which increased iteration time and required careful model design and efficiency tuning.</li>
-              <li>Handling real-world image variability through data augmentation and transfer learning fine-tuning.</li>
-            </ul>
+              <li>Reducing false negatives was critical for safety, requiring class weighting and architectural fine-tuning to favor malignant recall.</li>
+              <li>Initial CPU-only training added time constraints, requiring efficient model and data pipeline design.</li>
+              <li>Balancing recall and precision in a binary classification context with visually similar classes was a key modeling challenge.</li>
+            </ul>            
           </div>
         </section>
 
@@ -142,10 +142,11 @@
           </header>
           <div class="card">
             <ul>
-              <li>Achieved over 86% accuracy, with strong recall for benign and improved recall for malignant lesions using weighted loss.</li>
-              <li>Built a fully functioning image classification pipeline that can serve as a base for clinical decision support tools in dermatology.</li>
-              <li>Gained practical experience in model optimization, interpretability, and dataset preprocessing within a healthcare context.</li>
-            </ul>
+              <ul>
+                <li>Achieved 94% overall accuracy with 91% recall and 93% F1-score on malignant cases — outperforming the baseline by a wide margin.</li>
+                <li>Built a clinically relevant image classification pipeline using real-world data, optimized through weighted loss and targeted fine-tuning.</li>
+                <li>Demonstrated ability to design, train, and evaluate deep learning models for high-stakes healthcare problems using PyTorch and open-source tools.</li>
+              </ul>              
           </div>
         </section>
 
@@ -157,7 +158,7 @@
           </header>
           <div class="card">
             <p>Explore the complete analysis in the interactive notebook below:</p>
-            <iframe src="../notebooks/dermatology-notebook.html" width="100%" height="600px" frameborder="0"></iframe>
+            <iframe src="../images/skin.html" width="100%" height="600px" frameborder="0"></iframe>
           </div>
         </section>
       </div>
