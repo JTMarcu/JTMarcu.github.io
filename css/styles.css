@@ -345,9 +345,12 @@ a:hover {
 }
 
 .project-image {
-  height: 200px;
-  object-fit: cover;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Make sure the container spans the full width */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
 }
 
 .project-content {
@@ -604,6 +607,10 @@ a:hover {
 
 /* Image Shadow */
 .image-shadow {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: 300px; /* Set the maximum height */
+  width: auto; /* Maintain the aspect ratio */
+  display: block; /* Ensure the image behaves like a block element */
+  margin: 0 auto; /* Center the image horizontally */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Keep the shadow */
   border-radius: 8px; /* Optional: Add rounded corners */
 }
