@@ -55,13 +55,14 @@
     </div>
   </header>
   <main>
-    <!-- Project Section -->
     <section class="project-detail section">
       <div class="container">
         <!-- Title and Description -->
         <header class="section-header">
-          <h1 class="section-title">RAG Gandalf Chatbot</h1>
-          <p class="section-description">A "Lord of the Rings" expert chatbot built using LangChain and Hugging Face.</p>
+          <h1 class="section-title">Gandalf: A Middle-earth Chatbot</h1>
+          <p class="section-description">
+            A Tolkien-themed expert chatbot built using LangChain, FAISS, and the Mistral-7B-Instruct model, deployed via Gradio on Hugging Face Spaces.
+          </p>
         </header>
 
         <!-- Embedded Gradio App -->
@@ -71,113 +72,90 @@
             frameborder="0"
             width="850"
             height="450"
-            title="RAG Gandalf Chatbot"
-            style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); overflow: hidden;"
-          ></iframe>
+            title="Gandalf Chatbot App"
+            style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); overflow: hidden;">
+          </iframe>
         </div>
 
-        <!-- Overview Section -->
+        <!-- Overview -->
         <header class="section-header">
           <h2 class="section-title" style="margin-top: 150px;">Overview</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
           <p>
-          Gandalf is a fully local Retrieval-Augmented Generation (RAG) chatbot designed to answer questions about "The Lord of the Rings" using LangChain, FAISS, and the Mistral-7B-Instruct model. This project ensures privacy by running entirely on your local machine, with no external API calls after setup.
+            Ask Gandalf the Grey anything! This chatbot is trained on the full texts of <em>The Hobbit</em>, <em>The Lord of the Rings</em>, and <em>The Silmarillion</em> to respond with wisdom (or wit) drawn from Tolkien's legendarium.
           </p>
           <p>
-            This project leverages Retrieval-Augmented Generation (RAG) techniques to create a chatbot that acts as a "Lord of the Rings" expert. By combining LangChain for orchestration, FAISS for vector search, and the Mistral-7B-Instruct model for local inference, Gandalf provides accurate and contextually relevant answers to user queries. The chatbot processes "The Lord of the Rings" PDF to build a knowledge base, ensuring privacy and efficiency by running entirely on your local machine.
+            Built with LangChain and a FAISS vector database, the chatbot retrieves relevant context and uses the <code>mistralai/Mistral-7B-Instruct</code> model for generation. The Gradio interface is hosted live via Hugging Face Spaces, enabling anyone to seek counsel from the Grey Wizard himself.
           </p>
         </section>
 
-        <!-- Features Section -->
+        <!-- Features -->
         <header class="section-header">
           <h2 class="section-title" style="margin-top: 40px;">Features</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
           <ul>
-            <li><strong>Local Execution:</strong> No internet or cloud APIs required after initial setup.</li>
-            <li><strong>PDF Integration:</strong> Processes "The Lord of the Rings" PDF for question answering.</li>
-            <li><strong>Vector Search:</strong> Uses FAISS for efficient document retrieval.</li>
-            <li><strong>Mistral-7B-Instruct:</strong> Runs the lightweight <code>mistral-7b-instruct-v0.1.Q4_K_M.gguf</code> model locally.</li>
-            <li><strong>Gradio Interface:</strong> User-friendly web interface for interacting with the chatbot.</li>
+            <li><strong>Retrieval-Augmented Generation:</strong> Combines traditional search with neural text generation for accurate responses.</li>
+            <li><strong>Multi-book Indexing:</strong> Incorporates <em>The Hobbit</em>, <em>LotR</em>, and <em>The Silmarillion</em> PDFs.</li>
+            <li><strong>Custom Metadata:</strong> Displays source chapter and book for each answer.</li>
+            <li><strong>Gandalf-style Fallback:</strong> When no answer is found, the model responds with wizardly flair.</li>
+            <li><strong>Hosted UI:</strong> Powered by Gradio and live on Hugging Face Spaces.</li>
           </ul>
         </section>
 
-        <!-- Technologies Used Section -->
+        <!-- Technologies Used -->
         <header class="section-header">
           <h2 class="section-title" style="margin-top: 40px;">Technologies Used</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
           <ul>
-            <li><strong>LangChain:</strong> For orchestration and document processing.</li>
-            <li><strong>FAISS:</strong> For efficient vector-based document retrieval.</li>
-            <li><strong>Mistral-7B-Instruct:</strong> Lightweight local model for generating answers.</li>
-            <li><strong>Gradio:</strong> For building an interactive web interface.</li>
-            <li><strong>Python:</strong> Core programming language for the project.</li>
+            <li><strong>LangChain:</strong> RAG pipeline and orchestration</li>
+            <li><strong>FAISS:</strong> For fast vector-based document retrieval</li>
+            <li><strong>Sentence Transformers:</strong> <code>all-MiniLM-L6-v2</code> for chunk embeddings</li>
+            <li><strong>Mistral-7B-Instruct:</strong> Hosted via Hugging Face Inference API</li>
+            <li><strong>Gradio:</strong> Interactive frontend</li>
+            <li><strong>Python:</strong> Core programming language</li>
           </ul>
         </section>
 
-        <!-- Challenges Section -->
+        <!-- Challenges -->
         <header class="section-header">
           <h2 class="section-title" style="margin-top: 40px;">Challenges</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
           <p>
-            One of the key challenges was integrating multiple components, such as LangChain, FAISS, and the Mistral model, into a seamless pipeline. Ensuring the chatbot could run entirely locally without relying on external APIs required careful optimization of the model and vector search. Additionally, processing large PDFs and splitting them into meaningful chunks for embedding posed a challenge in terms of memory and computational efficiency.
+            A key challenge was parsing and chunking large PDFs in a way that preserved semantic meaning and chapter boundaries. Integrating metadata (book, chapter name) into each vector entry was essential for meaningful context and traceability. Deployment also required optimizing the interface for a Hugging Face-hosted environment.
           </p>
         </section>
 
-        <!-- Outcome Section -->
-        <header class="section-header">
-          <h2 class="section-title" style="margin-top: 40px;">Outcome</h2>
-          <div class="section-divider"></div>
-        </header>
-        <section class="section card">
-          <p>
-            The Gandalf chatbot successfully provides detailed and accurate answers to questions about "The Lord of the Rings" universe. By leveraging RAG techniques, it demonstrates the potential of local AI solutions for privacy-focused applications. The project also highlights the effectiveness of lightweight models like Mistral-7B-Instruct for running inference on personal devices.
-          </p>
-        </section>
-
-        <!-- How It Works Section -->
+        <!-- How It Works -->
         <header class="section-header">
           <h2 class="section-title" style="margin-top: 40px;">How It Works</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
           <ol>
-            <li><strong>Document Processing:</strong> The PDF is split into chunks using LangChain's text splitter.</li>
-            <li><strong>Vector Embedding:</strong> Each chunk is embedded using <code>sentence-transformers/all-MiniLM-L6-v2</code> and stored in a FAISS index.</li>
-            <li><strong>Question Answering:</strong> The Mistral-7B-Instruct model retrieves relevant chunks and generates answers.</li>
+            <li><strong>Chapter Detection:</strong> Each book PDF is split into chunks with chapter metadata via custom LangChain logic.</li>
+            <li><strong>Embeddings:</strong> Each chunk is embedded with <code>sentence-transformers/all-MiniLM-L6-v2</code> and stored in a FAISS index.</li>
+            <li><strong>Answer Generation:</strong> Relevant chunks are retrieved and passed to the Mistral-7B-Instruct model to generate a response.</li>
           </ol>
         </section>
 
-        <!-- Example Usage Section -->
-        <header class="section-header">
-          <h2 class="section-title" style="margin-top: 40px;">Example Usage</h2>
-          <div class="section-divider"></div>
-        </header>
-        <section class="section card">
-          <pre><code>
-question = "What happened in the mines of Moria?"
-result = qa_chain.invoke({"query": question})
-print("🧙 Gandalf says:\n", result['result'])
-          </code></pre>
-        </section>
-
-        <!-- Future Enhancements Section -->
+        <!-- Future Enhancements -->
         <header class="section-header">
           <h2 class="section-title" style="margin-top: 40px;">Future Enhancements</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
           <ul>
-            <li>Add support for additional texts from Tolkien's legendarium.</li>
-            <li>Experiment with other lightweight local models for improved performance.</li>
-            <li>Enhance the Gradio interface with additional features like context visualization.</li>
+            <li>Support for audio questions and TTS Gandalf voice responses.</li>
+            <li>Integration with additional texts like Unfinished Tales and HoMe volumes.</li>
+            <li>Enhanced document viewer to show original text alongside answers.</li>
           </ul>
         </section>
       </div>
