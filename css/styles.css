@@ -353,6 +353,20 @@ a:hover {
   padding: 0; /* Remove any default padding */
 }
 
+/* Ensure iframe is responsive */
+.project-image iframe {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust iframe height for smaller screens */
+@media (max-width: 768px) {
+  .project-image iframe {
+    height: 70vh; /* Use 70% of the viewport height on mobile */
+  }
+}
+
 .project-content {
   padding: 1.5rem;
 }
