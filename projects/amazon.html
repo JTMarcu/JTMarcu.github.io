@@ -76,17 +76,107 @@
             <div class="section-divider"></div>
           </header>
           <div class="card">
-            <p>Detailed overview of the project, including goals, data sources, and key insights.</p>
+            <p>
+              This project demonstrates the development of a personalized product recommendation system using Amazon's Electronics ratings dataset. By leveraging collaborative filtering techniques, specifically Singular Value Decomposition (SVD), the system predicts user preferences and suggests products accordingly.
+            </p>
             <ul>
-              <li>Key point 1</li>
-              <li>Key point 2</li>
-              <li>Key point 3</li>
+              <li>Utilized a dataset comprising over 7.8 million user-product interactions.</li>
+              <li>Implemented data preprocessing to focus on positive user feedback (ratings ≥ 4.0).</li>
+              <li>Applied matrix factorization to uncover latent user and product features.</li>
+            </ul>
+          </div>
+        </section>
+      
+        <!-- Data Preparation Section -->
+        <section class="project-data-preparation">
+          <header class="section-header">
+            <h2 class="section-title">Data Preparation</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <p>
+              The dataset was cleaned and filtered to enhance the quality of recommendations:
+            </p>
+            <ul>
+              <li>Removed entries with ratings below 4.0 to focus on positive user experiences.</li>
+              <li>Filtered out users and products with fewer than 50 interactions to reduce noise.</li>
+              <li>Constructed a user-item matrix to represent user preferences.</li>
+            </ul>
+          </div>
+        </section>
+      
+        <!-- Modeling Section -->
+        <section class="project-modeling">
+          <header class="section-header">
+            <h2 class="section-title">Modeling</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <p>
+              Implemented collaborative filtering using SVD to predict user ratings for unseen products:
+            </p>
+            <ul>
+              <li>Decomposed the user-item matrix into user and item latent feature matrices.</li>
+              <li>Reconstructed the matrix to estimate missing ratings.</li>
+              <li>Generated top-N product recommendations for each user based on predicted ratings.</li>
+            </ul>
+          </div>
+        </section>
+      
+        <!-- Results Section -->
+        <section class="project-results">
+          <header class="section-header">
+            <h2 class="section-title">Results</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <p>
+              The recommendation system effectively identifies products that align with user preferences:
+            </p>
+            <ul>
+              <li>Enhanced user experience by suggesting relevant products.</li>
+              <li>Demonstrated the capability to handle large-scale datasets efficiently.</li>
+              <li>Provided a foundation for further development of advanced recommendation engines.</li>
+            </ul>
+          </div>
+        </section>
+      
+        <!-- Skills Demonstrated Section -->
+        <section class="project-skills">
+          <header class="section-header">
+            <h2 class="section-title">Skills Demonstrated</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <ul>
+              <li>Data preprocessing and cleaning using Python (Pandas, NumPy).</li>
+              <li>Exploratory data analysis and visualization (Matplotlib, Seaborn).</li>
+              <li>Implementation of collaborative filtering techniques (SVD).</li>
+              <li>Building and evaluating recommendation systems.</li>
+              <li>Effective communication of data-driven insights.</li>
+            </ul>
+          </div>
+        </section>
+      
+        <!-- Next Steps Section -->
+        <section class="project-next-steps">
+          <header class="section-header">
+            <h2 class="section-title">Next Steps</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <p>
+              Potential enhancements to this project include:
+            </p>
+            <ul>
+              <li>Incorporating content-based filtering to complement collaborative methods.</li>
+              <li>Deploying the model as a web application for real-time recommendations.</li>
+              <li>Exploring deep learning approaches for improved prediction accuracy.</li>
             </ul>
           </div>
         </section>
 
         <!-- Additional Sections -->
-        <!-- Repeat similar structure for sections like Data Preparation, Results, Challenges, etc. -->
 
         <!-- Jupyter Notebook Section -->
         <section class="project-notebook">
