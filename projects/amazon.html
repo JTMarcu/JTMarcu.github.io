@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>March Madness 2025 Prediction - Jonathan Marcu</title>
-  <meta name="description" content="March Madness 2025 prediction model using machine learning by Jonathan Marcu.">
+  <title>Amazon Product Recommendation System - Jonathan Marcu</title>
+  <meta name="description" content="Amazon Product Recommendation System project by Jonathan Marcu.">
   <link rel="stylesheet" href="../css/styles.css">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -56,32 +56,53 @@
   </header>
   <main>
     <!-- Project Section -->
-    <section class="project-detail">
+    <section class="project-detail section">
       <div class="container">
-        <div class="project-header">
-          <h1 class="project-title">Project Title</h1>
-          <p class="project-description">Detailed description of the project.</p>
+        <header class="project-header section-header">
+          <h1 class="project-title section-title">Amazon Product Recommendation System</h1>
+          <p class="project-description">Brief description of the project goes here.</p>
+          <a href="#jupyter-notebook" class="button button-primary button-notebook">View Jupyter Notebook</a>
+        </header>
+
+        <!-- Project Image -->
+        <div class="project-image centered-image">
+          <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?auto=format&fit=crop&w=400&h=200" alt="Project Visualization" class="image-shadow">
         </div>
-        <div class="project-image">
-          <img src="project-image-url" alt="Project Title">
-        </div>
-        <div class="project-content">
-          <h2>Overview</h2>
-          <p>Overview of the project.</p>
-          <h2>Technologies Used</h2>
-          <ul>
-            <li>Technology 1</li>
-            <li>Technology 2</li>
-            <li>Technology 3</li>
-          </ul>
-          <h2>Challenges</h2>
-          <p>Challenges faced during the project.</p>
-          <h2>Outcome</h2>
-          <p>Outcome of the project.</p>
-        </div>
+
+        <!-- Overview Section -->
+        <section class="project-overview">
+          <header class="section-header">
+            <h2 class="section-title">Overview</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <p>Detailed overview of the project, including goals, data sources, and key insights.</p>
+            <ul>
+              <li>Key point 1</li>
+              <li>Key point 2</li>
+              <li>Key point 3</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Additional Sections -->
+        <!-- Repeat similar structure for sections like Data Preparation, Results, Challenges, etc. -->
+
+        <!-- Jupyter Notebook Section -->
+        <section class="project-notebook">
+          <header class="section-header" id="jupyter-notebook">
+            <h2 class="section-title">Jupyter Notebook</h2>
+            <div class="section-divider"></div>
+          </header>
+          <div class="card">
+            <p>Explore the complete analysis in the interactive notebook below:</p>
+            <iframe src="../images/Amazon _Recommendation_Systems.html" width="100%" height="600px" frameborder="0"></iframe>
+          </div>
+        </section>
       </div>
     </section>
   </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -91,35 +112,32 @@
           <p class="footer-subtitle">Data Scientist & Machine Learning Enthusiast</p>
         </div>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
           </a>
           <a href="mailto:JonMarcu@live.com" class="social-link" aria-label="Email">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://github.com/JTMarcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-            <i class="fab fa-github" aria-hidden="true"></i>
+          <a href="https://github.com/JTMarcu" target="_blank" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
           </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="copyright">
-          &copy; <span id="current-year"></span> Jonathan Marcu. All rights reserved.
-        </p>
+        <p>&copy; <span id="current-year"></span> Jonathan Marcu. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
   <script src="../js/main.js" type="module"></script>
   <script>
     // Theme toggle functionality
     const themeToggle = document.getElementById('theme-toggle');
-    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
     const currentTheme = localStorage.getItem('theme') || 'light';
 
     if (currentTheme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
-      themeToggleMobile.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
     }
 
     themeToggle.addEventListener('click', () => {
@@ -127,15 +145,6 @@
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
       themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
-      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
-    });
-
-    themeToggleMobile.addEventListener('click', () => {
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
-      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
     });
   </script>
 </body>
