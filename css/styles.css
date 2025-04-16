@@ -347,12 +347,9 @@ a:hover {
 }
 
 .project-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* Make sure the container spans the full width */
-  margin: 0; /* Remove any default margin */
-  padding: 0; /* Remove any default padding */
+  width: 400px;
+  height: 200px;
+  object-fit: cover; /* Ensures the image is cropped to fit */
 }
 
 /* Ensure iframe is responsive */
