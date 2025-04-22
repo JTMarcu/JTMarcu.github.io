@@ -33,6 +33,13 @@ export const projects = [
     image: "https://www.vuassistance.com/wp-content/uploads/2021/10/IMG-20211008-WA0009-800x500.jpg",
     tags: ["Python", "PyTorch", "Deep Learning", "Medical Imaging", "Data Science"],
     link: "projects/dermatology.html"
+  },
+  {
+    title: "Rental Price Optimization Tool",
+    description: "A tool that uses scraped data from apartments.com to analyze rental prices in the San Diego area, helping property managers optimize their pricing strategies.",
+    image: "https://timesofsandiego.com/wp-content/uploads/2023/12/Brynn-Civita.jpg",
+    tags: ["Python", "Selenium", "BeautifulSoup", "Data Cleaning", "Power BI", "Tableau"],
+    link: "projects/rental_price.html"
   }, 
   {
     title: "ATS Resume Generator",
