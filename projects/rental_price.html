@@ -130,18 +130,37 @@
           </header>
           <section class="section card">
             <ul class="tech-stack">
-              <li><i class="fab fa-python"></i> Python 3.10+</li>
-              <li>Selenium & BeautifulSoup</li>
-              <li>Pandas & NumPy</li>
-              <li>Regex & Logging</li>
-              <li>Tableau & Power BI</li>
-              <li>Jupyter Notebook</li>
+              <li>
+                <i class="fab fa-python"></i> Python 3.10+
+                <small>Core language for orchestrating scraping, data cleaning, and analysis with modern syntax and libraries.</small>
+              </li>
+              <li>
+                Selenium & BeautifulSoup
+                <small>Headless browser automation plus HTML parsing to render JS-loaded pages and extract listings & amenities.</small>
+              </li>
+              <li>
+                Pandas & NumPy
+                <small>DataFrame operations and vectorized computations for cleaning, transforming, and computing price metrics.</small>
+              </li>
+              <li>
+                Regex & Logging
+                <small>Regular expressions to normalize free-form text; logging module to capture runtime warnings & debug info.</small>
+              </li>
+              <li>
+                Tableau & Power BI
+                <small>Interactive dashboards surfacing rent distributions, amenity premiums, and neighborhood trends.</small>
+              </li>
+              <li>
+                Jupyter Notebook
+                <small>Exploratory environment for step-by-step analysis, code inspection, and interactive visualizations.</small>
+              </li>
             </ul>
           </section>
+
   
           <!-- Challenges & Solutions Section -->
           <header class="section-header">
-            <h2 class="section-title" style="margin-top: 40px;">Challenges &amp; Solutions</h2>
+            <h2 class="section-title" style="margin-top: 40px;">Challenges & Solutions</h2>
             <div class="section-divider"></div>
           </header>
           <section class="section section-alt card">
@@ -185,9 +204,26 @@
           </header>
           <section class="section section-alt card">
             <ul>
-              <li>Migrate scraper to Playwright + asyncio for speed and reliability.</li>
-              <li>Append geolocation data for map-based analyses.</li>
-              <li>Automate alerts for price anomalies via scheduled jobs.</li>
+              <li>
+                <strong>Rewrite Scraper with Playwright &amp; Asyncio</strong>
+                <small>Leverage Playwright’s async API for faster, headless browsing and concurrent page scraping.</small>
+              </li>
+              <li>
+                <strong>Enrich Data with Geolocation</strong>
+                <small>Use geocoding services to append latitude/longitude and neighborhood boundaries for map‐based analyses.</small>
+              </li>
+              <li>
+                <strong>Implement Automated Anomaly Alerts</strong>
+                <small>Schedule jobs to detect sudden price shifts and notify stakeholders via email or Slack.</small>
+              </li>
+              <li>
+                <strong>Deploy Interactive Dashboards</strong>
+                <small>Embed your Tableau/Power BI dashboards in a web portal with filtering and drill-down capabilities.</small>
+              </li>
+              <li>
+                <strong>Build Historical Trend Archive</strong>
+                <small>Store daily snapshots to analyze rent trends over time and feed into predictive forecasting models.</small>
+              </li>
             </ul>
           </section>
   
