@@ -7816,21 +7816,21 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 🌴 San Diego Rentals - Initial Data Health Check + Full Summary Table</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># San Diego Rentals - Initial Data Health Check + Full Summary Table</span>
 
 <span class="c1"># 1. Missing Values</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">🔍 Checking for missing values:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Checking for missing values:"</span><span class="p">)</span>
 <span class="n">missing_counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">missing_percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">missing_counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
 <span class="n">missing_report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'MissingValues'</span><span class="p">:</span> <span class="n">missing_counts</span><span class="p">,</span> <span class="s1">'PercentMissing'</span><span class="p">:</span> <span class="n">missing_percent</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)})</span>
 <span class="n">display</span><span class="p">(</span><span class="n">missing_report</span><span class="p">[</span><span class="n">missing_report</span><span class="p">[</span><span class="s1">'MissingValues'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># 2. Data Types</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">🔎 Checking data types:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Checking data types:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
 
 <span class="c1"># 3. Quick Stats on Numeric Columns</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">📊 Basic descriptive statistics:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Basic descriptive statistics:"</span><span class="p">)</span>
 <span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">desc_stats</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">numeric_cols</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">desc_stats</span><span class="p">)</span>
@@ -7858,7 +7858,7 @@ a.anchor-link {
 <span class="s2">| **Extreme Listings** | Some ultra-luxury units approaching $</span><span class="si">{</span><span class="n">max_rent</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">, but most cluster under $4K |</span>
 <span class="s2">"""</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">📝 Auto-Generated Summary:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Auto-Generated Summary:"</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">display</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">summary_table</span><span class="p">))</span>
 </pre></div>
@@ -7874,7 +7874,7 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-🔍 Checking for missing values:
+ Checking for missing values:
 </pre>
 </div>
 </div>
@@ -7928,14 +7928,14 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-🔎 Checking data types:
+ Checking data types:
 object     8
 bool       7
 float64    4
 int64      3
 Name: count, dtype: int64
 
-📊 Basic descriptive statistics:
+ Basic descriptive statistics:
 </pre>
 </div>
 </div>
@@ -8059,7 +8059,7 @@ Name: count, dtype: int64
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-📝 Auto-Generated Summary:
+ Auto-Generated Summary:
 </pre>
 </div>
 </div>
@@ -8381,7 +8381,7 @@ Auto-Generated Rental Price Summary:
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 🔎 Focused Rental Price View (&lt; $6,000)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Focused Rental Price View (&lt; $6,000)</span>
 
 <span class="c1"># Filtered dataset</span>
 <span class="n">df_clean_filtered</span> <span class="o">=</span> <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s1">'Price'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6000</span><span class="p">]</span>
@@ -8772,7 +8772,7 @@ Auto-Generated Rental Type Summary:
 
 <span class="c1"># Function to analyze any binary amenity column</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">analyze_amenity_rent</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">amenity_col</span><span class="p">,</span> <span class="n">amenity_label</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">🔍 </span><span class="si">{</span><span class="n">amenity_label</span><span class="si">}</span><span class="s2"> vs. Rent</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"-"</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">amenity_label</span><span class="si">}</span><span class="s2"> vs. Rent</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"-"</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
     
     <span class="c1"># 1. Summary</span>
     <span class="n">amenity_summary</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">amenity_col</span><span class="p">)[</span><span class="s1">'Price'</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">'count'</span><span class="p">,</span> <span class="s1">'mean'</span><span class="p">,</span> <span class="s1">'median'</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -8830,7 +8830,7 @@ Auto-Generated Rental Type Summary:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-🔍 Washer/Dryer In Unit vs. Rent
+Washer/Dryer In Unit vs. Rent
 ----------------------------------------
 </pre>
 </div>
@@ -8880,7 +8880,7 @@ Auto-Generated Rental Type Summary:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-🔍 Air Conditioning vs. Rent
+Air Conditioning vs. Rent
 ----------------------------------------
 </pre>
 </div>
@@ -8930,7 +8930,7 @@ Auto-Generated Rental Type Summary:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-🔍 Pool Access vs. Rent
+Pool Access vs. Rent
 ----------------------------------------
 </pre>
 </div>
@@ -8980,7 +8980,7 @@ Auto-Generated Rental Type Summary:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-🔍 Pet Friendly vs. Rent
+Pet Friendly vs. Rent
 ----------------------------------------
 </pre>
 </div>
@@ -9070,7 +9070,7 @@ Auto-Generated Rental Type Summary:
 <span class="si">{</span><span class="n">full_amenity_impact_summary</span><span class="si">}</span>
 <span class="s2">"""</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">📝 Auto-Generated Amenity Rent Impact Summary:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Auto-Generated Amenity Rent Impact Summary:"</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">display</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">final_summary_table</span><span class="p">))</span>
 </pre></div>
@@ -9086,7 +9086,7 @@ Auto-Generated Rental Type Summary:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-📝 Auto-Generated Amenity Rent Impact Summary:
+Auto-Generated Amenity Rent Impact Summary:
 </pre>
 </div>
 </div>
@@ -9738,7 +9738,7 @@ Auto-Generated Size vs Rent Summary:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Mapping Average Rent by Zip Code (Simple Scatter Map)</span>
@@ -9810,12 +9810,12 @@ Auto-Generated Size vs Rent Summary:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
-🔍 Geocoding Zip Codes... (may take ~1 min)
+Geocoding Zip Codes... (may take ~1 min)
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe allowfullscreen="" mozallowfullscreen="" srcdoc='&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -9844,7 +9844,7 @@ Auto-Generated Size vs Rent Summary:
             &lt;meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
             &lt;style&gt;
-                #map_815515864ab3fa5cbb3c94a0ce1af211 {
+                #map_af908533534a19ab418689b09fadeb48 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -9858,14 +9858,14 @@ Auto-Generated Size vs Rent Summary:
 &lt;body&gt;
     
     
-            &lt;div class="folium-map" id="map_815515864ab3fa5cbb3c94a0ce1af211" &gt;&lt;/div&gt;
+            &lt;div class="folium-map" id="map_af908533534a19ab418689b09fadeb48" &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_815515864ab3fa5cbb3c94a0ce1af211 = L.map(
-                "map_815515864ab3fa5cbb3c94a0ce1af211",
+            var map_af908533534a19ab418689b09fadeb48 = L.map(
+                "map_af908533534a19ab418689b09fadeb48",
                 {
                     center: [32.7157, -117.1611],
                     crs: L.CRS.EPSG3857,
@@ -9882,7 +9882,7 @@ Auto-Generated Size vs Rent Summary:
 
         
     
-            var tile_layer_ca5f6d126a4afd8533bc1a0bbf254375 = L.tileLayer(
+            var tile_layer_a3b25d134a95dd236b3a5002fe622d54 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -9899,1798 +9899,1775 @@ Auto-Generated Size vs Rent Summary:
             );
         
     
-            tile_layer_ca5f6d126a4afd8533bc1a0bbf254375.addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            tile_layer_a3b25d134a95dd236b3a5002fe622d54.addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-            var circle_marker_d6962f69f7ab43d6c3306ac63022517a = L.circleMarker(
+            var circle_marker_d63dbb2f381a7d46d057c40449119a15 = L.circleMarker(
                 [32.944571, -117.2107291],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.664014285714286, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_b2d34944541acc9ea4861e06ef463a79 = L.popup({
+        var popup_fb65261fe803ec4ef00ccbf141fce73b = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_7339f3ca965917760e951bb7977de948 = $(`&lt;div id="html_7339f3ca965917760e951bb7977de948" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92130&lt;br&gt;Avg Rent: $3633&lt;br&gt;Listings: 350&lt;/div&gt;`)[0];
-                popup_b2d34944541acc9ea4861e06ef463a79.setContent(html_7339f3ca965917760e951bb7977de948);
+                var html_f489f1f8df593b08bec9a2412846eb95 = $(`&lt;div id="html_f489f1f8df593b08bec9a2412846eb95" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92130&lt;br&gt;Avg Rent: $3633&lt;br&gt;Listings: 350&lt;/div&gt;`)[0];
+                popup_fb65261fe803ec4ef00ccbf141fce73b.setContent(html_f489f1f8df593b08bec9a2412846eb95);
             
         
 
-        circle_marker_d6962f69f7ab43d6c3306ac63022517a.bindPopup(popup_b2d34944541acc9ea4861e06ef463a79)
+        circle_marker_d63dbb2f381a7d46d057c40449119a15.bindPopup(popup_fb65261fe803ec4ef00ccbf141fce73b)
         ;
 
         
     
     
-            var circle_marker_77a20b342cb6f68483a8f5f6647d786b = L.circleMarker(
+            var circle_marker_271993c5d6af5f85f659202940f81a26 = L.circleMarker(
                 [32.6791024, -117.1709777],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.158939393939395, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_53a30004a42df51537ae1e5f0bd69e8b = L.popup({
+        var popup_cfa0733650b4262cb8ca89071e448de7 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_420340da03c5d8ffb9b85f67054983da = $(`&lt;div id="html_420340da03c5d8ffb9b85f67054983da" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92118&lt;br&gt;Avg Rent: $3532&lt;br&gt;Listings: 33&lt;/div&gt;`)[0];
-                popup_53a30004a42df51537ae1e5f0bd69e8b.setContent(html_420340da03c5d8ffb9b85f67054983da);
+                var html_bfb620b0f4d9bf07657ac16fae140e95 = $(`&lt;div id="html_bfb620b0f4d9bf07657ac16fae140e95" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92118&lt;br&gt;Avg Rent: $3532&lt;br&gt;Listings: 33&lt;/div&gt;`)[0];
+                popup_cfa0733650b4262cb8ca89071e448de7.setContent(html_bfb620b0f4d9bf07657ac16fae140e95);
             
         
 
-        circle_marker_77a20b342cb6f68483a8f5f6647d786b.bindPopup(popup_53a30004a42df51537ae1e5f0bd69e8b)
+        circle_marker_271993c5d6af5f85f659202940f81a26.bindPopup(popup_cfa0733650b4262cb8ca89071e448de7)
         ;
 
         
     
     
-            var circle_marker_b2479b5e2fdb5f6e28c4dc378814efe2 = L.circleMarker(
-                [32.6257298, -116.9537658],
-                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.895904761904763, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
-        
-    
-        var popup_01bc5d7eb4138eebbe80ce4af4e6660b = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_92b20913d0f5be03fdb478dd84818350 = $(`&lt;div id="html_92b20913d0f5be03fdb478dd84818350" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91915&lt;br&gt;Avg Rent: $3479&lt;br&gt;Listings: 210&lt;/div&gt;`)[0];
-                popup_01bc5d7eb4138eebbe80ce4af4e6660b.setContent(html_92b20913d0f5be03fdb478dd84818350);
-            
-        
-
-        circle_marker_b2479b5e2fdb5f6e28c4dc378814efe2.bindPopup(popup_01bc5d7eb4138eebbe80ce4af4e6660b)
-        ;
-
-        
-    
-    
-            var circle_marker_83ea2ab98b076859cf5d658868b9dc43 = L.circleMarker(
+            var circle_marker_7e6db8f2a316d6267687ee26e33755c6 = L.circleMarker(
                 [33.1043614, -117.2948518],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.43225806451613, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_986e141d5ec0c54059ef48cefa0d0e91 = L.popup({
+        var popup_232b18bd9184837cc3fafbc3314c664d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_e248b597f1346e79186cd771bdf36107 = $(`&lt;div id="html_e248b597f1346e79186cd771bdf36107" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92011&lt;br&gt;Avg Rent: $3386&lt;br&gt;Listings: 62&lt;/div&gt;`)[0];
-                popup_986e141d5ec0c54059ef48cefa0d0e91.setContent(html_e248b597f1346e79186cd771bdf36107);
+                var html_f13665df9afa62b3f8fe621ed2dbdb08 = $(`&lt;div id="html_f13665df9afa62b3f8fe621ed2dbdb08" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92011&lt;br&gt;Avg Rent: $3386&lt;br&gt;Listings: 62&lt;/div&gt;`)[0];
+                popup_232b18bd9184837cc3fafbc3314c664d.setContent(html_f13665df9afa62b3f8fe621ed2dbdb08);
             
         
 
-        circle_marker_83ea2ab98b076859cf5d658868b9dc43.bindPopup(popup_986e141d5ec0c54059ef48cefa0d0e91)
+        circle_marker_7e6db8f2a316d6267687ee26e33755c6.bindPopup(popup_232b18bd9184837cc3fafbc3314c664d)
         ;
 
         
     
     
-            var circle_marker_6a55bf251e47e9bdafe8bff8dabd6c48 = L.circleMarker(
+            var circle_marker_821371ae0d3ec16ff12f618d7213ae6c = L.circleMarker(
                 [32.9196171, -117.0822646],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.331263157894735, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_a715e363eb6f59ae0d9a0bce767b3ff5 = L.popup({
+        var popup_ad570099376e0897600e690a2a5b2ee6 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_1c5c3b782d907481b347948ed36b69bb = $(`&lt;div id="html_1c5c3b782d907481b347948ed36b69bb" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92131&lt;br&gt;Avg Rent: $3366&lt;br&gt;Listings: 95&lt;/div&gt;`)[0];
-                popup_a715e363eb6f59ae0d9a0bce767b3ff5.setContent(html_1c5c3b782d907481b347948ed36b69bb);
+                var html_5ce0266787a006d9243553bf24e72769 = $(`&lt;div id="html_5ce0266787a006d9243553bf24e72769" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92131&lt;br&gt;Avg Rent: $3366&lt;br&gt;Listings: 95&lt;/div&gt;`)[0];
+                popup_ad570099376e0897600e690a2a5b2ee6.setContent(html_5ce0266787a006d9243553bf24e72769);
             
         
 
-        circle_marker_6a55bf251e47e9bdafe8bff8dabd6c48.bindPopup(popup_a715e363eb6f59ae0d9a0bce767b3ff5)
+        circle_marker_821371ae0d3ec16ff12f618d7213ae6c.bindPopup(popup_ad570099376e0897600e690a2a5b2ee6)
         ;
 
         
     
     
-            var circle_marker_f56f5a87ca91bf51eb7f7c761df7ccf1 = L.circleMarker(
+            var circle_marker_9455729b1cb4d06cbdb98e0ffc16cdaf = L.circleMarker(
                 [32.9595459, -117.1316621],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.199444444444444, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_a25b082ca3b61ffaf6b1d3c23360a4f1 = L.popup({
+        var popup_84e8c955ca77a918e81216c08efe0194 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_9debd06264b2340bd90c7aa4d2c4bcaa = $(`&lt;div id="html_9debd06264b2340bd90c7aa4d2c4bcaa" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92129&lt;br&gt;Avg Rent: $3340&lt;br&gt;Listings: 279&lt;/div&gt;`)[0];
-                popup_a25b082ca3b61ffaf6b1d3c23360a4f1.setContent(html_9debd06264b2340bd90c7aa4d2c4bcaa);
+                var html_2ca59ef0704a16f742bad15348b6c887 = $(`&lt;div id="html_2ca59ef0704a16f742bad15348b6c887" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92129&lt;br&gt;Avg Rent: $3340&lt;br&gt;Listings: 279&lt;/div&gt;`)[0];
+                popup_84e8c955ca77a918e81216c08efe0194.setContent(html_2ca59ef0704a16f742bad15348b6c887);
             
         
 
-        circle_marker_f56f5a87ca91bf51eb7f7c761df7ccf1.bindPopup(popup_a25b082ca3b61ffaf6b1d3c23360a4f1)
+        circle_marker_9455729b1cb4d06cbdb98e0ffc16cdaf.bindPopup(popup_84e8c955ca77a918e81216c08efe0194)
         ;
 
         
     
     
-            var circle_marker_1b1e26f063cac4989061c5b522d1db90 = L.circleMarker(
+            var circle_marker_4aa7c518545f79e2537103d24ad274b4 = L.circleMarker(
                 [32.7700298, -117.198644],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.89215953307393, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_a87fb09d12ba5d7f5e5239876d7dc920 = L.popup({
+        var popup_ed18ba5a668c80f1870e559aa996dba4 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_705a93ab2961a26d04a9616545663d86 = $(`&lt;div id="html_705a93ab2961a26d04a9616545663d86" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92110&lt;br&gt;Avg Rent: $3278&lt;br&gt;Listings: 257&lt;/div&gt;`)[0];
-                popup_a87fb09d12ba5d7f5e5239876d7dc920.setContent(html_705a93ab2961a26d04a9616545663d86);
+                var html_8582fea1dc1efb65754c8cf5c70dc44e = $(`&lt;div id="html_8582fea1dc1efb65754c8cf5c70dc44e" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92110&lt;br&gt;Avg Rent: $3278&lt;br&gt;Listings: 257&lt;/div&gt;`)[0];
+                popup_ed18ba5a668c80f1870e559aa996dba4.setContent(html_8582fea1dc1efb65754c8cf5c70dc44e);
             
         
 
-        circle_marker_1b1e26f063cac4989061c5b522d1db90.bindPopup(popup_a87fb09d12ba5d7f5e5239876d7dc920)
+        circle_marker_4aa7c518545f79e2537103d24ad274b4.bindPopup(popup_ed18ba5a668c80f1870e559aa996dba4)
         ;
 
         
     
     
-            var circle_marker_839f26a8f622a95467d5a70d110f4297 = L.circleMarker(
+            var circle_marker_72fe79223a8b8d7535c2d9274c8b4ba5 = L.circleMarker(
                 [32.7750721, -117.1372615],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.687520833333334, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_c5f78b89547b1fc2a4567c3e94846efa = L.popup({
+        var popup_f3e0fad7d3416d98ae22fa398161200d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_571bc39357710d83093a51ca99c7f55b = $(`&lt;div id="html_571bc39357710d83093a51ca99c7f55b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92108&lt;br&gt;Avg Rent: $3238&lt;br&gt;Listings: 720&lt;/div&gt;`)[0];
-                popup_c5f78b89547b1fc2a4567c3e94846efa.setContent(html_571bc39357710d83093a51ca99c7f55b);
+                var html_119de0e3eb6b02d19e40ec06815eaed4 = $(`&lt;div id="html_119de0e3eb6b02d19e40ec06815eaed4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92108&lt;br&gt;Avg Rent: $3238&lt;br&gt;Listings: 720&lt;/div&gt;`)[0];
+                popup_f3e0fad7d3416d98ae22fa398161200d.setContent(html_119de0e3eb6b02d19e40ec06815eaed4);
             
         
 
-        circle_marker_839f26a8f622a95467d5a70d110f4297.bindPopup(popup_c5f78b89547b1fc2a4567c3e94846efa)
+        circle_marker_72fe79223a8b8d7535c2d9274c8b4ba5.bindPopup(popup_f3e0fad7d3416d98ae22fa398161200d)
         ;
 
         
     
     
-            var circle_marker_90843782de0155072c0f8d79a2cf7cdc = L.circleMarker(
+            var circle_marker_0c01ca8cbd8150b95db633563e95c237 = L.circleMarker(
                 [32.7206645, -117.1620507],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.648437047756875, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_6a56ee5b4b62df375728603ae36ddd44 = L.popup({
+        var popup_aa9b96a4146d055d3011ea0898a35fcc = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_50b9eb95d12efb96345f5341ba10fab9 = $(`&lt;div id="html_50b9eb95d12efb96345f5341ba10fab9" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92101&lt;br&gt;Avg Rent: $3230&lt;br&gt;Listings: 2764&lt;/div&gt;`)[0];
-                popup_6a56ee5b4b62df375728603ae36ddd44.setContent(html_50b9eb95d12efb96345f5341ba10fab9);
+                var html_b7795315f1a4ecdd315cd422f31272d9 = $(`&lt;div id="html_b7795315f1a4ecdd315cd422f31272d9" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92101&lt;br&gt;Avg Rent: $3230&lt;br&gt;Listings: 2764&lt;/div&gt;`)[0];
+                popup_aa9b96a4146d055d3011ea0898a35fcc.setContent(html_b7795315f1a4ecdd315cd422f31272d9);
             
         
 
-        circle_marker_90843782de0155072c0f8d79a2cf7cdc.bindPopup(popup_6a56ee5b4b62df375728603ae36ddd44)
+        circle_marker_0c01ca8cbd8150b95db633563e95c237.bindPopup(popup_aa9b96a4146d055d3011ea0898a35fcc)
         ;
 
         
     
     
-            var circle_marker_ece7341e8f3aca8cc91458bd250ed0d8 = L.circleMarker(
+            var circle_marker_f1acb6993d22caec87cc3a0729ccfb98 = L.circleMarker(
                 [32.8276949, -117.0935039],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.591286764705883, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_2dfe0da39ce10f7dead236ab01c6806e = L.popup({
+        var popup_bca2f6b5684b3f1d489e21a1a4446245 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_b17adf33137a002cee05df95dcd0af7d = $(`&lt;div id="html_b17adf33137a002cee05df95dcd0af7d" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92124&lt;br&gt;Avg Rent: $3218&lt;br&gt;Listings: 136&lt;/div&gt;`)[0];
-                popup_2dfe0da39ce10f7dead236ab01c6806e.setContent(html_b17adf33137a002cee05df95dcd0af7d);
+                var html_25bab6b6e49379b5808f47dbfbfb370b = $(`&lt;div id="html_25bab6b6e49379b5808f47dbfbfb370b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92124&lt;br&gt;Avg Rent: $3218&lt;br&gt;Listings: 136&lt;/div&gt;`)[0];
+                popup_bca2f6b5684b3f1d489e21a1a4446245.setContent(html_25bab6b6e49379b5808f47dbfbfb370b);
             
         
 
-        circle_marker_ece7341e8f3aca8cc91458bd250ed0d8.bindPopup(popup_2dfe0da39ce10f7dead236ab01c6806e)
+        circle_marker_f1acb6993d22caec87cc3a0729ccfb98.bindPopup(popup_bca2f6b5684b3f1d489e21a1a4446245)
         ;
 
         
     
     
-            var circle_marker_334bda627968c1c70660f54df20b3c11 = L.circleMarker(
+            var circle_marker_f60b48ab12748c05e8810ccdff1aed75 = L.circleMarker(
                 [33.1067219, -117.0690296],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.52469135802469, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_aaab52c02b458ac428b6b17c4d249291 = L.popup({
+        var popup_b36f9195065f7dbafa64309a67514a2b = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_c37ff1a16c471bb6cff6f97aabfbac59 = $(`&lt;div id="html_c37ff1a16c471bb6cff6f97aabfbac59" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92025&lt;br&gt;Avg Rent: $3205&lt;br&gt;Listings: 324&lt;/div&gt;`)[0];
-                popup_aaab52c02b458ac428b6b17c4d249291.setContent(html_c37ff1a16c471bb6cff6f97aabfbac59);
+                var html_52e35b2389a25a1e930a4cd655f18d97 = $(`&lt;div id="html_52e35b2389a25a1e930a4cd655f18d97" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92025&lt;br&gt;Avg Rent: $3205&lt;br&gt;Listings: 324&lt;/div&gt;`)[0];
+                popup_b36f9195065f7dbafa64309a67514a2b.setContent(html_52e35b2389a25a1e930a4cd655f18d97);
             
         
 
-        circle_marker_334bda627968c1c70660f54df20b3c11.bindPopup(popup_aaab52c02b458ac428b6b17c4d249291)
+        circle_marker_f60b48ab12748c05e8810ccdff1aed75.bindPopup(popup_b36f9195065f7dbafa64309a67514a2b)
         ;
 
         
     
     
-            var circle_marker_49d24915bb128f4783c6de8545cd645d = L.circleMarker(
+            var circle_marker_a7463a3d73392838325dd408b27daca5 = L.circleMarker(
                 [32.7941188, -117.2439089],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.516666666666667, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_b3532d6c5b7fb7f9e7b4ce7ad1cf1b55 = L.popup({
+        var popup_ef248974bc6a78420ebd3b025def7c16 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_cc2056e472fbe1f1e1dd356781107782 = $(`&lt;div id="html_cc2056e472fbe1f1e1dd356781107782" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92109&lt;br&gt;Avg Rent: $3203&lt;br&gt;Listings: 9&lt;/div&gt;`)[0];
-                popup_b3532d6c5b7fb7f9e7b4ce7ad1cf1b55.setContent(html_cc2056e472fbe1f1e1dd356781107782);
+                var html_be1403a07afd1935aa8b83dc817ea09b = $(`&lt;div id="html_be1403a07afd1935aa8b83dc817ea09b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92109&lt;br&gt;Avg Rent: $3203&lt;br&gt;Listings: 9&lt;/div&gt;`)[0];
+                popup_ef248974bc6a78420ebd3b025def7c16.setContent(html_be1403a07afd1935aa8b83dc817ea09b);
             
         
 
-        circle_marker_49d24915bb128f4783c6de8545cd645d.bindPopup(popup_b3532d6c5b7fb7f9e7b4ce7ad1cf1b55)
+        circle_marker_a7463a3d73392838325dd408b27daca5.bindPopup(popup_ef248974bc6a78420ebd3b025def7c16)
         ;
 
         
     
     
-            var circle_marker_afb440df68235b35483e9fdd0129d5bb = L.circleMarker(
+            var circle_marker_6d4aea4e8ba9620c7a43e398e77be738 = L.circleMarker(
                 [32.6314373, -116.9873742],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.33056, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_8eed207f75295ae7d39507f67bb2160a = L.popup({
+        var popup_3eb77ec6aefd4a8df4b84df22bb45991 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_8161cb580ad883b2da88221c64b2486c = $(`&lt;div id="html_8161cb580ad883b2da88221c64b2486c" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91913&lt;br&gt;Avg Rent: $3166&lt;br&gt;Listings: 375&lt;/div&gt;`)[0];
-                popup_8eed207f75295ae7d39507f67bb2160a.setContent(html_8161cb580ad883b2da88221c64b2486c);
+                var html_092c619913d20ecc2f7950c78847746b = $(`&lt;div id="html_092c619913d20ecc2f7950c78847746b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91913&lt;br&gt;Avg Rent: $3166&lt;br&gt;Listings: 375&lt;/div&gt;`)[0];
+                popup_3eb77ec6aefd4a8df4b84df22bb45991.setContent(html_092c619913d20ecc2f7950c78847746b);
             
         
 
-        circle_marker_afb440df68235b35483e9fdd0129d5bb.bindPopup(popup_8eed207f75295ae7d39507f67bb2160a)
+        circle_marker_6d4aea4e8ba9620c7a43e398e77be738.bindPopup(popup_3eb77ec6aefd4a8df4b84df22bb45991)
         ;
 
         
     
     
-            var circle_marker_70a981195faecb16504cc8bbb6a752dc = L.circleMarker(
+            var circle_marker_a80b56caac6446a315fe71a9c36cff39 = L.circleMarker(
                 [32.7941188, -117.2439089],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.203148148148149, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_1c4abee676dd7b74f3feceda0141f586 = L.popup({
+        var popup_60a56dc3e2c925e20676698332cf09db = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_305a756f759989631adc18e075e65880 = $(`&lt;div id="html_305a756f759989631adc18e075e65880" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92109&lt;br&gt;Avg Rent: $3141&lt;br&gt;Listings: 81&lt;/div&gt;`)[0];
-                popup_1c4abee676dd7b74f3feceda0141f586.setContent(html_305a756f759989631adc18e075e65880);
+                var html_b151fd84d6385237dcb2b24d02486e68 = $(`&lt;div id="html_b151fd84d6385237dcb2b24d02486e68" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92109&lt;br&gt;Avg Rent: $3141&lt;br&gt;Listings: 81&lt;/div&gt;`)[0];
+                popup_60a56dc3e2c925e20676698332cf09db.setContent(html_b151fd84d6385237dcb2b24d02486e68);
             
         
 
-        circle_marker_70a981195faecb16504cc8bbb6a752dc.bindPopup(popup_1c4abee676dd7b74f3feceda0141f586)
+        circle_marker_a80b56caac6446a315fe71a9c36cff39.bindPopup(popup_60a56dc3e2c925e20676698332cf09db)
         ;
 
         
     
     
-            var circle_marker_fbd9930382c8ac44594901147aa37e7c = L.circleMarker(
+            var circle_marker_0d6f8b76c2207d238ceb1b89d51211a9 = L.circleMarker(
                 [33.0555792, -117.2713118],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.197479338842975, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_f18f9f91262ddbdecc66a7571417fe4a = L.popup({
+        var popup_5cb7b0ba969c883eb86bec7877c5880b = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_d93ba4601998818c23074cabbdd1329a = $(`&lt;div id="html_d93ba4601998818c23074cabbdd1329a" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92024&lt;br&gt;Avg Rent: $3139&lt;br&gt;Listings: 121&lt;/div&gt;`)[0];
-                popup_f18f9f91262ddbdecc66a7571417fe4a.setContent(html_d93ba4601998818c23074cabbdd1329a);
+                var html_b6f0bd398f08f9ad7cea56f90fc7a2f4 = $(`&lt;div id="html_b6f0bd398f08f9ad7cea56f90fc7a2f4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92024&lt;br&gt;Avg Rent: $3139&lt;br&gt;Listings: 121&lt;/div&gt;`)[0];
+                popup_5cb7b0ba969c883eb86bec7877c5880b.setContent(html_b6f0bd398f08f9ad7cea56f90fc7a2f4);
             
         
 
-        circle_marker_fbd9930382c8ac44594901147aa37e7c.bindPopup(popup_f18f9f91262ddbdecc66a7571417fe4a)
+        circle_marker_0d6f8b76c2207d238ceb1b89d51211a9.bindPopup(popup_5cb7b0ba969c883eb86bec7877c5880b)
         ;
 
         
     
     
-            var circle_marker_c14457248476834b4a2a1d62b5dbefcc = L.circleMarker(
+            var circle_marker_b69db4f245de860ad853ba7b80635180 = L.circleMarker(
                 [32.8537547, -117.2090586],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.147493827160496, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_9651629160f778ed5610eb33810e7a7f = L.popup({
+        var popup_77832b9edc055c3feabcd4e9bf83e875 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_1cf29a62733b27141e6e68cf9d79bc49 = $(`&lt;div id="html_1cf29a62733b27141e6e68cf9d79bc49" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92122&lt;br&gt;Avg Rent: $3129&lt;br&gt;Listings: 405&lt;/div&gt;`)[0];
-                popup_9651629160f778ed5610eb33810e7a7f.setContent(html_1cf29a62733b27141e6e68cf9d79bc49);
+                var html_0cef68ae8fac60bac492dc129f1ad84d = $(`&lt;div id="html_0cef68ae8fac60bac492dc129f1ad84d" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92122&lt;br&gt;Avg Rent: $3129&lt;br&gt;Listings: 405&lt;/div&gt;`)[0];
+                popup_77832b9edc055c3feabcd4e9bf83e875.setContent(html_0cef68ae8fac60bac492dc129f1ad84d);
             
         
 
-        circle_marker_c14457248476834b4a2a1d62b5dbefcc.bindPopup(popup_9651629160f778ed5610eb33810e7a7f)
+        circle_marker_b69db4f245de860ad853ba7b80635180.bindPopup(popup_77832b9edc055c3feabcd4e9bf83e875)
         ;
 
         
     
     
-            var circle_marker_287124094825433e287e41cb5581e81d = L.circleMarker(
+            var circle_marker_fd41f41e28901ca305a24042cab68e45 = L.circleMarker(
                 [33.156013, -117.3289089],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.912367021276596, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_6edba674b2fffbb3a656ccfb16999dba = L.popup({
+        var popup_22d6df3ca94d3b66013fdc9cd04bcd39 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_cac6bef4f6e52c2e8e803f3f8d40c0a7 = $(`&lt;div id="html_cac6bef4f6e52c2e8e803f3f8d40c0a7" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92008&lt;br&gt;Avg Rent: $3082&lt;br&gt;Listings: 188&lt;/div&gt;`)[0];
-                popup_6edba674b2fffbb3a656ccfb16999dba.setContent(html_cac6bef4f6e52c2e8e803f3f8d40c0a7);
+                var html_678b0b37940881020554d845613999be = $(`&lt;div id="html_678b0b37940881020554d845613999be" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92008&lt;br&gt;Avg Rent: $3082&lt;br&gt;Listings: 188&lt;/div&gt;`)[0];
+                popup_22d6df3ca94d3b66013fdc9cd04bcd39.setContent(html_678b0b37940881020554d845613999be);
             
         
 
-        circle_marker_287124094825433e287e41cb5581e81d.bindPopup(popup_6edba674b2fffbb3a656ccfb16999dba)
+        circle_marker_fd41f41e28901ca305a24042cab68e45.bindPopup(popup_22d6df3ca94d3b66013fdc9cd04bcd39)
         ;
 
         
     
     
-            var circle_marker_1fe0bf4efa10f39e988c0817baea505d = L.circleMarker(
+            var circle_marker_ccac20f025ed8893e0a05fbf014717d4 = L.circleMarker(
                 [32.8355856, -117.260166],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.853467741935483, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_11c382ac9698974dbe742a4be2a2261b = L.popup({
+        var popup_ae37ed8f0900c26ee306fa70d6de7ab9 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2d4d6ecd9f7cd79a879649c7250c2bb6 = $(`&lt;div id="html_2d4d6ecd9f7cd79a879649c7250c2bb6" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92037&lt;br&gt;Avg Rent: $3071&lt;br&gt;Listings: 62&lt;/div&gt;`)[0];
-                popup_11c382ac9698974dbe742a4be2a2261b.setContent(html_2d4d6ecd9f7cd79a879649c7250c2bb6);
+                var html_09440949e095765a7a05236c9e09f499 = $(`&lt;div id="html_09440949e095765a7a05236c9e09f499" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92037&lt;br&gt;Avg Rent: $3071&lt;br&gt;Listings: 62&lt;/div&gt;`)[0];
+                popup_ae37ed8f0900c26ee306fa70d6de7ab9.setContent(html_09440949e095765a7a05236c9e09f499);
             
         
 
-        circle_marker_1fe0bf4efa10f39e988c0817baea505d.bindPopup(popup_11c382ac9698974dbe742a4be2a2261b)
+        circle_marker_ccac20f025ed8893e0a05fbf014717d4.bindPopup(popup_ae37ed8f0900c26ee306fa70d6de7ab9)
         ;
 
         
     
     
-            var circle_marker_a7708b85eba53a7df574c8c189123ba0 = L.circleMarker(
+            var circle_marker_481ab58f737e4cee71b895a3742a8875 = L.circleMarker(
                 [33.0253803, -117.2750648],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.839583333333333, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_1fae02a3299df4846d67a321189c9f40 = L.popup({
+        var popup_4b20542744c2c5d0e8537a2c97f97592 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_74c2aded70ac295a021f987bbe17f5df = $(`&lt;div id="html_74c2aded70ac295a021f987bbe17f5df" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92007&lt;br&gt;Avg Rent: $3068&lt;br&gt;Listings: 36&lt;/div&gt;`)[0];
-                popup_1fae02a3299df4846d67a321189c9f40.setContent(html_74c2aded70ac295a021f987bbe17f5df);
+                var html_795a2c6ae62cd062d00fbcf277d5594b = $(`&lt;div id="html_795a2c6ae62cd062d00fbcf277d5594b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92007&lt;br&gt;Avg Rent: $3068&lt;br&gt;Listings: 36&lt;/div&gt;`)[0];
+                popup_4b20542744c2c5d0e8537a2c97f97592.setContent(html_795a2c6ae62cd062d00fbcf277d5594b);
             
         
 
-        circle_marker_a7708b85eba53a7df574c8c189123ba0.bindPopup(popup_1fae02a3299df4846d67a321189c9f40)
+        circle_marker_481ab58f737e4cee71b895a3742a8875.bindPopup(popup_4b20542744c2c5d0e8537a2c97f97592)
         ;
 
         
     
     
-            var circle_marker_78726b1f6b1647160207be6f9dae5745 = L.circleMarker(
+            var circle_marker_35bf8a7d7aee85f7f940df5a0b0c618e = L.circleMarker(
                 [32.9550084, -117.2539784],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.825, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_bf7b66f860b272c6f2435fb6abd70314 = L.popup({
+        var popup_4457684d18236d60cfb70204cb6e4b63 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_1ef900dce980193baac6954fe2d3b46e = $(`&lt;div id="html_1ef900dce980193baac6954fe2d3b46e" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92014&lt;br&gt;Avg Rent: $3065&lt;br&gt;Listings: 3&lt;/div&gt;`)[0];
-                popup_bf7b66f860b272c6f2435fb6abd70314.setContent(html_1ef900dce980193baac6954fe2d3b46e);
+                var html_dbb2b0457ac24c14c9f905bcd31156a1 = $(`&lt;div id="html_dbb2b0457ac24c14c9f905bcd31156a1" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92014&lt;br&gt;Avg Rent: $3065&lt;br&gt;Listings: 3&lt;/div&gt;`)[0];
+                popup_4457684d18236d60cfb70204cb6e4b63.setContent(html_dbb2b0457ac24c14c9f905bcd31156a1);
             
         
 
-        circle_marker_78726b1f6b1647160207be6f9dae5745.bindPopup(popup_bf7b66f860b272c6f2435fb6abd70314)
+        circle_marker_35bf8a7d7aee85f7f940df5a0b0c618e.bindPopup(popup_4457684d18236d60cfb70204cb6e4b63)
         ;
 
         
     
     
-            var circle_marker_af1fde6703f95eea703b71175ae6faf1 = L.circleMarker(
+            var circle_marker_521300cb6b8bd6ffce0daa5587583722 = L.circleMarker(
                 [32.7993089, -117.1367073],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.806931567328919, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_8b1274b9e92aa2fa4e72ccf575f7c1fa = L.popup({
+        var popup_f75cf025a1bc5eb3941d6f9915268d56 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_8afb83e2cdf81119835978e037526324 = $(`&lt;div id="html_8afb83e2cdf81119835978e037526324" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92123&lt;br&gt;Avg Rent: $3061&lt;br&gt;Listings: 453&lt;/div&gt;`)[0];
-                popup_8b1274b9e92aa2fa4e72ccf575f7c1fa.setContent(html_8afb83e2cdf81119835978e037526324);
+                var html_3ac0abfa2151af47c6f6e4fec40a67a0 = $(`&lt;div id="html_3ac0abfa2151af47c6f6e4fec40a67a0" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92123&lt;br&gt;Avg Rent: $3061&lt;br&gt;Listings: 453&lt;/div&gt;`)[0];
+                popup_f75cf025a1bc5eb3941d6f9915268d56.setContent(html_3ac0abfa2151af47c6f6e4fec40a67a0);
             
         
 
-        circle_marker_af1fde6703f95eea703b71175ae6faf1.bindPopup(popup_8b1274b9e92aa2fa4e72ccf575f7c1fa)
+        circle_marker_521300cb6b8bd6ffce0daa5587583722.bindPopup(popup_f75cf025a1bc5eb3941d6f9915268d56)
         ;
 
         
     
     
-            var circle_marker_3ddd0cb1423f669d15014905e5a7ed5e = L.circleMarker(
+            var circle_marker_ed6f0b3310c53d722a7eceb80a04cae3 = L.circleMarker(
                 [33.095138, -117.249164],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.7638461538461545, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_f37c7643f0879eb90711647e53c0bfd8 = L.popup({
+        var popup_be38d373d2767d788593e9fc59ec3850 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_e6e4f7b55279c30fd7d30c64492825bc = $(`&lt;div id="html_e6e4f7b55279c30fd7d30c64492825bc" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92009&lt;br&gt;Avg Rent: $3053&lt;br&gt;Listings: 39&lt;/div&gt;`)[0];
-                popup_f37c7643f0879eb90711647e53c0bfd8.setContent(html_e6e4f7b55279c30fd7d30c64492825bc);
+                var html_b22e9449de6c73d6f35ba091b0406724 = $(`&lt;div id="html_b22e9449de6c73d6f35ba091b0406724" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92009&lt;br&gt;Avg Rent: $3053&lt;br&gt;Listings: 39&lt;/div&gt;`)[0];
+                popup_be38d373d2767d788593e9fc59ec3850.setContent(html_b22e9449de6c73d6f35ba091b0406724);
             
         
 
-        circle_marker_3ddd0cb1423f669d15014905e5a7ed5e.bindPopup(popup_f37c7643f0879eb90711647e53c0bfd8)
+        circle_marker_ed6f0b3310c53d722a7eceb80a04cae3.bindPopup(popup_be38d373d2767d788593e9fc59ec3850)
         ;
 
         
     
     
-            var circle_marker_79194474a4c4499cf74131cab4dd802f = L.circleMarker(
+            var circle_marker_85c3513036545930a117b10d1a8e90ac = L.circleMarker(
                 [33.1924519, -117.3576087],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.636028368794325, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_e48da3a84d0cc3808e1cb6acf5b9da93 = L.popup({
+        var popup_05d664b0656309b582d476b8d9c18fe0 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_733ff7f05a8992607e0901cabf95dd78 = $(`&lt;div id="html_733ff7f05a8992607e0901cabf95dd78" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92054&lt;br&gt;Avg Rent: $3027&lt;br&gt;Listings: 141&lt;/div&gt;`)[0];
-                popup_e48da3a84d0cc3808e1cb6acf5b9da93.setContent(html_733ff7f05a8992607e0901cabf95dd78);
+                var html_6d791d33335617609f108f7c968f571b = $(`&lt;div id="html_6d791d33335617609f108f7c968f571b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92054&lt;br&gt;Avg Rent: $3027&lt;br&gt;Listings: 141&lt;/div&gt;`)[0];
+                popup_05d664b0656309b582d476b8d9c18fe0.setContent(html_6d791d33335617609f108f7c968f571b);
             
         
 
-        circle_marker_79194474a4c4499cf74131cab4dd802f.bindPopup(popup_e48da3a84d0cc3808e1cb6acf5b9da93)
+        circle_marker_85c3513036545930a117b10d1a8e90ac.bindPopup(popup_05d664b0656309b582d476b8d9c18fe0)
         ;
 
         
     
     
-            var circle_marker_209f150484870859dc08a29e16218d2d = L.circleMarker(
+            var circle_marker_f082cc7919f481f62743a2af7592d35c = L.circleMarker(
                 [33.0153593, -117.1175739],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.629047619047619, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_8660f6f2a53a0cdaa4af4df3083c0c65 = L.popup({
+        var popup_754cb6c5b3285b959e56216e26eb7745 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_7940c9109901630d4260a8b731d6c9f1 = $(`&lt;div id="html_7940c9109901630d4260a8b731d6c9f1" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92127&lt;br&gt;Avg Rent: $3026&lt;br&gt;Listings: 63&lt;/div&gt;`)[0];
-                popup_8660f6f2a53a0cdaa4af4df3083c0c65.setContent(html_7940c9109901630d4260a8b731d6c9f1);
+                var html_f1b07414ff43f6b18404912f5fd6869b = $(`&lt;div id="html_f1b07414ff43f6b18404912f5fd6869b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92127&lt;br&gt;Avg Rent: $3026&lt;br&gt;Listings: 63&lt;/div&gt;`)[0];
+                popup_754cb6c5b3285b959e56216e26eb7745.setContent(html_f1b07414ff43f6b18404912f5fd6869b);
             
         
 
-        circle_marker_209f150484870859dc08a29e16218d2d.bindPopup(popup_8660f6f2a53a0cdaa4af4df3083c0c65)
+        circle_marker_f082cc7919f481f62743a2af7592d35c.bindPopup(popup_754cb6c5b3285b959e56216e26eb7745)
         ;
 
         
     
     
-            var circle_marker_c05e8ec94c96a96028dc4a811587dbad = L.circleMarker(
+            var circle_marker_cc3242e3f04bd80dc21796455e2f51bc = L.circleMarker(
                 [32.5753924, -117.0543735],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.371984732824428, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_61e41b072392e07f3027795cc71d98f5 = L.popup({
+        var popup_852a00377ff6084caa892b556a6c4bec = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_8e416045d18956a85835d9f81aba8f4a = $(`&lt;div id="html_8e416045d18956a85835d9f81aba8f4a" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92154&lt;br&gt;Avg Rent: $2974&lt;br&gt;Listings: 262&lt;/div&gt;`)[0];
-                popup_61e41b072392e07f3027795cc71d98f5.setContent(html_8e416045d18956a85835d9f81aba8f4a);
+                var html_982f7eb2842f5c74a686fe8511e3d220 = $(`&lt;div id="html_982f7eb2842f5c74a686fe8511e3d220" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92154&lt;br&gt;Avg Rent: $2974&lt;br&gt;Listings: 262&lt;/div&gt;`)[0];
+                popup_852a00377ff6084caa892b556a6c4bec.setContent(html_982f7eb2842f5c74a686fe8511e3d220);
             
         
 
-        circle_marker_c05e8ec94c96a96028dc4a811587dbad.bindPopup(popup_61e41b072392e07f3027795cc71d98f5)
+        circle_marker_cc3242e3f04bd80dc21796455e2f51bc.bindPopup(popup_852a00377ff6084caa892b556a6c4bec)
         ;
 
         
     
     
-            var circle_marker_85efb1bf2ee2a4d04f383580ec9a935d = L.circleMarker(
+            var circle_marker_be946324b605c246d3c7b6b52006f545 = L.circleMarker(
                 [32.7469723, -117.1683661],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.221947565543071, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_1f2511ca7ce88ca0898d1cd18be5cb9d = L.popup({
+        var popup_1f1510b7ddaa5365219161c1030d002a = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_962895c38849e69c3712a10729b7839f = $(`&lt;div id="html_962895c38849e69c3712a10729b7839f" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92103&lt;br&gt;Avg Rent: $2944&lt;br&gt;Listings: 267&lt;/div&gt;`)[0];
-                popup_1f2511ca7ce88ca0898d1cd18be5cb9d.setContent(html_962895c38849e69c3712a10729b7839f);
+                var html_86f644af0980e6f3afb05c14a026fc14 = $(`&lt;div id="html_86f644af0980e6f3afb05c14a026fc14" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92103&lt;br&gt;Avg Rent: $2944&lt;br&gt;Listings: 267&lt;/div&gt;`)[0];
+                popup_1f1510b7ddaa5365219161c1030d002a.setContent(html_86f644af0980e6f3afb05c14a026fc14);
             
         
 
-        circle_marker_85efb1bf2ee2a4d04f383580ec9a935d.bindPopup(popup_1f2511ca7ce88ca0898d1cd18be5cb9d)
+        circle_marker_be946324b605c246d3c7b6b52006f545.bindPopup(popup_1f1510b7ddaa5365219161c1030d002a)
         ;
 
         
     
     
-            var circle_marker_0a98199849bbf6ad50446c2382f0edef = L.circleMarker(
+            var circle_marker_6b1497014f92df005820217d498499f0 = L.circleMarker(
                 [32.7629346, -117.1247204],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.136724137931035, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_71ef74da0a687f128c3e550081514c4c = L.popup({
+        var popup_15ea97947734580bc30251451786ef03 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_743f179e99df7bdeb70e818a5722b71a = $(`&lt;div id="html_743f179e99df7bdeb70e818a5722b71a" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92116&lt;br&gt;Avg Rent: $2927&lt;br&gt;Listings: 87&lt;/div&gt;`)[0];
-                popup_71ef74da0a687f128c3e550081514c4c.setContent(html_743f179e99df7bdeb70e818a5722b71a);
+                var html_7968a6fd39e2b0555d33baeb152d5d1c = $(`&lt;div id="html_7968a6fd39e2b0555d33baeb152d5d1c" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92116&lt;br&gt;Avg Rent: $2927&lt;br&gt;Listings: 87&lt;/div&gt;`)[0];
+                popup_15ea97947734580bc30251451786ef03.setContent(html_7968a6fd39e2b0555d33baeb152d5d1c);
             
         
 
-        circle_marker_0a98199849bbf6ad50446c2382f0edef.bindPopup(popup_71ef74da0a687f128c3e550081514c4c)
+        circle_marker_6b1497014f92df005820217d498499f0.bindPopup(popup_15ea97947734580bc30251451786ef03)
         ;
 
         
     
     
-            var circle_marker_a353c5b0b8fe13701944ddbcf4760f08 = L.circleMarker(
+            var circle_marker_d8d29440b22dcbedda0cddb55156cd1a = L.circleMarker(
                 [32.7437874, -117.1286901],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.106272727272728, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_54e16a666dd60448f9a433a7175a79f9 = L.popup({
+        var popup_cea4d4e138ad55b610e5b2757735e0ca = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_4a7a5c5fc530f65a1e5621f26a4aefb7 = $(`&lt;div id="html_4a7a5c5fc530f65a1e5621f26a4aefb7" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92104&lt;br&gt;Avg Rent: $2921&lt;br&gt;Listings: 165&lt;/div&gt;`)[0];
-                popup_54e16a666dd60448f9a433a7175a79f9.setContent(html_4a7a5c5fc530f65a1e5621f26a4aefb7);
+                var html_47f7a4bdf259e62189a74304cfb17b83 = $(`&lt;div id="html_47f7a4bdf259e62189a74304cfb17b83" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92104&lt;br&gt;Avg Rent: $2921&lt;br&gt;Listings: 165&lt;/div&gt;`)[0];
+                popup_cea4d4e138ad55b610e5b2757735e0ca.setContent(html_47f7a4bdf259e62189a74304cfb17b83);
             
         
 
-        circle_marker_a353c5b0b8fe13701944ddbcf4760f08.bindPopup(popup_54e16a666dd60448f9a433a7175a79f9)
+        circle_marker_d8d29440b22dcbedda0cddb55156cd1a.bindPopup(popup_cea4d4e138ad55b610e5b2757735e0ca)
         ;
 
         
     
     
-            var circle_marker_893b626cef628638159c794b563c43ef = L.circleMarker(
+            var circle_marker_d8bfedd52c9d351c6a60d1d43304a27b = L.circleMarker(
                 [33.1654281, -117.3048874],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.074864864864864, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_d1d5a2208aec2bfa4c76ccd84b16e7fd = L.popup({
+        var popup_acac4866aad6238345b6ded5fc6a137e = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_12d3b6dbdd28fd68f2aaf8e7ee173392 = $(`&lt;div id="html_12d3b6dbdd28fd68f2aaf8e7ee173392" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92010&lt;br&gt;Avg Rent: $2915&lt;br&gt;Listings: 74&lt;/div&gt;`)[0];
-                popup_d1d5a2208aec2bfa4c76ccd84b16e7fd.setContent(html_12d3b6dbdd28fd68f2aaf8e7ee173392);
+                var html_7b2557be353e0a908ec46cd8be7b32ae = $(`&lt;div id="html_7b2557be353e0a908ec46cd8be7b32ae" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92010&lt;br&gt;Avg Rent: $2915&lt;br&gt;Listings: 74&lt;/div&gt;`)[0];
+                popup_acac4866aad6238345b6ded5fc6a137e.setContent(html_7b2557be353e0a908ec46cd8be7b32ae);
             
         
 
-        circle_marker_893b626cef628638159c794b563c43ef.bindPopup(popup_d1d5a2208aec2bfa4c76ccd84b16e7fd)
+        circle_marker_d8bfedd52c9d351c6a60d1d43304a27b.bindPopup(popup_acac4866aad6238345b6ded5fc6a137e)
         ;
 
         
     
     
-            var circle_marker_7f05a33e0b0d4f807c948cbfd16bb4eb = L.circleMarker(
+            var circle_marker_2dd4730c093c86b88d1bf3d07f05a82b = L.circleMarker(
                 [33.1984658, -117.2835665],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.921446886446886, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_2a378b883f4a8f48f73929e364dd59f5 = L.popup({
+        var popup_8a6db984d8593e3c68678e33fa143245 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_180fb8f3e75fc21132a830caedfec6f4 = $(`&lt;div id="html_180fb8f3e75fc21132a830caedfec6f4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92056&lt;br&gt;Avg Rent: $2884&lt;br&gt;Listings: 273&lt;/div&gt;`)[0];
-                popup_2a378b883f4a8f48f73929e364dd59f5.setContent(html_180fb8f3e75fc21132a830caedfec6f4);
+                var html_008e01c494f64ba3d96f3fce74f47c21 = $(`&lt;div id="html_008e01c494f64ba3d96f3fce74f47c21" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92056&lt;br&gt;Avg Rent: $2884&lt;br&gt;Listings: 273&lt;/div&gt;`)[0];
+                popup_8a6db984d8593e3c68678e33fa143245.setContent(html_008e01c494f64ba3d96f3fce74f47c21);
             
         
 
-        circle_marker_7f05a33e0b0d4f807c948cbfd16bb4eb.bindPopup(popup_2a378b883f4a8f48f73929e364dd59f5)
+        circle_marker_2dd4730c093c86b88d1bf3d07f05a82b.bindPopup(popup_8a6db984d8593e3c68678e33fa143245)
         ;
 
         
     
     
-            var circle_marker_c399352c1d4fc994481633205d7704a7 = L.circleMarker(
+            var circle_marker_2b011725ee69711108288ed509e30a1b = L.circleMarker(
                 [32.6982131, -117.1182331],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.918333333333333, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_afaa249b11c3f005c7635f9e7b8bcf2e = L.popup({
+        var popup_a0fbf0fda73fe05a4bf5fc3117f9fac0 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2f6ccdfa7cdd5720c8f8ab3eb5989c81 = $(`&lt;div id="html_2f6ccdfa7cdd5720c8f8ab3eb5989c81" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92113&lt;br&gt;Avg Rent: $2884&lt;br&gt;Listings: 9&lt;/div&gt;`)[0];
-                popup_afaa249b11c3f005c7635f9e7b8bcf2e.setContent(html_2f6ccdfa7cdd5720c8f8ab3eb5989c81);
+                var html_c2972940afba5e405ba5abc23797a77f = $(`&lt;div id="html_c2972940afba5e405ba5abc23797a77f" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92113&lt;br&gt;Avg Rent: $2884&lt;br&gt;Listings: 9&lt;/div&gt;`)[0];
+                popup_a0fbf0fda73fe05a4bf5fc3117f9fac0.setContent(html_c2972940afba5e405ba5abc23797a77f);
             
         
 
-        circle_marker_c399352c1d4fc994481633205d7704a7.bindPopup(popup_afaa249b11c3f005c7635f9e7b8bcf2e)
+        circle_marker_2b011725ee69711108288ed509e30a1b.bindPopup(popup_a0fbf0fda73fe05a4bf5fc3117f9fac0)
         ;
 
         
     
     
-            var circle_marker_a3f3d0bf67fd6b1bd9fd07b5fc25bad5 = L.circleMarker(
+            var circle_marker_3bc59f36db59b90cbd10fcce7fd21edd = L.circleMarker(
                 [32.6642158, -116.9579516],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.90625, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_86c294772ca30ac999de29d96d1968d9 = L.popup({
+        var popup_357a23c64af68cf64052b0cf0d4cbf4e = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_08bcdb6d5e434bd94af86a2009f5f3c5 = $(`&lt;div id="html_08bcdb6d5e434bd94af86a2009f5f3c5" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91914&lt;br&gt;Avg Rent: $2881&lt;br&gt;Listings: 12&lt;/div&gt;`)[0];
-                popup_86c294772ca30ac999de29d96d1968d9.setContent(html_08bcdb6d5e434bd94af86a2009f5f3c5);
+                var html_1888df82d06fb37b66998ab48808bc78 = $(`&lt;div id="html_1888df82d06fb37b66998ab48808bc78" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91914&lt;br&gt;Avg Rent: $2881&lt;br&gt;Listings: 12&lt;/div&gt;`)[0];
+                popup_357a23c64af68cf64052b0cf0d4cbf4e.setContent(html_1888df82d06fb37b66998ab48808bc78);
             
         
 
-        circle_marker_a3f3d0bf67fd6b1bd9fd07b5fc25bad5.bindPopup(popup_86c294772ca30ac999de29d96d1968d9)
+        circle_marker_3bc59f36db59b90cbd10fcce7fd21edd.bindPopup(popup_357a23c64af68cf64052b0cf0d4cbf4e)
         ;
 
         
     
     
-            var circle_marker_6c33511c38d42d76f8c5630a55d7048b = L.circleMarker(
+            var circle_marker_13e7f72c79eddbd536d6eb02d023eebf = L.circleMarker(
                 [32.9919784, -117.0709738],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.708909090909092, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_3058d12e17c2b0d74809500f0c59980d = L.popup({
+        var popup_27ff69142b29015ecbaad550ae3b1c9d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_93aec5318b6339985f19c52877113442 = $(`&lt;div id="html_93aec5318b6339985f19c52877113442" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92128&lt;br&gt;Avg Rent: $2842&lt;br&gt;Listings: 165&lt;/div&gt;`)[0];
-                popup_3058d12e17c2b0d74809500f0c59980d.setContent(html_93aec5318b6339985f19c52877113442);
+                var html_6854988e3dbca55b116168fd267359aa = $(`&lt;div id="html_6854988e3dbca55b116168fd267359aa" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92128&lt;br&gt;Avg Rent: $2842&lt;br&gt;Listings: 165&lt;/div&gt;`)[0];
+                popup_27ff69142b29015ecbaad550ae3b1c9d.setContent(html_6854988e3dbca55b116168fd267359aa);
             
         
 
-        circle_marker_6c33511c38d42d76f8c5630a55d7048b.bindPopup(popup_3058d12e17c2b0d74809500f0c59980d)
+        circle_marker_13e7f72c79eddbd536d6eb02d023eebf.bindPopup(popup_27ff69142b29015ecbaad550ae3b1c9d)
         ;
 
         
     
     
-            var circle_marker_32b02cf74a112a4db0966c1e345b6f1c = L.circleMarker(
+            var circle_marker_4c4a139fc6c2bb3aa7d79dbb1566cf5b = L.circleMarker(
                 [32.9751884, -117.0418136],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.594838709677419, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_bbc2d7d578f6f3fe81f311b37f4761a0 = L.popup({
+        var popup_62d7b591c164677370742ee83ede920d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_964d48e3bbed6114d4a29ff0d012e44c = $(`&lt;div id="html_964d48e3bbed6114d4a29ff0d012e44c" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92064&lt;br&gt;Avg Rent: $2819&lt;br&gt;Listings: 93&lt;/div&gt;`)[0];
-                popup_bbc2d7d578f6f3fe81f311b37f4761a0.setContent(html_964d48e3bbed6114d4a29ff0d012e44c);
+                var html_5138071bbbeea5da56fe5f87d448eb56 = $(`&lt;div id="html_5138071bbbeea5da56fe5f87d448eb56" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92064&lt;br&gt;Avg Rent: $2819&lt;br&gt;Listings: 93&lt;/div&gt;`)[0];
+                popup_62d7b591c164677370742ee83ede920d.setContent(html_5138071bbbeea5da56fe5f87d448eb56);
             
         
 
-        circle_marker_32b02cf74a112a4db0966c1e345b6f1c.bindPopup(popup_bbc2d7d578f6f3fe81f311b37f4761a0)
+        circle_marker_4c4a139fc6c2bb3aa7d79dbb1566cf5b.bindPopup(popup_62d7b591c164677370742ee83ede920d)
         ;
 
         
     
     
-            var circle_marker_785f61d808698012bcb37cca2487b205 = L.circleMarker(
+            var circle_marker_a0dc9cb63260ce330e5a3aa26f59ed8c = L.circleMarker(
                 [32.6657979, -117.0180342],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.555999999999999, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_b94b80be1704ec2d3f1bf1f2228c03af = L.popup({
+        var popup_e16f7863385905c32ff2898e35330578 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_95df911799009b21008f6c1dc11312eb = $(`&lt;div id="html_95df911799009b21008f6c1dc11312eb" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91902&lt;br&gt;Avg Rent: $2811&lt;br&gt;Listings: 15&lt;/div&gt;`)[0];
-                popup_b94b80be1704ec2d3f1bf1f2228c03af.setContent(html_95df911799009b21008f6c1dc11312eb);
+                var html_b42cbe1617962586a762c8dcd127b802 = $(`&lt;div id="html_b42cbe1617962586a762c8dcd127b802" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91902&lt;br&gt;Avg Rent: $2811&lt;br&gt;Listings: 15&lt;/div&gt;`)[0];
+                popup_e16f7863385905c32ff2898e35330578.setContent(html_b42cbe1617962586a762c8dcd127b802);
             
         
 
-        circle_marker_785f61d808698012bcb37cca2487b205.bindPopup(popup_b94b80be1704ec2d3f1bf1f2228c03af)
+        circle_marker_a0dc9cb63260ce330e5a3aa26f59ed8c.bindPopup(popup_e16f7863385905c32ff2898e35330578)
         ;
 
         
     
     
-            var circle_marker_33a0d3390c3d8c6d10aaa933050bbf70 = L.circleMarker(
-                [32.7844968, -117.0158509],
+            var circle_marker_d2e7f4e81d080a8bd4f6bc3f548d1210 = L.circleMarker(
+                [32.7844939, -117.0158496],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.458300970873786, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_af1b7b560c09cd100d758048c2016a2f = L.popup({
+        var popup_0d8363f91e072f9fd7aae5942f93f630 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_81a3613778e1f634d77eb79e498dba8d = $(`&lt;div id="html_81a3613778e1f634d77eb79e498dba8d" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91942&lt;br&gt;Avg Rent: $2792&lt;br&gt;Listings: 412&lt;/div&gt;`)[0];
-                popup_af1b7b560c09cd100d758048c2016a2f.setContent(html_81a3613778e1f634d77eb79e498dba8d);
+                var html_04a4127850403a0a714d118fff5c53c4 = $(`&lt;div id="html_04a4127850403a0a714d118fff5c53c4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91942&lt;br&gt;Avg Rent: $2792&lt;br&gt;Listings: 412&lt;/div&gt;`)[0];
+                popup_0d8363f91e072f9fd7aae5942f93f630.setContent(html_04a4127850403a0a714d118fff5c53c4);
             
         
 
-        circle_marker_33a0d3390c3d8c6d10aaa933050bbf70.bindPopup(popup_af1b7b560c09cd100d758048c2016a2f)
+        circle_marker_d2e7f4e81d080a8bd4f6bc3f548d1210.bindPopup(popup_0d8363f91e072f9fd7aae5942f93f630)
         ;
 
         
     
     
-            var circle_marker_ce5d26a073a2cd975179503c9a8ce0f1 = L.circleMarker(
+            var circle_marker_f4036f03976828cfcdab832025b33b07 = L.circleMarker(
                 [32.7336468, -116.9588916],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.41640625, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_9f93fa96ecac14af4dde6e1496804f18 = L.popup({
+        var popup_197e404fc36e06486a6c10d73fc37ee8 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2dbbcbf7165a6ada3bacdcc4a8186522 = $(`&lt;div id="html_2dbbcbf7165a6ada3bacdcc4a8186522" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91978&lt;br&gt;Avg Rent: $2783&lt;br&gt;Listings: 32&lt;/div&gt;`)[0];
-                popup_9f93fa96ecac14af4dde6e1496804f18.setContent(html_2dbbcbf7165a6ada3bacdcc4a8186522);
+                var html_ccf508b39cddab9e51eed0d155bd2c21 = $(`&lt;div id="html_ccf508b39cddab9e51eed0d155bd2c21" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91978&lt;br&gt;Avg Rent: $2783&lt;br&gt;Listings: 32&lt;/div&gt;`)[0];
+                popup_197e404fc36e06486a6c10d73fc37ee8.setContent(html_ccf508b39cddab9e51eed0d155bd2c21);
             
         
 
-        circle_marker_ce5d26a073a2cd975179503c9a8ce0f1.bindPopup(popup_9f93fa96ecac14af4dde6e1496804f18)
+        circle_marker_f4036f03976828cfcdab832025b33b07.bindPopup(popup_197e404fc36e06486a6c10d73fc37ee8)
         ;
 
         
     
     
-            var circle_marker_ca073bb75b8c41da5c02633023d7626f = L.circleMarker(
+            var circle_marker_442ed48b187dc266bc6fa78e845c4eda = L.circleMarker(
                 [33.2447479, -117.3003419],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.4017647058823535, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_06f5d167602d40d159feaa5bf7a87305 = L.popup({
+        var popup_253c55ce3381dc20109158696f05fb69 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_a56c861392f258b8976c869f68ba7b81 = $(`&lt;div id="html_a56c861392f258b8976c869f68ba7b81" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92057&lt;br&gt;Avg Rent: $2780&lt;br&gt;Listings: 153&lt;/div&gt;`)[0];
-                popup_06f5d167602d40d159feaa5bf7a87305.setContent(html_a56c861392f258b8976c869f68ba7b81);
+                var html_2fb55ca84426f81d346a901463f6ccdc = $(`&lt;div id="html_2fb55ca84426f81d346a901463f6ccdc" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92057&lt;br&gt;Avg Rent: $2780&lt;br&gt;Listings: 153&lt;/div&gt;`)[0];
+                popup_253c55ce3381dc20109158696f05fb69.setContent(html_2fb55ca84426f81d346a901463f6ccdc);
             
         
 
-        circle_marker_ca073bb75b8c41da5c02633023d7626f.bindPopup(popup_06f5d167602d40d159feaa5bf7a87305)
+        circle_marker_442ed48b187dc266bc6fa78e845c4eda.bindPopup(popup_253c55ce3381dc20109158696f05fb69)
         ;
 
         
     
     
-            var circle_marker_12655c57f8cfe1780b46f71d58ffc742 = L.circleMarker(
+            var circle_marker_d16961ed79671ca7a134b89efe2ab50a = L.circleMarker(
                 [33.1208928, -117.1961682],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.389130434782608, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_270b6f0db9601ef993ce98dd9e136c2a = L.popup({
+        var popup_936fd33406f4463f29d777e6dfc501c8 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_851f8a7abeba72e1b6254ffdca16781a = $(`&lt;div id="html_851f8a7abeba72e1b6254ffdca16781a" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92078&lt;br&gt;Avg Rent: $2778&lt;br&gt;Listings: 69&lt;/div&gt;`)[0];
-                popup_270b6f0db9601ef993ce98dd9e136c2a.setContent(html_851f8a7abeba72e1b6254ffdca16781a);
+                var html_5e807b33d6636cc4bbdb65faaada4009 = $(`&lt;div id="html_5e807b33d6636cc4bbdb65faaada4009" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92078&lt;br&gt;Avg Rent: $2778&lt;br&gt;Listings: 69&lt;/div&gt;`)[0];
+                popup_936fd33406f4463f29d777e6dfc501c8.setContent(html_5e807b33d6636cc4bbdb65faaada4009);
             
         
 
-        circle_marker_12655c57f8cfe1780b46f71d58ffc742.bindPopup(popup_270b6f0db9601ef993ce98dd9e136c2a)
+        circle_marker_d16961ed79671ca7a134b89efe2ab50a.bindPopup(popup_936fd33406f4463f29d777e6dfc501c8)
         ;
 
         
     
     
-            var circle_marker_ed13b8fbfd46f58dcafff5f2e4a8d5e4 = L.circleMarker(
+            var circle_marker_3bba604cff48cc616b139f89c387807e = L.circleMarker(
                 [32.9958912, -117.2594365],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.38625, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_4c2a1e3af32bc285b751efa50f9267ba = L.popup({
+        var popup_411fda46feff372be823589b8da4d5be = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_d2bedb1bc02244335f792eccebb41458 = $(`&lt;div id="html_d2bedb1bc02244335f792eccebb41458" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92075&lt;br&gt;Avg Rent: $2777&lt;br&gt;Listings: 24&lt;/div&gt;`)[0];
-                popup_4c2a1e3af32bc285b751efa50f9267ba.setContent(html_d2bedb1bc02244335f792eccebb41458);
+                var html_de7161def29c1160991ee2343d16558e = $(`&lt;div id="html_de7161def29c1160991ee2343d16558e" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92075&lt;br&gt;Avg Rent: $2777&lt;br&gt;Listings: 24&lt;/div&gt;`)[0];
+                popup_411fda46feff372be823589b8da4d5be.setContent(html_de7161def29c1160991ee2343d16558e);
             
         
 
-        circle_marker_ed13b8fbfd46f58dcafff5f2e4a8d5e4.bindPopup(popup_4c2a1e3af32bc285b751efa50f9267ba)
+        circle_marker_3bba604cff48cc616b139f89c387807e.bindPopup(popup_411fda46feff372be823589b8da4d5be)
         ;
 
         
     
     
-            var circle_marker_177906ee8cfc23882199f521b60dd9ea = L.circleMarker(
+            var circle_marker_a1f6f3d75adcc18fe64008abecf9f01f = L.circleMarker(
                 [33.2126742, -117.2237631],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.150555555555557, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_b62a883209f62123ed708e8a082dcdc2 = L.popup({
+        var popup_953b28df18216724ec279300949bd00d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2fec026fe006d2f565f9cf95d605eff9 = $(`&lt;div id="html_2fec026fe006d2f565f9cf95d605eff9" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92084&lt;br&gt;Avg Rent: $2730&lt;br&gt;Listings: 81&lt;/div&gt;`)[0];
-                popup_b62a883209f62123ed708e8a082dcdc2.setContent(html_2fec026fe006d2f565f9cf95d605eff9);
+                var html_d72e0b7fa0a368a78d8c97f203f987ce = $(`&lt;div id="html_d72e0b7fa0a368a78d8c97f203f987ce" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92084&lt;br&gt;Avg Rent: $2730&lt;br&gt;Listings: 81&lt;/div&gt;`)[0];
+                popup_953b28df18216724ec279300949bd00d.setContent(html_d72e0b7fa0a368a78d8c97f203f987ce);
             
         
 
-        circle_marker_177906ee8cfc23882199f521b60dd9ea.bindPopup(popup_b62a883209f62123ed708e8a082dcdc2)
+        circle_marker_a1f6f3d75adcc18fe64008abecf9f01f.bindPopup(popup_953b28df18216724ec279300949bd00d)
         ;
 
         
     
     
-            var circle_marker_9352a59707f4b394b19d27cf4862f153 = L.circleMarker(
+            var circle_marker_4558460049fd465efcb452a7d57c52c7 = L.circleMarker(
                 [32.6103888, -117.0489831],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.982626728110599, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_9ad8274540bef5b2e8e3bbea3505e7a6 = L.popup({
+        var popup_b2118f93a974e53886e1233ecb97a708 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_90958f85dcab0a4ffac49c2719f57cc9 = $(`&lt;div id="html_90958f85dcab0a4ffac49c2719f57cc9" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91911&lt;br&gt;Avg Rent: $2697&lt;br&gt;Listings: 217&lt;/div&gt;`)[0];
-                popup_9ad8274540bef5b2e8e3bbea3505e7a6.setContent(html_90958f85dcab0a4ffac49c2719f57cc9);
+                var html_c41409c6a31e4c1e6c0f3739b63a90e4 = $(`&lt;div id="html_c41409c6a31e4c1e6c0f3739b63a90e4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91911&lt;br&gt;Avg Rent: $2697&lt;br&gt;Listings: 217&lt;/div&gt;`)[0];
+                popup_b2118f93a974e53886e1233ecb97a708.setContent(html_c41409c6a31e4c1e6c0f3739b63a90e4);
             
         
 
-        circle_marker_9352a59707f4b394b19d27cf4862f153.bindPopup(popup_9ad8274540bef5b2e8e3bbea3505e7a6)
+        circle_marker_4558460049fd465efcb452a7d57c52c7.bindPopup(popup_b2118f93a974e53886e1233ecb97a708)
         ;
 
         
     
     
-            var circle_marker_4e2037ea22492402476cd89a8ef8b5ef = L.circleMarker(
+            var circle_marker_07f8694b9ff321383cd38571c950048d = L.circleMarker(
                 [33.8912944, -117.3273948],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.925555555555556, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_f8478cc987af8df595ea7d4614a151f3 = L.popup({
+        var popup_10d3d04212f79faf66fc73ca00eb189d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_c6b59b447f1da70c028ddbee134ba3ff = $(`&lt;div id="html_c6b59b447f1da70c028ddbee134ba3ff" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92508&lt;br&gt;Avg Rent: $2685&lt;br&gt;Listings: 27&lt;/div&gt;`)[0];
-                popup_f8478cc987af8df595ea7d4614a151f3.setContent(html_c6b59b447f1da70c028ddbee134ba3ff);
+                var html_00e9494a066bd47ba089cd3568f59ed2 = $(`&lt;div id="html_00e9494a066bd47ba089cd3568f59ed2" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92508&lt;br&gt;Avg Rent: $2685&lt;br&gt;Listings: 27&lt;/div&gt;`)[0];
+                popup_10d3d04212f79faf66fc73ca00eb189d.setContent(html_00e9494a066bd47ba089cd3568f59ed2);
             
         
 
-        circle_marker_4e2037ea22492402476cd89a8ef8b5ef.bindPopup(popup_f8478cc987af8df595ea7d4614a151f3)
+        circle_marker_07f8694b9ff321383cd38571c950048d.bindPopup(popup_10d3d04212f79faf66fc73ca00eb189d)
         ;
 
         
     
     
-            var circle_marker_12a6fea8e2869a5be77b9d5ced874117 = L.circleMarker(
+            var circle_marker_34ebc06f095b4ceba0001897b8d354cb = L.circleMarker(
                 [33.1535861, -117.1499673],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.872924528301887, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_60e35ae57b8e22bf44ff6799c780a2c1 = L.popup({
+        var popup_3f6a7c0d0284953a0794270d7db01831 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ae7403777537e597ef917f66291ee13a = $(`&lt;div id="html_ae7403777537e597ef917f66291ee13a" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92069&lt;br&gt;Avg Rent: $2675&lt;br&gt;Listings: 159&lt;/div&gt;`)[0];
-                popup_60e35ae57b8e22bf44ff6799c780a2c1.setContent(html_ae7403777537e597ef917f66291ee13a);
+                var html_8968a057216d1cfa971a6d6cb7da4b5a = $(`&lt;div id="html_8968a057216d1cfa971a6d6cb7da4b5a" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92069&lt;br&gt;Avg Rent: $2675&lt;br&gt;Listings: 159&lt;/div&gt;`)[0];
+                popup_3f6a7c0d0284953a0794270d7db01831.setContent(html_8968a057216d1cfa971a6d6cb7da4b5a);
             
         
 
-        circle_marker_12a6fea8e2869a5be77b9d5ced874117.bindPopup(popup_60e35ae57b8e22bf44ff6799c780a2c1)
+        circle_marker_34ebc06f095b4ceba0001897b8d354cb.bindPopup(popup_3f6a7c0d0284953a0794270d7db01831)
         ;
 
         
     
     
-            var circle_marker_cc2cd1c64ceeeb841dfcf10d317cb792 = L.circleMarker(
+            var circle_marker_5b760ed456ed4f7cc85a0071ddfa9118 = L.circleMarker(
                 [32.760131, -117.0072445],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.826739130434783, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_0c90d61eb99d9fdb36905fb5cc07c14a = L.popup({
+        var popup_7af4d96a951ac706691ed692778ac929 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_6b115ff4fade698860dcbf7d0d3bcf82 = $(`&lt;div id="html_6b115ff4fade698860dcbf7d0d3bcf82" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91941&lt;br&gt;Avg Rent: $2665&lt;br&gt;Listings: 69&lt;/div&gt;`)[0];
-                popup_0c90d61eb99d9fdb36905fb5cc07c14a.setContent(html_6b115ff4fade698860dcbf7d0d3bcf82);
+                var html_e5e3f23514f0657ca44f12096b916f3c = $(`&lt;div id="html_e5e3f23514f0657ca44f12096b916f3c" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91941&lt;br&gt;Avg Rent: $2665&lt;br&gt;Listings: 69&lt;/div&gt;`)[0];
+                popup_7af4d96a951ac706691ed692778ac929.setContent(html_e5e3f23514f0657ca44f12096b916f3c);
             
         
 
-        circle_marker_cc2cd1c64ceeeb841dfcf10d317cb792.bindPopup(popup_0c90d61eb99d9fdb36905fb5cc07c14a)
+        circle_marker_5b760ed456ed4f7cc85a0071ddfa9118.bindPopup(popup_7af4d96a951ac706691ed692778ac929)
         ;
 
         
     
     
-            var circle_marker_7f37ea0e45389eb760cd4808c8d0a83a = L.circleMarker(
+            var circle_marker_d37f7fcf65eff61b10ac49b366995734 = L.circleMarker(
                 [33.1984011, -117.2495323],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.792155172413793, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_f803c8fd8c5299a5080e0b17088b6df0 = L.popup({
+        var popup_6f2672ac27c15d4f5538b897de157506 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_6b6d8f01818a024f2dbc4e4222dc5454 = $(`&lt;div id="html_6b6d8f01818a024f2dbc4e4222dc5454" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92083&lt;br&gt;Avg Rent: $2658&lt;br&gt;Listings: 174&lt;/div&gt;`)[0];
-                popup_f803c8fd8c5299a5080e0b17088b6df0.setContent(html_6b6d8f01818a024f2dbc4e4222dc5454);
+                var html_cf274cef2c11d47bfd1d2e9ae9735eb4 = $(`&lt;div id="html_cf274cef2c11d47bfd1d2e9ae9735eb4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92083&lt;br&gt;Avg Rent: $2658&lt;br&gt;Listings: 174&lt;/div&gt;`)[0];
+                popup_6f2672ac27c15d4f5538b897de157506.setContent(html_cf274cef2c11d47bfd1d2e9ae9735eb4);
             
         
 
-        circle_marker_7f37ea0e45389eb760cd4808c8d0a83a.bindPopup(popup_f803c8fd8c5299a5080e0b17088b6df0)
+        circle_marker_d37f7fcf65eff61b10ac49b366995734.bindPopup(popup_6f2672ac27c15d4f5538b897de157506)
         ;
 
         
     
     
-            var circle_marker_656b90e5692181b16d5c86235d7d0ee1 = L.circleMarker(
+            var circle_marker_97fd1ff919126a3b26b94cbaf91b4c20 = L.circleMarker(
                 [33.1705967, -117.2437924],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.770985915492958, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_f03a456435dbc4748813a4f48416a40b = L.popup({
+        var popup_a186ffb1661b86af5f1f1b50e2797d84 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_7f5fb43c4424cfb625d3fc3e3505413f = $(`&lt;div id="html_7f5fb43c4424cfb625d3fc3e3505413f" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92081&lt;br&gt;Avg Rent: $2654&lt;br&gt;Listings: 213&lt;/div&gt;`)[0];
-                popup_f03a456435dbc4748813a4f48416a40b.setContent(html_7f5fb43c4424cfb625d3fc3e3505413f);
+                var html_f258b8088f0745bf407ab23ac0058eb7 = $(`&lt;div id="html_f258b8088f0745bf407ab23ac0058eb7" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92081&lt;br&gt;Avg Rent: $2654&lt;br&gt;Listings: 213&lt;/div&gt;`)[0];
+                popup_a186ffb1661b86af5f1f1b50e2797d84.setContent(html_f258b8088f0745bf407ab23ac0058eb7);
             
         
 
-        circle_marker_656b90e5692181b16d5c86235d7d0ee1.bindPopup(popup_f03a456435dbc4748813a4f48416a40b)
+        circle_marker_97fd1ff919126a3b26b94cbaf91b4c20.bindPopup(popup_a186ffb1661b86af5f1f1b50e2797d84)
         ;
 
         
     
     
-            var circle_marker_40d59264223a6e7ccb715c48f2fabf4c = L.circleMarker(
+            var circle_marker_52cafcc8a73cfe0914158eec743b7e82 = L.circleMarker(
                 [32.5786661, -117.1163963],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.680555555555556, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_41669dbcb360860d5a7fe2cba42efb90 = L.popup({
+        var popup_f6f903bef04f46bcf9b2bb52bb62bcd5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_d04dac5787b42d874adf58178c9f20f5 = $(`&lt;div id="html_d04dac5787b42d874adf58178c9f20f5" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91932&lt;br&gt;Avg Rent: $2636&lt;br&gt;Listings: 27&lt;/div&gt;`)[0];
-                popup_41669dbcb360860d5a7fe2cba42efb90.setContent(html_d04dac5787b42d874adf58178c9f20f5);
+                var html_94771ec35a2d7ed127e334c1f477b5a0 = $(`&lt;div id="html_94771ec35a2d7ed127e334c1f477b5a0" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91932&lt;br&gt;Avg Rent: $2636&lt;br&gt;Listings: 27&lt;/div&gt;`)[0];
+                popup_f6f903bef04f46bcf9b2bb52bb62bcd5.setContent(html_94771ec35a2d7ed127e334c1f477b5a0);
             
         
 
-        circle_marker_40d59264223a6e7ccb715c48f2fabf4c.bindPopup(popup_41669dbcb360860d5a7fe2cba42efb90)
+        circle_marker_52cafcc8a73cfe0914158eec743b7e82.bindPopup(popup_f6f903bef04f46bcf9b2bb52bb62bcd5)
         ;
 
         
     
     
-            var circle_marker_5dfc4dcdb9a81accdf659cab490529ec = L.circleMarker(
+            var circle_marker_3824bfb76f3ae98502796fce4687b9ab = L.circleMarker(
                 [32.7740121, -116.9139549],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.661136363636363, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_c0d122dc09a09ab0cb8a106ed7b2f6b1 = L.popup({
+        var popup_ef2175b9c841fdc50017363c202bcb76 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_80f668eab14193ceb4d7d4c5c10855fd = $(`&lt;div id="html_80f668eab14193ceb4d7d4c5c10855fd" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92019&lt;br&gt;Avg Rent: $2632&lt;br&gt;Listings: 132&lt;/div&gt;`)[0];
-                popup_c0d122dc09a09ab0cb8a106ed7b2f6b1.setContent(html_80f668eab14193ceb4d7d4c5c10855fd);
+                var html_14af5bd0c267a607c153d8be289a82d4 = $(`&lt;div id="html_14af5bd0c267a607c153d8be289a82d4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92019&lt;br&gt;Avg Rent: $2632&lt;br&gt;Listings: 132&lt;/div&gt;`)[0];
+                popup_ef2175b9c841fdc50017363c202bcb76.setContent(html_14af5bd0c267a607c153d8be289a82d4);
             
         
 
-        circle_marker_5dfc4dcdb9a81accdf659cab490529ec.bindPopup(popup_c0d122dc09a09ab0cb8a106ed7b2f6b1)
+        circle_marker_3824bfb76f3ae98502796fce4687b9ab.bindPopup(popup_ef2175b9c841fdc50017363c202bcb76)
         ;
 
         
     
     
-            var circle_marker_403377c212f1816cd695676a2a91f92b = L.circleMarker(
+            var circle_marker_f725339e726bdcae8a805966ff1fa2f9 = L.circleMarker(
                 [32.8501555, -116.9894671],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.623033707865168, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_8e71c531843d4fc768807e433e5bee59 = L.popup({
+        var popup_9f527621801d44f7a0b4e1c6faf96108 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_05f2f429461d50369105eb072ff91b36 = $(`&lt;div id="html_05f2f429461d50369105eb072ff91b36" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92071&lt;br&gt;Avg Rent: $2625&lt;br&gt;Listings: 89&lt;/div&gt;`)[0];
-                popup_8e71c531843d4fc768807e433e5bee59.setContent(html_05f2f429461d50369105eb072ff91b36);
+                var html_25e6c1ece56e526be75b5982ba15ceec = $(`&lt;div id="html_25e6c1ece56e526be75b5982ba15ceec" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92071&lt;br&gt;Avg Rent: $2625&lt;br&gt;Listings: 89&lt;/div&gt;`)[0];
+                popup_9f527621801d44f7a0b4e1c6faf96108.setContent(html_25e6c1ece56e526be75b5982ba15ceec);
             
         
 
-        circle_marker_403377c212f1816cd695676a2a91f92b.bindPopup(popup_8e71c531843d4fc768807e433e5bee59)
+        circle_marker_f725339e726bdcae8a805966ff1fa2f9.bindPopup(popup_9f527621801d44f7a0b4e1c6faf96108)
         ;
 
         
     
     
-            var circle_marker_d45553182ceb247d38453af642efa05b = L.circleMarker(
+            var circle_marker_ef6e7aab50c88558fbd705594d4639ca = L.circleMarker(
                 [32.8014977, -117.173916],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.593863636363637, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_18953e9befb61b6535c68a1be01a88a1 = L.popup({
+        var popup_ebe0cc59f75124500e307714f2fc92f5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_3cf65b1792cae3aea789c43b24f0a2ab = $(`&lt;div id="html_3cf65b1792cae3aea789c43b24f0a2ab" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92111&lt;br&gt;Avg Rent: $2619&lt;br&gt;Listings: 66&lt;/div&gt;`)[0];
-                popup_18953e9befb61b6535c68a1be01a88a1.setContent(html_3cf65b1792cae3aea789c43b24f0a2ab);
+                var html_30eb72882dd61f09ddfeb1dcaf1b8c80 = $(`&lt;div id="html_30eb72882dd61f09ddfeb1dcaf1b8c80" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92111&lt;br&gt;Avg Rent: $2619&lt;br&gt;Listings: 66&lt;/div&gt;`)[0];
+                popup_ebe0cc59f75124500e307714f2fc92f5.setContent(html_30eb72882dd61f09ddfeb1dcaf1b8c80);
             
         
 
-        circle_marker_d45553182ceb247d38453af642efa05b.bindPopup(popup_18953e9befb61b6535c68a1be01a88a1)
+        circle_marker_ef6e7aab50c88558fbd705594d4639ca.bindPopup(popup_ebe0cc59f75124500e307714f2fc92f5)
         ;
 
         
     
     
-            var circle_marker_617cc0d9e4a4fae128e247493e85ebe5 = L.circleMarker(
+            var circle_marker_d0a5af6c9d86bdfb1a4249a332cf8a49 = L.circleMarker(
                 [32.7399788, -117.2444809],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.540904255319149, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_d5052427dc2dbe8b674a571a700992a2 = L.popup({
+        var popup_877093e7e80e47ec736921cb2aa1d812 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_f46d298723ac2760d1d4175e95c77285 = $(`&lt;div id="html_f46d298723ac2760d1d4175e95c77285" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92107&lt;br&gt;Avg Rent: $2608&lt;br&gt;Listings: 94&lt;/div&gt;`)[0];
-                popup_d5052427dc2dbe8b674a571a700992a2.setContent(html_f46d298723ac2760d1d4175e95c77285);
+                var html_ad76229652a079e28738f34fd8104a43 = $(`&lt;div id="html_ad76229652a079e28738f34fd8104a43" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92107&lt;br&gt;Avg Rent: $2608&lt;br&gt;Listings: 94&lt;/div&gt;`)[0];
+                popup_877093e7e80e47ec736921cb2aa1d812.setContent(html_ad76229652a079e28738f34fd8104a43);
             
         
 
-        circle_marker_617cc0d9e4a4fae128e247493e85ebe5.bindPopup(popup_d5052427dc2dbe8b674a571a700992a2)
+        circle_marker_d0a5af6c9d86bdfb1a4249a332cf8a49.bindPopup(popup_877093e7e80e47ec736921cb2aa1d812)
         ;
 
         
     
     
-            var circle_marker_f1ba65fab261063edd3482ae907940b7 = L.circleMarker(
+            var circle_marker_0802d285361a718c263ee94f19443153 = L.circleMarker(
                 [32.7293716, -117.2314447],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5075, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_205f81908108e1d208d52defeeff9882 = L.popup({
+        var popup_5af3820ea6c43dda12a2660614b5e71c = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_ad7c35afee8d2c7d06c2db225d62bf3e = $(`&lt;div id="html_ad7c35afee8d2c7d06c2db225d62bf3e" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92106&lt;br&gt;Avg Rent: $2602&lt;br&gt;Listings: 24&lt;/div&gt;`)[0];
-                popup_205f81908108e1d208d52defeeff9882.setContent(html_ad7c35afee8d2c7d06c2db225d62bf3e);
+                var html_187a297777fe53ed542bca64ab217fb1 = $(`&lt;div id="html_187a297777fe53ed542bca64ab217fb1" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92106&lt;br&gt;Avg Rent: $2602&lt;br&gt;Listings: 24&lt;/div&gt;`)[0];
+                popup_5af3820ea6c43dda12a2660614b5e71c.setContent(html_187a297777fe53ed542bca64ab217fb1);
             
         
 
-        circle_marker_f1ba65fab261063edd3482ae907940b7.bindPopup(popup_205f81908108e1d208d52defeeff9882)
+        circle_marker_0802d285361a718c263ee94f19443153.bindPopup(popup_5af3820ea6c43dda12a2660614b5e71c)
         ;
 
         
     
     
-            var circle_marker_ef293ffe894dfa70ef81392a06826b4c = L.circleMarker(
+            var circle_marker_5044c24a20d60965a38f589d011ecda7 = L.circleMarker(
                 [33.0921971, -117.1062292],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.507173913043477, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_ba465d92bd7e4414b4b525e126149cc1 = L.popup({
+        var popup_a2bc3a43b17446383f95f2752b26daba = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_947589f19b2f573484fa982060c11d39 = $(`&lt;div id="html_947589f19b2f573484fa982060c11d39" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92029&lt;br&gt;Avg Rent: $2601&lt;br&gt;Listings: 69&lt;/div&gt;`)[0];
-                popup_ba465d92bd7e4414b4b525e126149cc1.setContent(html_947589f19b2f573484fa982060c11d39);
+                var html_96a2dcb22324893dabb3feacf765bbac = $(`&lt;div id="html_96a2dcb22324893dabb3feacf765bbac" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92029&lt;br&gt;Avg Rent: $2601&lt;br&gt;Listings: 69&lt;/div&gt;`)[0];
+                popup_a2bc3a43b17446383f95f2752b26daba.setContent(html_96a2dcb22324893dabb3feacf765bbac);
             
         
 
-        circle_marker_ef293ffe894dfa70ef81392a06826b4c.bindPopup(popup_ba465d92bd7e4414b4b525e126149cc1)
+        circle_marker_5044c24a20d60965a38f589d011ecda7.bindPopup(popup_a2bc3a43b17446383f95f2752b26daba)
         ;
 
         
     
     
-            var circle_marker_9f40a8bdd2ee4149e3083fb0713c36f9 = L.circleMarker(
+            var circle_marker_92a9d6e58e348473c8e80ba5d1f7b20f = L.circleMarker(
                 [32.9176021, -117.1470576],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.501486486486487, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_2af5a796279e55199b6b14ddbc9d0467 = L.popup({
+        var popup_2bd1b1e63b529a414a8f2d7fafc5e94d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_566bdb4c8b1ef188c0b05d72e4ba298e = $(`&lt;div id="html_566bdb4c8b1ef188c0b05d72e4ba298e" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92126&lt;br&gt;Avg Rent: $2600&lt;br&gt;Listings: 222&lt;/div&gt;`)[0];
-                popup_2af5a796279e55199b6b14ddbc9d0467.setContent(html_566bdb4c8b1ef188c0b05d72e4ba298e);
+                var html_a5a75d158b677787ae216a7b1c918d73 = $(`&lt;div id="html_a5a75d158b677787ae216a7b1c918d73" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92126&lt;br&gt;Avg Rent: $2600&lt;br&gt;Listings: 222&lt;/div&gt;`)[0];
+                popup_2bd1b1e63b529a414a8f2d7fafc5e94d.setContent(html_a5a75d158b677787ae216a7b1c918d73);
             
         
 
-        circle_marker_9f40a8bdd2ee4149e3083fb0713c36f9.bindPopup(popup_2af5a796279e55199b6b14ddbc9d0467)
+        circle_marker_92a9d6e58e348473c8e80ba5d1f7b20f.bindPopup(popup_2bd1b1e63b529a414a8f2d7fafc5e94d)
         ;
 
         
     
     
-            var circle_marker_cb559eb5500f780aff6969a20cf86246 = L.circleMarker(
+            var circle_marker_990d10c24e8dfafb1d0f565a307ec398 = L.circleMarker(
                 [32.8573639, -116.9229859],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.45, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_0195ec0e79e33156944caa7e2ac6328f = L.popup({
+        var popup_6137f19f654455cc7d0bc4c75982e421 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_6eb9da6f158866f865a2afc3ced63e7b = $(`&lt;div id="html_6eb9da6f158866f865a2afc3ced63e7b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92040&lt;br&gt;Avg Rent: $2590&lt;br&gt;Listings: 9&lt;/div&gt;`)[0];
-                popup_0195ec0e79e33156944caa7e2ac6328f.setContent(html_6eb9da6f158866f865a2afc3ced63e7b);
+                var html_52ea706a3b27ec7b5a7cba4277ce95e0 = $(`&lt;div id="html_52ea706a3b27ec7b5a7cba4277ce95e0" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92040&lt;br&gt;Avg Rent: $2590&lt;br&gt;Listings: 9&lt;/div&gt;`)[0];
+                popup_6137f19f654455cc7d0bc4c75982e421.setContent(html_52ea706a3b27ec7b5a7cba4277ce95e0);
             
         
 
-        circle_marker_cb559eb5500f780aff6969a20cf86246.bindPopup(popup_0195ec0e79e33156944caa7e2ac6328f)
+        circle_marker_990d10c24e8dfafb1d0f565a307ec398.bindPopup(popup_6137f19f654455cc7d0bc4c75982e421)
         ;
 
         
     
     
-            var circle_marker_70011c526501c39c6a70efd54bbabede = L.circleMarker(
+            var circle_marker_75698a7c9d5f58d3c2e3315947e54e89 = L.circleMarker(
                 [32.8241283, -117.1986463],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.430875000000001, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_47ecaeec75bad7eaefe628b00be8296f = L.popup({
+        var popup_ed9aef8811d2d3ab58c83a66b3f16f74 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_9eca7d17e783bc7ea3255cd14f44aa51 = $(`&lt;div id="html_9eca7d17e783bc7ea3255cd14f44aa51" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92117&lt;br&gt;Avg Rent: $2586&lt;br&gt;Listings: 120&lt;/div&gt;`)[0];
-                popup_47ecaeec75bad7eaefe628b00be8296f.setContent(html_9eca7d17e783bc7ea3255cd14f44aa51);
+                var html_3cbb35cec42ee07af1e16252735a81c2 = $(`&lt;div id="html_3cbb35cec42ee07af1e16252735a81c2" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92117&lt;br&gt;Avg Rent: $2586&lt;br&gt;Listings: 120&lt;/div&gt;`)[0];
+                popup_ed9aef8811d2d3ab58c83a66b3f16f74.setContent(html_3cbb35cec42ee07af1e16252735a81c2);
             
         
 
-        circle_marker_70011c526501c39c6a70efd54bbabede.bindPopup(popup_47ecaeec75bad7eaefe628b00be8296f)
+        circle_marker_75698a7c9d5f58d3c2e3315947e54e89.bindPopup(popup_ed9aef8811d2d3ab58c83a66b3f16f74)
         ;
 
         
     
     
-            var circle_marker_95452ab210569326dd6272a8b62875d3 = L.circleMarker(
+            var circle_marker_cbe0b3076163bb4b042abd26f58f89f8 = L.circleMarker(
                 [32.7319021, -117.0343661],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.2142307692307694, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_0dfe72d2fc4dc524c9975c3ccc99c98d = L.popup({
+        var popup_352809c9219e7c9388b2f694af81a3f5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_cdc04beb45e02c28924754d9037ed89e = $(`&lt;div id="html_cdc04beb45e02c28924754d9037ed89e" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91945&lt;br&gt;Avg Rent: $2543&lt;br&gt;Listings: 39&lt;/div&gt;`)[0];
-                popup_0dfe72d2fc4dc524c9975c3ccc99c98d.setContent(html_cdc04beb45e02c28924754d9037ed89e);
+                var html_baa4d9c7440f3e3327ec8030b1b6e2cb = $(`&lt;div id="html_baa4d9c7440f3e3327ec8030b1b6e2cb" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91945&lt;br&gt;Avg Rent: $2543&lt;br&gt;Listings: 39&lt;/div&gt;`)[0];
+                popup_352809c9219e7c9388b2f694af81a3f5.setContent(html_baa4d9c7440f3e3327ec8030b1b6e2cb);
             
         
 
-        circle_marker_95452ab210569326dd6272a8b62875d3.bindPopup(popup_0dfe72d2fc4dc524c9975c3ccc99c98d)
+        circle_marker_cbe0b3076163bb4b042abd26f58f89f8.bindPopup(popup_352809c9219e7c9388b2f694af81a3f5)
         ;
 
         
     
     
-            var circle_marker_7a14cadc9006040303ca612ab22d5135 = L.circleMarker(
+            var circle_marker_f9d5c75f76b9af998e9d78064f07c2c0 = L.circleMarker(
                 [32.7153444, -117.1191262],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.067647058823529, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_e529095c36fe750d546ce8d8e120be4b = L.popup({
+        var popup_049281f9b55e79f1f55b4fa1641b8425 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_7b9e97d016c33966dc8ed2bb08b42bdb = $(`&lt;div id="html_7b9e97d016c33966dc8ed2bb08b42bdb" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92102&lt;br&gt;Avg Rent: $2514&lt;br&gt;Listings: 51&lt;/div&gt;`)[0];
-                popup_e529095c36fe750d546ce8d8e120be4b.setContent(html_7b9e97d016c33966dc8ed2bb08b42bdb);
+                var html_0849af951bd5f4e3c6d763a351c8a6c9 = $(`&lt;div id="html_0849af951bd5f4e3c6d763a351c8a6c9" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92102&lt;br&gt;Avg Rent: $2514&lt;br&gt;Listings: 51&lt;/div&gt;`)[0];
+                popup_049281f9b55e79f1f55b4fa1641b8425.setContent(html_0849af951bd5f4e3c6d763a351c8a6c9);
             
         
 
-        circle_marker_7a14cadc9006040303ca612ab22d5135.bindPopup(popup_e529095c36fe750d546ce8d8e120be4b)
+        circle_marker_f9d5c75f76b9af998e9d78064f07c2c0.bindPopup(popup_049281f9b55e79f1f55b4fa1641b8425)
         ;
 
         
     
     
-            var circle_marker_5227dcd3b7d628f97cebaff918cbff90 = L.circleMarker(
+            var circle_marker_ba1de004d090082d726f92889e071bbd = L.circleMarker(
                 [32.7242777, -116.9953955],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.974000000000001, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_bb7f93ade4852daa0a9a1eaab16e7084 = L.popup({
+        var popup_e7201f4828bb4a8375c6934f9ff91183 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_47840a28758a0fbb937d7505db097cba = $(`&lt;div id="html_47840a28758a0fbb937d7505db097cba" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91977&lt;br&gt;Avg Rent: $2495&lt;br&gt;Listings: 60&lt;/div&gt;`)[0];
-                popup_bb7f93ade4852daa0a9a1eaab16e7084.setContent(html_47840a28758a0fbb937d7505db097cba);
+                var html_497dd5f6027e8bb35ab3cb783f9693c7 = $(`&lt;div id="html_497dd5f6027e8bb35ab3cb783f9693c7" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91977&lt;br&gt;Avg Rent: $2495&lt;br&gt;Listings: 60&lt;/div&gt;`)[0];
+                popup_e7201f4828bb4a8375c6934f9ff91183.setContent(html_497dd5f6027e8bb35ab3cb783f9693c7);
             
         
 
-        circle_marker_5227dcd3b7d628f97cebaff918cbff90.bindPopup(popup_bb7f93ade4852daa0a9a1eaab16e7084)
+        circle_marker_ba1de004d090082d726f92889e071bbd.bindPopup(popup_e7201f4828bb4a8375c6934f9ff91183)
         ;
 
         
     
     
-            var circle_marker_7b3005f5239618c33fd6fde635f80592 = L.circleMarker(
+            var circle_marker_f99a88a93a0249aecffafcd4eae63ce6 = L.circleMarker(
                 [32.9036604, -117.191891],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.808333333333333, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_7afe9ea3b3727e4b51c40d04ee4103a8 = L.popup({
+        var popup_f965565eb2a8fa586e74cc3405f15a5d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_774b7cf3d3561495df502752779b5d8c = $(`&lt;div id="html_774b7cf3d3561495df502752779b5d8c" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92121&lt;br&gt;Avg Rent: $2462&lt;br&gt;Listings: 18&lt;/div&gt;`)[0];
-                popup_7afe9ea3b3727e4b51c40d04ee4103a8.setContent(html_774b7cf3d3561495df502752779b5d8c);
+                var html_0217d2ca4343dd389b183e63fed207e9 = $(`&lt;div id="html_0217d2ca4343dd389b183e63fed207e9" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92121&lt;br&gt;Avg Rent: $2462&lt;br&gt;Listings: 18&lt;/div&gt;`)[0];
+                popup_f965565eb2a8fa586e74cc3405f15a5d.setContent(html_0217d2ca4343dd389b183e63fed207e9);
             
         
 
-        circle_marker_7b3005f5239618c33fd6fde635f80592.bindPopup(popup_7afe9ea3b3727e4b51c40d04ee4103a8)
+        circle_marker_f99a88a93a0249aecffafcd4eae63ce6.bindPopup(popup_f965565eb2a8fa586e74cc3405f15a5d)
         ;
 
         
     
     
-            var circle_marker_f198f215927a9743d1140e17f80389e0 = L.circleMarker(
+            var circle_marker_61caf5e272eb6b7499195f0db07e21d5 = L.circleMarker(
                 [33.223492, -117.3513011],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.774485294117646, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_465e3ddc52ed3494cdeee07b52cc09c8 = L.popup({
+        var popup_a26bec0a22c32c09637d78151e9baba0 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_326ee765f26ac69503d4354467bfcd32 = $(`&lt;div id="html_326ee765f26ac69503d4354467bfcd32" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92058&lt;br&gt;Avg Rent: $2455&lt;br&gt;Listings: 68&lt;/div&gt;`)[0];
-                popup_465e3ddc52ed3494cdeee07b52cc09c8.setContent(html_326ee765f26ac69503d4354467bfcd32);
+                var html_342cb37310e3c8b76168da97f48e9055 = $(`&lt;div id="html_342cb37310e3c8b76168da97f48e9055" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92058&lt;br&gt;Avg Rent: $2455&lt;br&gt;Listings: 68&lt;/div&gt;`)[0];
+                popup_a26bec0a22c32c09637d78151e9baba0.setContent(html_342cb37310e3c8b76168da97f48e9055);
             
         
 
-        circle_marker_f198f215927a9743d1140e17f80389e0.bindPopup(popup_465e3ddc52ed3494cdeee07b52cc09c8)
+        circle_marker_61caf5e272eb6b7499195f0db07e21d5.bindPopup(popup_a26bec0a22c32c09637d78151e9baba0)
         ;
 
         
     
     
-            var circle_marker_e9f67bc0c5fa3b04559959bfdfac22c7 = L.circleMarker(
+            var circle_marker_5f4a75a0bddf3096159d22aa84df7cac = L.circleMarker(
                 [32.6411448, -117.0371083],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.77090206185567, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_7aa6026277d776ce734658b75363109c = L.popup({
+        var popup_ce0d2e612470226e40c2ebd6c2af45c7 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_cb66a9f9de7d6b71aad8d1edce5fdb0f = $(`&lt;div id="html_cb66a9f9de7d6b71aad8d1edce5fdb0f" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91910&lt;br&gt;Avg Rent: $2454&lt;br&gt;Listings: 194&lt;/div&gt;`)[0];
-                popup_7aa6026277d776ce734658b75363109c.setContent(html_cb66a9f9de7d6b71aad8d1edce5fdb0f);
+                var html_944c6adefdffe2e135cc16a0455daffc = $(`&lt;div id="html_944c6adefdffe2e135cc16a0455daffc" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91910&lt;br&gt;Avg Rent: $2454&lt;br&gt;Listings: 194&lt;/div&gt;`)[0];
+                popup_ce0d2e612470226e40c2ebd6c2af45c7.setContent(html_944c6adefdffe2e135cc16a0455daffc);
             
         
 
-        circle_marker_e9f67bc0c5fa3b04559959bfdfac22c7.bindPopup(popup_7aa6026277d776ce734658b75363109c)
+        circle_marker_5f4a75a0bddf3096159d22aa84df7cac.bindPopup(popup_ce0d2e612470226e40c2ebd6c2af45c7)
         ;
 
         
     
     
-            var circle_marker_c6f6fe12f2b045a974f54fc1e4fa8d59 = L.circleMarker(
+            var circle_marker_24f595363bf5da0ddaa8c735405dd117 = L.circleMarker(
                 [32.7610074, -117.0706003],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.663984771573605, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_ed7da3abc18f5f8b37f3a5e8411b4d2e = L.popup({
+        var popup_efdfa45ee7300bc6bf8cc39a44a73459 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_019c0b5f89fd5642be29f46167a304c9 = $(`&lt;div id="html_019c0b5f89fd5642be29f46167a304c9" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92115&lt;br&gt;Avg Rent: $2433&lt;br&gt;Listings: 197&lt;/div&gt;`)[0];
-                popup_ed7da3abc18f5f8b37f3a5e8411b4d2e.setContent(html_019c0b5f89fd5642be29f46167a304c9);
+                var html_55ceddcb957b37d4bf8494e00f3d0e62 = $(`&lt;div id="html_55ceddcb957b37d4bf8494e00f3d0e62" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92115&lt;br&gt;Avg Rent: $2433&lt;br&gt;Listings: 197&lt;/div&gt;`)[0];
+                popup_efdfa45ee7300bc6bf8cc39a44a73459.setContent(html_55ceddcb957b37d4bf8494e00f3d0e62);
             
         
 
-        circle_marker_c6f6fe12f2b045a974f54fc1e4fa8d59.bindPopup(popup_ed7da3abc18f5f8b37f3a5e8411b4d2e)
+        circle_marker_24f595363bf5da0ddaa8c735405dd117.bindPopup(popup_efdfa45ee7300bc6bf8cc39a44a73459)
         ;
 
         
     
     
-            var circle_marker_a5018e1712573850a5a1bcc31cdb540e = L.circleMarker(
+            var circle_marker_82a6a4a3ff11e922c8f8e1677a9e0fe7 = L.circleMarker(
                 [33.1772327, -117.1060467],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.20484375, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_d4d4c29f1f1fe7889fa7ff70e87db85b = L.popup({
+        var popup_fd46f5bdaddb97e2e1479b314be5c3b6 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_77246ff32047ef4a75bdfc6149df6e28 = $(`&lt;div id="html_77246ff32047ef4a75bdfc6149df6e28" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92026&lt;br&gt;Avg Rent: $2341&lt;br&gt;Listings: 96&lt;/div&gt;`)[0];
-                popup_d4d4c29f1f1fe7889fa7ff70e87db85b.setContent(html_77246ff32047ef4a75bdfc6149df6e28);
+                var html_ca43bbd354956dd287e8a6447806278d = $(`&lt;div id="html_ca43bbd354956dd287e8a6447806278d" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92026&lt;br&gt;Avg Rent: $2341&lt;br&gt;Listings: 96&lt;/div&gt;`)[0];
+                popup_fd46f5bdaddb97e2e1479b314be5c3b6.setContent(html_ca43bbd354956dd287e8a6447806278d);
             
         
 
-        circle_marker_a5018e1712573850a5a1bcc31cdb540e.bindPopup(popup_d4d4c29f1f1fe7889fa7ff70e87db85b)
+        circle_marker_82a6a4a3ff11e922c8f8e1677a9e0fe7.bindPopup(popup_fd46f5bdaddb97e2e1479b314be5c3b6)
         ;
 
         
     
     
-            var circle_marker_90a8ebb5765ed75b36787c923fe01f05 = L.circleMarker(
+            var circle_marker_1c40cc15a8d0d7e2c2dc50d85266c5b3 = L.circleMarker(
                 [32.6752193, -117.0891276],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.053717948717949, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_e7b792b637ca1f5f402fc0ad63fa93ec = L.popup({
+        var popup_e0c2d918be2bc6785ac143dbdef9a732 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_e2a6b03151025b2a3c67c5613e67fd67 = $(`&lt;div id="html_e2a6b03151025b2a3c67c5613e67fd67" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91950&lt;br&gt;Avg Rent: $2311&lt;br&gt;Listings: 117&lt;/div&gt;`)[0];
-                popup_e7b792b637ca1f5f402fc0ad63fa93ec.setContent(html_e2a6b03151025b2a3c67c5613e67fd67);
+                var html_5122f133e88ad7a867f03a1526e3e30e = $(`&lt;div id="html_5122f133e88ad7a867f03a1526e3e30e" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91950&lt;br&gt;Avg Rent: $2311&lt;br&gt;Listings: 117&lt;/div&gt;`)[0];
+                popup_e0c2d918be2bc6785ac143dbdef9a732.setContent(html_5122f133e88ad7a867f03a1526e3e30e);
             
         
 
-        circle_marker_90a8ebb5765ed75b36787c923fe01f05.bindPopup(popup_e7b792b637ca1f5f402fc0ad63fa93ec)
+        circle_marker_1c40cc15a8d0d7e2c2dc50d85266c5b3.bindPopup(popup_e0c2d918be2bc6785ac143dbdef9a732)
         ;
 
         
     
     
-            var circle_marker_3fed02c431239a098372ed1c1a297f61 = L.circleMarker(
+            var circle_marker_1e91fec7f2a4924278739183c1df5d86 = L.circleMarker(
                 [32.8026878, -117.0259393],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.9890000000000008, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_852c1c1ab65a0dc93d74b64ddc42ffd4 = L.popup({
+        var popup_b9521bf11a24a95d8034b89ce168d4fc = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_845f6e1a3b4a172adda90901aebc2ec1 = $(`&lt;div id="html_845f6e1a3b4a172adda90901aebc2ec1" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92119&lt;br&gt;Avg Rent: $2298&lt;br&gt;Listings: 45&lt;/div&gt;`)[0];
-                popup_852c1c1ab65a0dc93d74b64ddc42ffd4.setContent(html_845f6e1a3b4a172adda90901aebc2ec1);
+                var html_a325a93fa98c1654f3833158c78679f7 = $(`&lt;div id="html_a325a93fa98c1654f3833158c78679f7" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92119&lt;br&gt;Avg Rent: $2298&lt;br&gt;Listings: 45&lt;/div&gt;`)[0];
+                popup_b9521bf11a24a95d8034b89ce168d4fc.setContent(html_a325a93fa98c1654f3833158c78679f7);
             
         
 
-        circle_marker_3fed02c431239a098372ed1c1a297f61.bindPopup(popup_852c1c1ab65a0dc93d74b64ddc42ffd4)
+        circle_marker_1e91fec7f2a4924278739183c1df5d86.bindPopup(popup_b9521bf11a24a95d8034b89ce168d4fc)
         ;
 
         
     
     
-            var circle_marker_7dd8973267c13da0a74a0d05c5125261 = L.circleMarker(
+            var circle_marker_5b288f85ebc523622b210bbf8ac5e288 = L.circleMarker(
                 [32.8273834, -116.7622309],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.8646296296296305, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_f69ef848aec9b5892405309a46089d2e = L.popup({
+        var popup_cd65cbb9f444b61124e88f5cc8dd8204 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_e2a292f8e85dba16265893d174f756ac = $(`&lt;div id="html_e2a292f8e85dba16265893d174f756ac" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91901&lt;br&gt;Avg Rent: $2273&lt;br&gt;Listings: 81&lt;/div&gt;`)[0];
-                popup_f69ef848aec9b5892405309a46089d2e.setContent(html_e2a292f8e85dba16265893d174f756ac);
+                var html_9434d1ac3d436cf6271d5713c36ec03b = $(`&lt;div id="html_9434d1ac3d436cf6271d5713c36ec03b" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91901&lt;br&gt;Avg Rent: $2273&lt;br&gt;Listings: 81&lt;/div&gt;`)[0];
+                popup_cd65cbb9f444b61124e88f5cc8dd8204.setContent(html_9434d1ac3d436cf6271d5713c36ec03b);
             
         
 
-        circle_marker_7dd8973267c13da0a74a0d05c5125261.bindPopup(popup_f69ef848aec9b5892405309a46089d2e)
+        circle_marker_5b288f85ebc523622b210bbf8ac5e288.bindPopup(popup_cd65cbb9f444b61124e88f5cc8dd8204)
         ;
 
         
     
     
-            var circle_marker_acd05260f8b883b99a524e30ae2b2f3b = L.circleMarker(
+            var circle_marker_031e9731af85ab2c4ae652e1464332e0 = L.circleMarker(
                 [33.1386316, -117.0513827],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.8111052631578946, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_48435619e7d1d7bee3de55fd6a255671 = L.popup({
+        var popup_bd49ee03258a3c09322012afbcba1a4f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_7dbc361067786bee9fec297da5fd49a3 = $(`&lt;div id="html_7dbc361067786bee9fec297da5fd49a3" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92027&lt;br&gt;Avg Rent: $2262&lt;br&gt;Listings: 95&lt;/div&gt;`)[0];
-                popup_48435619e7d1d7bee3de55fd6a255671.setContent(html_7dbc361067786bee9fec297da5fd49a3);
+                var html_71cb796103d7547c96d01a2593e30c81 = $(`&lt;div id="html_71cb796103d7547c96d01a2593e30c81" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92027&lt;br&gt;Avg Rent: $2262&lt;br&gt;Listings: 95&lt;/div&gt;`)[0];
+                popup_bd49ee03258a3c09322012afbcba1a4f.setContent(html_71cb796103d7547c96d01a2593e30c81);
             
         
 
-        circle_marker_acd05260f8b883b99a524e30ae2b2f3b.bindPopup(popup_48435619e7d1d7bee3de55fd6a255671)
+        circle_marker_031e9731af85ab2c4ae652e1464332e0.bindPopup(popup_bd49ee03258a3c09322012afbcba1a4f)
         ;
 
         
     
     
-            var circle_marker_41c06aa4ce777354a6c5ddd462353cdc = L.circleMarker(
+            var circle_marker_d7fe5304edea0077a9ac5c581c3660b1 = L.circleMarker(
                 [32.6800708, -117.0471135],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.5916666666666677, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_a22d1bf7b5d25c91581131aa008ca182 = L.popup({
+        var popup_cb79cf95c3ef1a1158c0756769fcfe09 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_0d459979655e94cca929ea16b4d0fdfb = $(`&lt;div id="html_0d459979655e94cca929ea16b4d0fdfb" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92139&lt;br&gt;Avg Rent: $2218&lt;br&gt;Listings: 18&lt;/div&gt;`)[0];
-                popup_a22d1bf7b5d25c91581131aa008ca182.setContent(html_0d459979655e94cca929ea16b4d0fdfb);
+                var html_0f9207579e87565e955e709eb676b658 = $(`&lt;div id="html_0f9207579e87565e955e709eb676b658" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92139&lt;br&gt;Avg Rent: $2218&lt;br&gt;Listings: 18&lt;/div&gt;`)[0];
+                popup_cb79cf95c3ef1a1158c0756769fcfe09.setContent(html_0f9207579e87565e955e709eb676b658);
             
         
 
-        circle_marker_41c06aa4ce777354a6c5ddd462353cdc.bindPopup(popup_a22d1bf7b5d25c91581131aa008ca182)
+        circle_marker_d7fe5304edea0077a9ac5c581c3660b1.bindPopup(popup_cb79cf95c3ef1a1158c0756769fcfe09)
         ;
 
         
     
     
-            var circle_marker_eb1d78a561cc0a93eb350bb5ca146ab1 = L.circleMarker(
+            var circle_marker_22c6989128751e87b9450d2394b65007 = L.circleMarker(
                 [33.0265998, -116.8532761],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.57375, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_19ad03cd630f89e26108a3ce7ae9ac62 = L.popup({
+        var popup_b53ac953d532709c5edebb4d59aa09b0 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_e34b982127269ad6fb70d8c79cf73417 = $(`&lt;div id="html_e34b982127269ad6fb70d8c79cf73417" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92065&lt;br&gt;Avg Rent: $2215&lt;br&gt;Listings: 12&lt;/div&gt;`)[0];
-                popup_19ad03cd630f89e26108a3ce7ae9ac62.setContent(html_e34b982127269ad6fb70d8c79cf73417);
+                var html_c8f0ce76a7bfcdb50314baac94e9112d = $(`&lt;div id="html_c8f0ce76a7bfcdb50314baac94e9112d" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92065&lt;br&gt;Avg Rent: $2215&lt;br&gt;Listings: 12&lt;/div&gt;`)[0];
+                popup_b53ac953d532709c5edebb4d59aa09b0.setContent(html_c8f0ce76a7bfcdb50314baac94e9112d);
             
         
 
-        circle_marker_eb1d78a561cc0a93eb350bb5ca146ab1.bindPopup(popup_19ad03cd630f89e26108a3ce7ae9ac62)
+        circle_marker_22c6989128751e87b9450d2394b65007.bindPopup(popup_b53ac953d532709c5edebb4d59aa09b0)
         ;
 
         
     
     
-            var circle_marker_505f51d4459365737b068bf7aabe8012 = L.circleMarker(
+            var circle_marker_ab98070dfb4e9b057352f064a2a297e8 = L.circleMarker(
                 [32.7945392, -117.0712254],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.5516704805491983, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_e2342d5f7b922dbc5fd8336318fae1a6 = L.popup({
+        var popup_b87d3db0958500cdf7f0071edba45e50 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_314845e86e1725db0a275832fc7dbb92 = $(`&lt;div id="html_314845e86e1725db0a275832fc7dbb92" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92120&lt;br&gt;Avg Rent: $2210&lt;br&gt;Listings: 437&lt;/div&gt;`)[0];
-                popup_e2342d5f7b922dbc5fd8336318fae1a6.setContent(html_314845e86e1725db0a275832fc7dbb92);
+                var html_f8d36b15b46930c5dc6aae21ccc80304 = $(`&lt;div id="html_f8d36b15b46930c5dc6aae21ccc80304" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92120&lt;br&gt;Avg Rent: $2210&lt;br&gt;Listings: 437&lt;/div&gt;`)[0];
+                popup_b87d3db0958500cdf7f0071edba45e50.setContent(html_f8d36b15b46930c5dc6aae21ccc80304);
             
         
 
-        circle_marker_505f51d4459365737b068bf7aabe8012.bindPopup(popup_e2342d5f7b922dbc5fd8336318fae1a6)
+        circle_marker_ab98070dfb4e9b057352f064a2a297e8.bindPopup(popup_b87d3db0958500cdf7f0071edba45e50)
         ;
 
         
     
     
-            var circle_marker_94e783e2ff24cdc5f07b36ba7ac05f90 = L.circleMarker(
+            var circle_marker_efd47152f8ca73e94f9856196021ae7b = L.circleMarker(
                 [33.364199, -117.2201465],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.5446428571428577, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_9c28e1eac45fffc96ec03021d4e88bb9 = L.popup({
+        var popup_66fcf9f840e33a3ee42b3ec738e7eaba = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_80e7d35fd75b89553ef18da22824e8ff = $(`&lt;div id="html_80e7d35fd75b89553ef18da22824e8ff" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92028&lt;br&gt;Avg Rent: $2209&lt;br&gt;Listings: 42&lt;/div&gt;`)[0];
-                popup_9c28e1eac45fffc96ec03021d4e88bb9.setContent(html_80e7d35fd75b89553ef18da22824e8ff);
+                var html_0328e5702ad152507c383d5d0b75bda4 = $(`&lt;div id="html_0328e5702ad152507c383d5d0b75bda4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92028&lt;br&gt;Avg Rent: $2209&lt;br&gt;Listings: 42&lt;/div&gt;`)[0];
+                popup_66fcf9f840e33a3ee42b3ec738e7eaba.setContent(html_0328e5702ad152507c383d5d0b75bda4);
             
         
 
-        circle_marker_94e783e2ff24cdc5f07b36ba7ac05f90.bindPopup(popup_9c28e1eac45fffc96ec03021d4e88bb9)
+        circle_marker_efd47152f8ca73e94f9856196021ae7b.bindPopup(popup_66fcf9f840e33a3ee42b3ec738e7eaba)
         ;
 
         
     
     
-            var circle_marker_f82eff558b356a48319eb8d0673a31a8 = L.circleMarker(
+            var circle_marker_4f0382f3dac1f6f62277b9f76cc22fec = L.circleMarker(
                 [32.8233769, -116.9106861],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.531478873239437, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_49a6ddd3baf2b4862bec010f5549dd3d = L.popup({
+        var popup_10ea8d36d9d5ef76497d157dee48c35f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_53e404007558076db508bc4485bcb7fe = $(`&lt;div id="html_53e404007558076db508bc4485bcb7fe" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92021&lt;br&gt;Avg Rent: $2206&lt;br&gt;Listings: 213&lt;/div&gt;`)[0];
-                popup_49a6ddd3baf2b4862bec010f5549dd3d.setContent(html_53e404007558076db508bc4485bcb7fe);
+                var html_109fc5726a7bed2108a644640eb12200 = $(`&lt;div id="html_109fc5726a7bed2108a644640eb12200" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92021&lt;br&gt;Avg Rent: $2206&lt;br&gt;Listings: 213&lt;/div&gt;`)[0];
+                popup_10ea8d36d9d5ef76497d157dee48c35f.setContent(html_109fc5726a7bed2108a644640eb12200);
             
         
 
-        circle_marker_f82eff558b356a48319eb8d0673a31a8.bindPopup(popup_49a6ddd3baf2b4862bec010f5549dd3d)
+        circle_marker_4f0382f3dac1f6f62277b9f76cc22fec.bindPopup(popup_10ea8d36d9d5ef76497d157dee48c35f)
         ;
 
         
     
     
-            var circle_marker_90843bb7f78f5b7908a31829e220ec25 = L.circleMarker(
+            var circle_marker_aea7119202c842e67d827ef944bf56a7 = L.circleMarker(
                 [32.7242777, -116.9953955],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.18125, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_c46db9ddb49b2498a1c2079abfa54551 = L.popup({
+        var popup_66f490f83b2e968f2f4c66ef9e13bd3f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_89d8a5b2713ba12ad01cf8be7798e352 = $(`&lt;div id="html_89d8a5b2713ba12ad01cf8be7798e352" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91977&lt;br&gt;Avg Rent: $2136&lt;br&gt;Listings: 12&lt;/div&gt;`)[0];
-                popup_c46db9ddb49b2498a1c2079abfa54551.setContent(html_89d8a5b2713ba12ad01cf8be7798e352);
+                var html_1da1a47a17dba924d66d9d931f69fd40 = $(`&lt;div id="html_1da1a47a17dba924d66d9d931f69fd40" style="width: 100.0%; height: 100.0%;"&gt;Zip: 91977&lt;br&gt;Avg Rent: $2136&lt;br&gt;Listings: 12&lt;/div&gt;`)[0];
+                popup_66f490f83b2e968f2f4c66ef9e13bd3f.setContent(html_1da1a47a17dba924d66d9d931f69fd40);
             
         
 
-        circle_marker_90843bb7f78f5b7908a31829e220ec25.bindPopup(popup_c46db9ddb49b2498a1c2079abfa54551)
+        circle_marker_aea7119202c842e67d827ef944bf56a7.bindPopup(popup_66f490f83b2e968f2f4c66ef9e13bd3f)
         ;
 
         
     
     
-            var circle_marker_4712f4252caca3626b14c6724dbe65bc = L.circleMarker(
+            var circle_marker_be0ef2ba20eaefe907dc961cd4cada2a = L.circleMarker(
                 [32.7935415, -116.972139],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1316326530612244, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_d03ebc5a7fd72e944bbc28605585a8e4 = L.popup({
+        var popup_6230892de958524207319ebb7d1b8262 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_2f29e0fae7334b00dea9c1c4fa0643a8 = $(`&lt;div id="html_2f29e0fae7334b00dea9c1c4fa0643a8" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92020&lt;br&gt;Avg Rent: $2126&lt;br&gt;Listings: 147&lt;/div&gt;`)[0];
-                popup_d03ebc5a7fd72e944bbc28605585a8e4.setContent(html_2f29e0fae7334b00dea9c1c4fa0643a8);
+                var html_9244ea0d220302afed5eeedb7e0f49ff = $(`&lt;div id="html_9244ea0d220302afed5eeedb7e0f49ff" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92020&lt;br&gt;Avg Rent: $2126&lt;br&gt;Listings: 147&lt;/div&gt;`)[0];
+                popup_6230892de958524207319ebb7d1b8262.setContent(html_9244ea0d220302afed5eeedb7e0f49ff);
             
         
 
-        circle_marker_4712f4252caca3626b14c6724dbe65bc.bindPopup(popup_d03ebc5a7fd72e944bbc28605585a8e4)
+        circle_marker_be0ef2ba20eaefe907dc961cd4cada2a.bindPopup(popup_6230892de958524207319ebb7d1b8262)
         ;
 
         
     
     
-            var circle_marker_f19feac43cecd952e2cd2ee7319b09a8 = L.circleMarker(
+            var circle_marker_d733e3e96c194714b66560d73d942347 = L.circleMarker(
                 [32.7391462, -117.0953766],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.070344827586207, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_281fc6fdc88c49884cce0c8c7c3a63ad = L.popup({
+        var popup_1c3f771ccac8a150d8fd654b6cc17212 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_4b9933e14a4789d32609b6c588e5723e = $(`&lt;div id="html_4b9933e14a4789d32609b6c588e5723e" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92105&lt;br&gt;Avg Rent: $2114&lt;br&gt;Listings: 29&lt;/div&gt;`)[0];
-                popup_281fc6fdc88c49884cce0c8c7c3a63ad.setContent(html_4b9933e14a4789d32609b6c588e5723e);
+                var html_a82fbdebb189a8903e6f3ce4abed71e4 = $(`&lt;div id="html_a82fbdebb189a8903e6f3ce4abed71e4" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92105&lt;br&gt;Avg Rent: $2114&lt;br&gt;Listings: 29&lt;/div&gt;`)[0];
+                popup_1c3f771ccac8a150d8fd654b6cc17212.setContent(html_a82fbdebb189a8903e6f3ce4abed71e4);
             
         
 
-        circle_marker_f19feac43cecd952e2cd2ee7319b09a8.bindPopup(popup_281fc6fdc88c49884cce0c8c7c3a63ad)
+        circle_marker_d733e3e96c194714b66560d73d942347.bindPopup(popup_1c3f771ccac8a150d8fd654b6cc17212)
         ;
 
         
     
     
-            var circle_marker_ebbebdc185c82d44b426e3a47d878080 = L.circleMarker(
+            var circle_marker_b644946758f51824f9d7b242fccb06ce = L.circleMarker(
                 [32.7700298, -117.198644],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.0724999999999998, "stroke": true, "weight": 3}
-            ).addTo(map_815515864ab3fa5cbb3c94a0ce1af211);
+            ).addTo(map_af908533534a19ab418689b09fadeb48);
         
     
-        var popup_c469ff1183e3dc555c6c44a1bdeb6d3f = L.popup({
+        var popup_faae1920b8c4df8c3224575ef409c47f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_09e761e326d94d7fa72b82a3ce5a9725 = $(`&lt;div id="html_09e761e326d94d7fa72b82a3ce5a9725" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92110&lt;br&gt;Avg Rent: $1714&lt;br&gt;Listings: 12&lt;/div&gt;`)[0];
-                popup_c469ff1183e3dc555c6c44a1bdeb6d3f.setContent(html_09e761e326d94d7fa72b82a3ce5a9725);
+                var html_86070366521fb9de4292fd0bd36cd2ac = $(`&lt;div id="html_86070366521fb9de4292fd0bd36cd2ac" style="width: 100.0%; height: 100.0%;"&gt;Zip: 92110&lt;br&gt;Avg Rent: $1714&lt;br&gt;Listings: 12&lt;/div&gt;`)[0];
+                popup_faae1920b8c4df8c3224575ef409c47f.setContent(html_86070366521fb9de4292fd0bd36cd2ac);
             
         
 
-        circle_marker_ebbebdc185c82d44b426e3a47d878080.bindPopup(popup_c469ff1183e3dc555c6c44a1bdeb6d3f)
+        circle_marker_b644946758f51824f9d7b242fccb06ce.bindPopup(popup_faae1920b8c4df8c3224575ef409c47f)
         ;
 
         
