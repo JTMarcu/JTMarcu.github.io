@@ -36,9 +36,9 @@ export const projects = [
   },
   {
     title: "Rental Price Optimization Tool",
-    description: "A tool that uses scraped data from apartments.com to analyze rental prices in the San Diego area, helping property managers optimize their pricing strategies.",
+    description: "A full-stack project scraping Apartments.com listings, analyzing 13,000+ rentals by amenities, city, size, and predicting rent prices using machine learning models. Delivered interactive dashboards in Tableau and Power BI.",
     image: "https://timesofsandiego.com/wp-content/uploads/2023/12/Brynn-Civita.jpg",
-    tags: ["Python", "Selenium", "BeautifulSoup", "Data Cleaning", "Power BI", "Tableau"],
+    tags: ["Python", "Selenium", "BeautifulSoup", "Data Science", "Data Visualization", "Power BI", "Tableau", "Machine Learning"],
     link: "projects/rental_price.html"
   }, 
   {
