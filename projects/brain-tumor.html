@@ -107,16 +107,46 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
             <div class="section-divider"></div>
           </header>
           <section class="section section-alt card">
+            <p style="text-align: center; font-weight: bold; font-size: 150%; text-decoration: underline;">Model Performance Metrics</p>
             <div class="visualization centered-image">
-              <img src="../images/brain_tumor_results.png" alt="Model Performance">
-              <p>Model Performance Metrics</p>
+                <table>
+                <thead>
+                  <tr>
+                  <th>Phase</th>
+                  <th>Accuracy</th>
+                  <th>Precision (Tumor)</th>
+                  <th>Recall (Tumor)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                  <td>Initial (Frozen)</td>
+                  <td>85%</td>
+                  <td>82%</td>
+                  <td>80%</td>
+                  </tr>
+                  <tr>
+                  <td>After Fine-Tuning</td>
+                  <td>88%</td>
+                  <td>80%</td>
+                  <td>96%</td>
+                  </tr>
+                  <tr>
+                  <td>After Threshold Tuning</td>
+                  <td><strong>91%</strong></td>
+                  <td><strong>85% → 97%</strong></td>
+                  <td><strong>87% → 96%</strong></td>
+                  </tr>
+                </tbody>
+                </table>
+              
             </div>
             
             <h3>Top Insights</h3>
             <ul>
-              <li>Achieved 92% accuracy on the test dataset.</li>
-              <li>Data augmentation improved model generalization by 15%.</li>
-              <li>Precision and recall scores were balanced, indicating robust performance.</li>
+              <li>Achieved <strong>91%</strong> accuracy after threshold tuning.</li>
+              <li>Precision for tumor detection improved from <strong>85%</strong> to <strong>97%</strong>.</li>
+              <li>Recall for tumor detection increased from <strong>87%</strong> to <strong>96%</strong>.</li>
             </ul>
           </section>
 
