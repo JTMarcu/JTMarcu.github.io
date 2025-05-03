@@ -658,3 +658,19 @@ a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Keep the shadow */
   border-radius: 8px; /* Optional: Add rounded corners */
 }
+
+/* Image Container */
+.image-container {
+  position: relative;
+  overflow: hidden; /* Ensures the left side is cut off */
+  width: 100%; /* Full width of the container */
+  height: auto; /* Adjust height as needed */
+  max-height: 300px; /* Optional: Limit the height */
+}
+
+.image-container img {
+  width: 100%; /* Ensures the image fills the container */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image covers the container */
+  object-position: right; /* Prioritizes the right side */
+}
