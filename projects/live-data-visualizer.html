@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project - Jonathan Marcu</title>
-  <meta name="description" content="project by Jonathan Marcu.">
+  <title>MCP Live Dashboard Project - Jonathan Marcu</title>
+  <meta name="description" content="MCP Live Dashboard Project by Jonathan Marcu.">
   <link rel="stylesheet" href="../css/styles.css">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -55,130 +55,111 @@
     </div>
   </header>
   <main>
-    <!-- Project Section -->
-    <section class="project-detail section">
+    <section class="resume-detail section">
       <div class="container">
-        <header class="project-header section-header">
-          <h1 class="project-title section-title">Live Data Visualizer</h1>
-          <div class="project-image centered-image">
-            <img src="https://th.bing.com/th/id/OIP.SN1qtTiB8wnOjKksOW7WHQHaEK?w=288&h=180&c=7&r=0&o=7&cb=iwp1&pid=1.7&rm=3" alt="Live Data Visualizer Project Image" class="image-shadow">
-          </div>
-          <p class="project-description">
-            The Live Data Visualizer is a cutting-edge tool designed to empower businesses and individuals with real-time insights. By integrating with the Model Context Protocol (MCP), it fetches and visualizes live data streams, such as stock prices, enabling data-driven decision-making and actionable insights.
+        <header class="resume-header section-header">
+          <h1 class="resume-title section-title">Live Data Visualizer</h1>
+          <p class="resume-description">
+            Real-time stock, weather, and news dashboard built with Streamlit and powered by the Model Context Protocol (MCP).
           </p>
         </header>
 
-        <!-- Value Proposition Section -->
-        <section class="project-value">
+          <!-- Project Image -->
           <header class="section-header">
-            <h2 class="section-title">Why Use Live Data Visualizer?</h2>
+            <h2 class="section-title" style="margin-top: 40px;">Dashboard Sample</h2>
             <div class="section-divider"></div>
           </header>
-          <div class="project-screenshot centered-image">
+          <div class="section card">
+            <div class="centered-image">
               <a href="../images/live-dash-demo.png" target="_blank">
-                <img src="../images/live-dash-demo.png" alt="Live Data Visualizer Screenshot" class="image-shadow" style="width: 500px; height: auto;">
+                <img src="../images/live-dash-demo.png" alt="Live Dashboard Preview" class="image-shadow">
               </a>
+            </div>
           </div>
-          <div class="card">
+
+          <!-- Overview Section -->
+          <header class="section-header">
+            <h2 class="section-title" style="margin-top: 40px;">Project Overview</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section class="section card">
             <p>
-              In today's fast-paced world, staying ahead requires access to real-time data. The Live Data Visualizer provides businesses with the tools to:
+              The Live Data Visualizer is an interactive Streamlit dashboard that integrates stock price data, financial news headlines, and real-time weather updates into one unified interface. It auto-refreshes every 10–30 seconds and is ideal for analysts, developers, and business leaders who want contextual insights at a glance.
             </p>
             <ul>
-              <li><strong>Make Informed Decisions:</strong> Access live stock prices and other data streams to react quickly to market changes.</li>
-              <li><strong>Enhance Operational Efficiency:</strong> Streamline workflows with a user-friendly dashboard and one-click setup.</li>
-              <li><strong>Gain Competitive Advantage:</strong> Leverage real-time insights to identify trends and opportunities before competitors.</li>
+              <li><strong>Live Stock Tracker:</strong> Real-time stock quotes with open price comparison and trend monitoring.</li>
+              <li><strong>News Headlines:</strong> Yahoo Finance RSS feed parsing for up-to-the-minute headlines by stock symbol.</li>
+              <li><strong>Weather Widget:</strong> Live city weather via OpenWeatherMap API including icon, temperature, and conditions.</li>
+              <li><strong>Autorefresh Engine:</strong> Streamlit autorefresh module ensures a live experience without manual reloads.</li>
+              <li><strong>MCP Integration:</strong> Communicates with local tools served via FastAPI under the Model Context Protocol (MCP).</li>
             </ul>
-          </div>
-        </section>
+          </section>
 
-        <!-- Features Section -->
-        <section class="project-features">
+          <!-- Capabilities Section -->
           <header class="section-header">
-            <h2 class="section-title">Key Features</h2>
+            <h2 class="section-title" style="margin-top: 40px;">Capabilities & Use Cases</h2>
             <div class="section-divider"></div>
           </header>
-          <div class="card">
+          <section class="section section-alt card">
             <ul>
-              <li><strong>Real-Time Data Visualization:</strong> Stream and display live data updates for immediate insights.</li>
-              <li><strong>Stock Price Monitoring:</strong> Retrieve and visualize live stock prices for any symbol.</li>
-              <li><strong>MCP Integration:</strong> Seamlessly connect with MCP servers to fetch contextual data.</li>
-              <li><strong>Interactive Dashboard:</strong> Explore data through an intuitive and user-friendly interface.</li>
-              <li><strong>Scalable Architecture:</strong> Modular design allows for easy customization and expansion.</li>
-              <li><strong>One-Click Deployment:</strong> Launch the MCP server and dashboard with a single command.</li>
+              <li><strong>Custom Symbols:</strong> Users can input any stock tickers (e.g., AAPL, TSLA, RIVN) for live monitoring.</li>
+              <li><strong>City Weather Lookup:</strong> Instantly fetch weather for any global city name.</li>
+              <li><strong>Auto-Updating UI:</strong> Dynamic layout with no reloads thanks to autorefresh and Streamlit layout APIs.</li>
+              <li><strong>Local & Lightweight:</strong> Runs entirely on your local machine—ideal for privacy-sensitive contexts or offline analysis.</li>
+              <li><strong>Extendable Architecture:</strong> Easily add new widgets like crypto prices, commodity trackers, or chat interfaces.</li>
             </ul>
-          </div>
-        </section>
+          </section>
 
-        <!-- Use Cases Section -->
-        <section class="project-use-cases">
+          <!-- Tech Stack Section -->
           <header class="section-header">
-            <h2 class="section-title">Who Can Benefit?</h2>
+            <h2 class="section-title" style="margin-top: 40px;">Technical Stack</h2>
             <div class="section-divider"></div>
           </header>
-          <div class="card">
+          <section class="section card">
+            <ul class="tech-stack">
+              <li><i class="fab fa-python"></i> Python 3.10</li>
+              <li>Streamlit & Altair</li>
+              <li>FastAPI + MCP server</li>
+              <li>YFinance, Feedparser</li>
+              <li>OpenWeatherMap API</li>
+              <li>Dotenv, Requests, Pandas</li>
+            </ul>
+          </section>
+
+          <!-- Challenges Section -->
+          <header class="section-header">
+            <h2 class="section-title" style="margin-top: 40px;">Challenges & Solutions</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section class="section section-alt card">
+            <div class="challenge">
+              <h3>API Rate Limits</h3>
+              <ul>
+                <li>Implemented caching with `st.cache_data` to reduce unnecessary API calls.</li>
+                <li>Grouped API refresh intervals using a single autorefresh selector.</li>
+              </ul>
+            </div>
+            <div class="challenge">
+              <h3>Dashboard Responsiveness</h3>
+              <ul>
+                <li>Used Streamlit columns to balance layout between stock data, weather, and headlines.</li>
+                <li>Mobile layout improved using responsive CSS for embedded screenshots and components.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Business Impact Section -->
+          <header class="section-header">
+            <h2 class="section-title" style="margin-top: 40px;">Business Impact</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section class="section card">
             <ul>
-              <li><strong>Financial Analysts:</strong> Monitor stock prices and market trends in real time.</li>
-              <li><strong>Business Owners:</strong> Gain insights into key metrics to make data-driven decisions.</li>
-              <li><strong>Developers:</strong> Use the modular architecture to build custom data visualizations.</li>
-              <li><strong>Educators:</strong> Demonstrate real-time data analysis techniques in classrooms or workshops.</li>
+              <li>Centralized multiple live data sources into a single, navigable dashboard.</li>
+              <li>Accelerated decision-making by surfacing actionable signals in one view.</li>
+              <li>Provided a foundation for internal analytics tools with minimal deployment overhead.</li>
             </ul>
-          </div>
-        </section>
-
-        <!-- Technologies Used Section -->
-        <section class="project-technologies">
-          <header class="section-header">
-            <h2 class="section-title">Technologies Used</h2>
-            <div class="section-divider"></div>
-          </header>
-          <div class="card">
-            <ul>
-              <li><strong>Frontend:</strong> Streamlit for interactive dashboards.</li>
-              <li><strong>Backend:</strong> Python with FastAPI for API development.</li>
-              <li><strong>Data Handling:</strong> Pandas for data manipulation.</li>
-              <li><strong>MCP Integration:</strong> mcp-python-sdk for seamless client/server communication.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Installation Section -->
-        <section class="project-installation">
-          <header class="section-header">
-            <h2 class="section-title">Getting Started</h2>
-            <div class="section-divider"></div>
-          </header>
-          <div class="card">
-            <ol>
-              <li><strong>Clone the Repository:</strong>
-                <pre><code>git clone https://github.com/JTMarcu/live-data-visualizer.git
-cd live-data-visualizer</code></pre>
-              </li>
-              <li><strong>Create a Virtual Environment:</strong>
-                <pre><code>python -m venv venv
-.\venv\Scripts\activate</code></pre>
-              </li>
-              <li><strong>Install Dependencies:</strong>
-                <pre><code>pip install -r requirements.txt</code></pre>
-              </li>
-              <li><strong>Configure Environment Variables:</strong>
-                <p>Create a <code>.env</code> file (or copy from <code>.env.example</code>) and set your MCP server URL:</p>
-                <pre><code>MCP_SERVER_URL=http://localhost:8000</code></pre>
-              </li>
-            </ol>
-          </div>
-        </section>
-
-        <!-- Quick Start Section -->
-        <section class="project-quick-start">
-          <header class="section-header">
-            <h2 class="section-title">Quick Start</h2>
-            <div class="section-divider"></div>
-          </header>
-          <div class="card">
-            <p>To launch the project, execute the following command:</p>
-            <pre><code>python main.py</code></pre>
-          </div>
-        </section>
+          </section>
       </div>
     </section>
   </main>
@@ -229,3 +210,4 @@ cd live-data-visualizer</code></pre>
   </script>
 </body>
 </html>
+``` 

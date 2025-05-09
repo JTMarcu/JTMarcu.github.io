@@ -1,5 +1,12 @@
 export const projects = [
   {
+  title: "Live Data Visualizer",
+  description: "A local Streamlit dashboard that streams live stock prices, financial news, and weather data using MCP and FastAPI tools.",
+  image: "https://th.bing.com/th/id/OIP.SN1qtTiB8wnOjKksOW7WHQHaEK?w=288&h=180&c=7&r=0&o=7&cb=iwp1&pid=1.7&rm=3",
+  tags: ["Python", "Streamlit", "FastAPI", "Altair", "Live Data", "MCP"],
+  link: "projects/live-data-visualizer.html"
+  },
+  {
     title: "NCAA March Madness Prediction Model",
     description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
     image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
@@ -89,13 +96,6 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1509869175650-a1d97972541a?auto=format&fit=crop&w=400&h=200",
     tags: ["Flask", "Python", "PDF Generation", "Education", "Automation"],
     link: "projects/math-worksheet.html"
-  },
-  {
-    title: "Live Data Visualizer",
-    description: "A real-time dashboard that integrates with MCP to fetch and visualize live stock prices and other data streams.",
-    image: "https://th.bing.com/th/id/OIP.SN1qtTiB8wnOjKksOW7WHQHaEK?w=288&h=180&c=7&r=0&o=7&cb=iwp1&pid=1.7&rm=3",
-    tags: ["Python", "Streamlit", "FastAPI", "Data Visualization", "MCP"],
-    link: "projects/live-data-visualizer.html"
   }
 
 ];
