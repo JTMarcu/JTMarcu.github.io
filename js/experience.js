@@ -1,6 +1,6 @@
 export const experiences = [
-    {
-      title: "Data & Full-Stack Developer",
+  {
+    title: "Data & Full-Stack Developer",
     company: "Freelance",
     period: "2023-Present",
     description: [
@@ -37,22 +37,56 @@ export const experiences = [
       "Briefly held a Supervisor role, overseeing front-end operations and managing cashiers and assistants.",
     ],
   },
-    // ... other experiences ...
-  ];
-  
-  export function generateExperience() {
-    const experienceTimeline = document.querySelector('.experience-timeline');
-    experiences.forEach(experience => {
-      const experienceCard = `
-        <div class="experience-card">
-          <h3 class="experience-title">${experience.title}</h3>
-          <h4 class="experience-company">${experience.company}</h4>
-          <p class="experience-period">${experience.period}</p>
+];
+
+export function generateExperience() {
+  const experienceTimeline = document.querySelector('.experience-timeline');
+
+  experiences.forEach((experience, index) => {
+    const descriptionItems = experience.description.map(desc => {
+      const keywords = [
+        'Python', 'SQL', 'Tableau', 'Power BI', 'Flask', 'Google Cloud', 
+        'RAG', 'FastAPI', 'ReportLab', 'Machine Learning', 'pandas'
+      ];
+      let highlighted = desc;
+      keywords.forEach(word => {
+        const regex = new RegExp(`\\b(${word})\\b`, 'g');
+        highlighted = highlighted.replace(regex, `<span class="project-tag">$1</span>`);
+      });
+      return `<li>${highlighted}</li>`;
+    }).join('');
+
+    const experienceCard = `
+      <div class="experience-card" id="card-${index}">
+        <button class="experience-toggle" data-target="exp-${index}">
+          <div class="experience-header">
+            <div>
+              <h3 class="experience-title">${experience.title}</h3>
+              <h4 class="experience-company">${experience.company}</h4>
+              <p class="experience-period">${experience.period}</p>
+            </div>
+            <div class="experience-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+        </button>
+        <div class="experience-details" id="exp-${index}" style="display: none;">
           <ul class="experience-description">
-            ${experience.description.map(desc => `<li>${desc}</li>`).join('')}
+            ${descriptionItems}
           </ul>
         </div>
-      `;
-      experienceTimeline.innerHTML += experienceCard;
+      </div>
+    `;
+    experienceTimeline.innerHTML += experienceCard;
+  });
+
+  document.querySelectorAll('.experience-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const target = document.getElementById(button.dataset.target);
+      const card = button.closest('.experience-card');
+      const isOpen = target.style.display === 'block';
+
+      target.style.display = isOpen ? 'none' : 'block';
+      button.classList.toggle('open', !isOpen);
+      card.classList.toggle('open', !isOpen);
     });
-  }
+  });
+}

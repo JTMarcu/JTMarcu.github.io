@@ -36,6 +36,14 @@
   --link-hover-color: #bda2fe;
 }
 
+[data-theme="dark"] .experience-title {
+  color: #ffffff; /* Full white for job titles in dark mode */
+}
+
+[data-theme="dark"] .experience-company {
+  color: var(--secondary-text-color); /* Subtle gray for company names */
+}
+
 /* Base Styles */
 * {
   margin: 0;
@@ -74,7 +82,7 @@ a:hover {
 
 /* Utility Classes */
 .section {
-  padding: 5rem 0;
+  padding: 0rem 0;
   scroll-margin-top: 100px;
 }
 
@@ -399,11 +407,24 @@ a:hover {
 }
 
 .project-tag {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--primary-color); /* Matches your Experience badge */
+  color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 2rem;
   font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 4px; /* Optional: Adds spacing between tags */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.project-tag.python {
+  background-color: #3776ab; /* Python blue */
+}
+
+.project-tag.tableau {
+  background-color: #e97627; /* Tableau orange */
 }
 
 /* Skills Grid */
@@ -475,17 +496,63 @@ a:hover {
   border-radius: 1rem;
   position: relative;
   box-shadow: var(--box-shadow);
+  margin-bottom: 2.5rem; /* Added this line for spacing */
 }
 
-.experience-card::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 2rem;
-  width: 20px;
-  height: 20px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
+.experience-toggle {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-background);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  transition: background-color 0.3s ease;
+}
+
+.experience-header:hover {
+  background-color: rgba(198, 40, 40, 0.05);
+}
+
+.experience-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.experience-company {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin: 0;
+}
+
+.experience-period {
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+}
+
+.experience-toggle-icon {
+  transition: transform 0.3s ease;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.experience-toggle.open .experience-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.experience-card.open {
+  background-color: rgba(198, 40, 40, 0.04);
 }
 
 /* Education Cards */
@@ -630,6 +697,17 @@ a:hover {
 
 .section {
   animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Centered Image */
