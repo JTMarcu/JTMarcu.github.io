@@ -491,12 +491,12 @@ a:hover {
 }
 
 .experience-card {
-  background: var(--card-background);
+  background: var(--background-color);
   padding: 2rem;
   border-radius: 1rem;
   position: relative;
   box-shadow: var(--box-shadow);
-  margin-bottom: 2.5rem; /* Added this line for spacing */
+  margin-bottom: .5rem;
 }
 
 .experience-toggle {
