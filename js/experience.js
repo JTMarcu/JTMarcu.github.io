@@ -4,12 +4,13 @@ export const experiences = [
     company: "Freelance",
     period: "2023-Present",
     description: [
+      "Developed a Live Data Visualizer dashboard using Streamlit, FastAPI, and MCP to integrate real-time stock, weather, and news data for business analytics.",
       "Designed and implemented data pipelines using Google Cloud to automate data collection and processing for a medical staffing company.",
       "Built interactive dashboards to visualize key metrics, enabling data-driven prioritization of job targeting and workflow optimization.",
       "Developed a Retrieval-Augmented Generation (RAG) AI Agent for small businesses to draft personalized email responses.",
       "Building a predictive model for the upcoming NCAA March Madness tournament using machine learning techniques.",
       "Built an ATS-friendly Resume Generator using Python (pandas, ReportLab) to format and structure resumes based on CSV data.",
-      "Developed Common Core Math Worksheet Generator (Flask/pandas/ReportLab) for K-5 educational resources.",
+      "Developed Common Core Math Worksheet Generator (Flask/pandas/ReportLab) for K-5 educational resources.",      
     ],
   },
   {
@@ -30,7 +31,10 @@ export const experiences = [
     period: "2007-2023",
     description: [
       "Independently managed merchandising and stocking for multiple departments, ensuring product availability and visual appeal.",
-      "Leveraged Costco's internal computer systems and sales records to make data-driven decisions, optimizing inventory and improving product placement.",
+      "Leveraged Costco's internal computer systems and sales records to make <b>data-driven decisions</b>, optimizing inventory and improving product placement.",
+      "Utilized <b>Excel</b> and <b>Google Sheets</b> for <b>data analysis</b>, <b>reporting</b>, and <b>inventory optimization</b>.",
+      "Created and maintained <b>Pivot Tables</b>, performed <b>VLOOKUP</b> operations, and automated workflows with <b>macros</b> and custom <b>formulas</b>.",
+      "Performed <b>data cleaning</b> and <b>ETL</b> tasks to ensure accurate <b>KPI tracking</b> and <b>process improvement</b>.",
       "Took ownership of department performance, implementing process improvements that increased efficiency and organization.",
       "Trusted by management to work autonomously, ensuring department success with minimal oversight.",
       "Operated forklifts to transport, load, and unload merchandise safely and efficiently.",
@@ -46,7 +50,12 @@ export function generateExperience() {
     const descriptionItems = experience.description.map(desc => {
       const keywords = [
         'Python', 'SQL', 'Tableau', 'Power BI', 'Flask', 'Google Cloud', 
-        'RAG', 'FastAPI', 'ReportLab', 'Machine Learning', 'pandas'
+        'RAG', 'FastAPI', 'ReportLab', 'Machine Learning', 'pandas',
+        'Streamlit', 'MCP', 'Dashboard', 'Data Pipeline',
+        'Excel', 'Google Sheets', 'Data Analysis', 'Spreadsheet Automation',
+        'VLOOKUP', 'Pivot Tables', 'Data Visualization', 'Reporting',
+        'Process Improvement', 'Inventory Optimization', 'ETL', 'Data Cleaning',
+        'KPI Tracking', 'Macros', 'Formulas'
       ];
       let highlighted = desc;
       keywords.forEach(word => {
