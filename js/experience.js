@@ -26,7 +26,7 @@ export const experiences = [
     url: "https://governmentseminars.com/",
   },
   {
-    title: "Service Assistant & Merchant",
+    title: "Lead Merchant & Service Assistant",
     company: "Costco Wholesale",
     period: "2007-2023",
     description: [
