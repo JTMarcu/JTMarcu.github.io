@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Dashboard + Resume Builder - Jonathan Marcu</title>
+  <meta name="description" content="A full-featured assistant for job seekers built with Streamlit, FastAPI, and AI."/>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <nav class="container">
+      <a href="../index.html" class="logo">Jonathan Marcu</a>
+      <div class="contact-location"><i class="fas fa-map-marker-alt"></i><span>San Diego, CA</span></div>
+      <div class="nav-links">
+        <a href="../index.html#about" class="nav-item">About</a>
+        <a href="../index.html#experience" class="nav-item">Experience</a>
+        <a href="../index.html#projects" class="nav-item">Projects</a>
+        <a href="../index.html#skills" class="nav-item">Skills</a>
+        <a href="../index.html#education" class="nav-item">Education</a>
+        <a href="../index.html#contact" class="nav-item">Contact</a>
+        <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="project-detail section">
+      <div class="container">
+        <header class="project-header section-header">
+          <h1 class="project-title section-title">Job Dashboard + Resume Builder</h1>
+          <p class="project-description">
+            A modular, local-first platform to search jobs, tailor resumes using AI, and manage your applications from one interface.
+          </p>
+          <a href="https://github.com/JTMarcu/job-dashboard" target="_blank" class="button button-outline" style="margin-top: 1rem;">
+            <i class="fab fa-github"></i> View GitHub Repo
+          </a>
+        </header>
+
+        <div class="centered-image">
+          <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=900&q=80"
+               alt="Job Dashboard Preview" class="image-shadow">
+        </div>
+
+        <header class="section-header"><h2 class="section-title" style="margin-top: 40px;">Project Overview</h2><div class="section-divider"></div></header>
+        <section class="section card">
+          <h3>Purpose</h3>
+          <p>
+            This project was designed to help job seekers automate the repetitive aspects of the job hunt, from discovering job listings to tailoring resumes to tracking applications.
+          </p>
+          <ul>
+            <li>🔍 Search real-time job listings from Adzuna and JSearch</li>
+            <li>📝 Build ATS-optimized resumes with grouped form inputs</li>
+            <li>🎯 Paste job descriptions and get tailored resumes using OpenAI or Ollama</li>
+            <li>📄 Export structured resumes in CSV, JSON, or PDF</li>
+          </ul>
+        </section>
+
+        <header class="section-header"><h2 class="section-title" style="margin-top: 40px;">Key Modules</h2><div class="section-divider"></div></header>
+        <section class="section section-alt card">
+          <h3>Resume Builder</h3>
+          <p>Structured inputs with support for CSV prefill, grouped inputs, and Master Resume logic. PDF export via ReportLab.</p>
+
+          <h3>Job Search</h3>
+          <p>Streamlit dashboard integrates Adzuna and JSearch (via RapidAPI) with role/location filtering and clickable job cards.</p>
+
+          <h3>Resume Tailoring</h3>
+          <p>Paste any job description and use OpenAI or Ollama (locally) to generate a bullet-accurate, cleanly formatted resume.</p>
+
+          <h3>User Profiles</h3>
+          <p>Each user has a JSON profile that auto-loads on startup and stores resume history, contact info, and export preferences.</p>
+        </section>
+
+        <header class="section-header"><h2 class="section-title" style="margin-top: 40px;">Technology Stack</h2><div class="section-divider"></div></header>
+        <section class="section card">
+          <ul class="tech-stack">
+            <li><i class="fab fa-python"></i> Python 3.10 — Core application logic and data transformation</li>
+            <li>Streamlit — Interactive front-end interface</li>
+            <li>FastAPI (MCP Server) — Modular tool orchestrator</li>
+            <li>ReportLab — Custom PDF resume generator</li>
+            <li>Pandas — CSV/JSON handling for structured resumes</li>
+            <li>OpenAI + Ollama — LLM options for tailoring mode</li>
+          </ul>
+        </section>
+
+        <header class="section-header"><h2 class="section-title" style="margin-top: 40px;">Roadmap</h2><div class="section-divider"></div></header>
+        <section class="section section-alt card">
+          <ul>
+            <li><strong>Cover Letter Generator</strong> — Auto-generate matching cover letters</li>
+            <li><strong>Interview Prep Assistant</strong> — Predict and prep for likely questions</li>
+            <li><strong>Application Tracker</strong> — Export applications to Notion or CSV</li>
+            <li><strong>Unified View</strong> — Merge job search and resume tailoring on one screen</li>
+          </ul>
+        </section>
+
+        <header class="section-header"><h2 class="section-title" style="margin-top: 40px;">What I Learned</h2><div class="section-divider"></div></header>
+        <section class="section card">
+          <ul>
+            <li>Orchestrating modular tools across front-end and back-end</li>
+            <li>Handling user-generated structured data with graceful fallbacks</li>
+            <li>Supporting both local and cloud-based LLMs via the same UI</li>
+            <li>Designing scalable resume formatting rules for real-world use</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h2 class="footer-title">Jonathan Marcu</h2>
+          <p class="footer-subtitle">Data Scientist & Machine Learning Enthusiast</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:JonMarcu@live.com" class="social-link"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/JTMarcu" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Jonathan Marcu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" type="module"></script>
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -84,6 +84,13 @@ export const projects = [
     link: "projects/amazon.html"
   },
   {
+  title: "Job Dashboard + Resume Builder",
+  description: "Local-first platform to search jobs, tailor resumes using AI, and manage applications with MCP-powered tools.",
+  image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
+  tags: ["Python", "Streamlit", "FastAPI", "OpenAI", "Ollama", "PDF", "Automation", "Resume"],
+  link: "projects/job-dashboard.html"
+  },
+  {
     title: "Predicting Potential Customers",
     description: "Identifying leads likely to convert to paid customers using decision trees, random forests, and hyperparameter tuning.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&h=200",
