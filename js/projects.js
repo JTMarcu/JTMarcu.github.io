@@ -49,13 +49,6 @@ export const projects = [
     link: "projects/rental_price.html"
   }, 
   {
-    title: "ATS Resume Generator",
-    description: "Developed a Python-based tool that converts structured CSV data into a formatted ATS-friendly PDF resume.",
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "pandas", "ReportLab", "PDF Generation", "Automation"],
-    link: "projects/ats-resume.html"
-  },
-  {
     title: "AWS Flashcards",
     description: "Flashcards app to help study for AWS exams. Built with Flask and Python, it provides an interactive way to learn AWS concepts.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&h=200",
@@ -89,22 +82,7 @@ export const projects = [
   image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
   tags: ["Python", "Streamlit", "FastAPI", "OpenAI", "Ollama", "PDF", "Automation", "Resume"],
   link: "projects/job-dashboard.html"
-  },
-  {
-    title: "Predicting Potential Customers",
-    description: "Identifying leads likely to convert to paid customers using decision trees, random forests, and hyperparameter tuning.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Machine Learning", "Random Forest", "Customer Analytics"],
-    link: "projects/customers.html"
-  },
-  {
-    title: "Common Core Math Worksheet Generator",
-    description: "Flask app generating K-5 math worksheets (Python, pandas, ReportLab). Dynamically creates PDFs aligned with Common Core standards.",
-    image: "https://images.unsplash.com/photo-1509869175650-a1d97972541a?auto=format&fit=crop&w=400&h=200",
-    tags: ["Flask", "Python", "PDF Generation", "Education", "Automation"],
-    link: "projects/math-worksheet.html"
   }
-
 ];
 
 export function generateProjects() {
