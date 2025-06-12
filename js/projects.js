@@ -14,6 +14,13 @@ export const projects = [
     link: "projects/march-madness.html"
   },
   {
+  title: "Rental Price Optimization Tool",
+  description: "A full-stack data pipeline for scraping, storing, and analyzing 13,000+ San Diego rentals. Scrapes Apartments.com listings, loads monthly data into PostgreSQL, analyzes trends with SQL in Jupyter, and powers automated dashboards in Power BI and Tableau. Includes machine learning rent prediction.",
+  image: "https://timesofsandiego.com/wp-content/uploads/2023/12/Brynn-Civita.jpg",
+  tags: ["Python", "Selenium", "BeautifulSoup", "Pandas", "PostgreSQL", "SQLAlchemy", "psycopg2", "Jupyter", "Data Science", "Data Visualization", "Power BI", "Tableau", "Machine Learning"],
+  link: "projects/rental_price.html"
+  }, 
+  {
     title: "FoodHub Order Analysis",
     description: "Analyzing data to understand the demand of different restaurants and enhance business and customer experience.",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=200",
@@ -40,13 +47,6 @@ export const projects = [
     image: "https://www.vuassistance.com/wp-content/uploads/2021/10/IMG-20211008-WA0009-800x500.jpg",
     tags: ["Python", "PyTorch", "Deep Learning", "Medical Imaging", "Data Science"],
     link: "projects/dermatology.html"
-  },
-  {
-    title: "Rental Price Optimization Tool",
-    description: "A full-stack project scraping Apartments.com listings, analyzing 13,000+ rentals by amenities, city, size, and predicting rent prices using machine learning models. Delivered interactive dashboards in Tableau and Power BI.",
-    image: "https://timesofsandiego.com/wp-content/uploads/2023/12/Brynn-Civita.jpg",
-    tags: ["Python", "Selenium", "BeautifulSoup", "Data Science", "Data Visualization", "Power BI", "Tableau", "Machine Learning"],
-    link: "projects/rental_price.html"
   }, 
   {
     title: "AWS Flashcards",

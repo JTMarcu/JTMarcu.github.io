@@ -165,8 +165,43 @@
                 Jupyter Notebook
                 <small>Exploratory analysis environment for dynamic coding, visualizations, and final report generation.</small>
               </li>
+              <li>
+                <i class="fas fa-database"></i> PostgreSQL
+                <small>Local database server for storing, querying, and analyzing all scraped rental data for scalable, historical, and automated dashboarding.</small>
+              </li>
+              <li>
+                SQLAlchemy & psycopg2
+                <small>Python libraries for connecting to PostgreSQL, running ETL pipelines, and executing SQL queries from scripts and notebooks.</small>
+              </li>
             </ul>
           </section>
+
+          <!-- PostgreSQL & Data Pipeline Section -->
+          <header class="section-header">
+            <h2 class="section-title" style="margin-top: 40px;">PostgreSQL Data Pipeline & SQL Analysis</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section class="section card">
+            <h3>Database Workflow for Historical Analysis</h3>
+            <p>
+              To support **scalable month-over-month analysis** and automated dashboarding, I set up a <strong>local PostgreSQL server</strong> for storing and querying all scraped rental data.
+            </p>
+            <ul>
+              <li><strong>Python ETL Pipeline:</strong> A script ingests cleaned CSVs of monthly rental listings and loads them into a normalized <code>rental_data</code> table using <code>pandas</code> and <code>SQLAlchemy</code> (<a href="https://github.com/JTMarcu/rental_price_etl" target="_blank">see code</a>).</li>
+              <li><strong>Data Model:</strong> Table schema stores one record per property per month, with composite primary key <code>(property_id, month, year)</code> for easy time series analysis.</li>
+              <li><strong>SQL in Jupyter:</strong> Connect via <code>psycopg2</code> or <code>sqlalchemy</code> from Jupyter Notebooks to run complex SQL queries and feed results directly into pandas for analysis and visualization.</li>
+              <li><strong>BI Dashboard Integration:</strong> Power BI connects natively to PostgreSQL, auto-refreshing dashboards with the latest monthly reports—no manual CSV uploads needed.</li>
+            </ul>
+            <div style="margin-top: 1rem;">
+              <strong>Example workflow:</strong>
+              <ol>
+                <li>Scrape new listings &rarr; save CSV &rarr; run ETL to load into Postgres</li>
+                <li>Analyze price, amenities, and trends with SQL (e.g., month-over-month rent change, average by zip/city, amenity premiums)</li>
+                <li>Power BI dashboards update instantly with fresh data for business reporting</li>
+              </ol>
+            </div>
+          </section>
+
   
           <!-- Challenges & Solutions Section -->
           <header class="section-header">
@@ -240,7 +275,7 @@
             <div class="section-divider"></div>
           </header>
           <section class="section card">
-            <h3>Interactive Analysis</h3>
+            <h3>Interactive Analysis (Prior to Postgres Integration)</h3>
             <p>Explore the full interactive code and visualizations below:</p>
             <iframe src="../images/may_2025_rental_analysis.html" width="100%" height="600px" frameborder="0"></iframe>
           </section>
