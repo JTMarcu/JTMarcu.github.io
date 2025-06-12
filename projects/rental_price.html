@@ -61,7 +61,8 @@
         <header class="project-header section-header">
           <h1 class="project-title section-title">Rental Price Optimization Tool</h1>
           <p class="project-description">
-            A tool that leverages scraped Apartments.com data, deep rental analysis, and interactive dashboards to help property managers optimize rates and maximize revenue.
+            A full-stack pipeline that scrapes Apartments.com data, stores monthly reports in PostgreSQL, and enables analysis and visualization in Jupyter and Power BI/Tableau. 
+            Empowers property managers with actionable, up-to-date rental insights and price optimization models.
           </p>
           <a href="#jupyter-notebook" class="button button-primary button-notebook">View Jupyter Notebook</a>
         </header>
@@ -184,7 +185,7 @@
           <section class="section card">
             <h3>Database Workflow for Historical Analysis</h3>
             <p>
-              To support **scalable month-over-month analysis** and automated dashboarding, I set up a <strong>local PostgreSQL server</strong> for storing and querying all scraped rental data.
+              To support <strong>scalable month-over-month analysis</strong> and automated dashboarding, I set up a <strong>local PostgreSQL server</strong> for storing and querying all scraped rental data.
             </p>
             <ul>
               <li><strong>Python ETL Pipeline:</strong> A script ingests cleaned CSVs of monthly rental listings and loads them into a normalized <code>rental_data</code> table using <code>pandas</code> and <code>SQLAlchemy</code> (<a href="https://github.com/JTMarcu/rental_price_etl" target="_blank">see code</a>).</li>
