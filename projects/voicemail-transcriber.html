@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voicemail & Call Categorizer – Jonathan Marcu</title>
+  <meta name="description" content="AI-powered Voicemail and Call Categorizer by Jonathan Marcu: Instantly transcribe, extract key details, and organize client calls for action.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <nav class="container">
+      <a href="../index.html" class="logo">Jonathan Marcu</a>
+      <div class="contact-location">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <span>San Diego, CA</span>
+      </div>
+      <div class="nav-links">
+        <a href="../index.html#about" class="nav-item">About</a>
+        <a href="../index.html#experience" class="nav-item">Experience</a>
+        <a href="../index.html#projects" class="nav-item">Projects</a>
+        <a href="../index.html#skills" class="nav-item">Skills</a>
+        <a href="../index.html#education" class="nav-item">Education</a>
+        <a href="../index.html#contact" class="nav-item">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="mobile-nav">
+        <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="container">
+        <a href="../index.html#about" class="mobile-nav-item">About</a>
+        <a href="../index.html#experience" class="mobile-nav-item">Experience</a>
+        <a href="../index.html#projects" class="mobile-nav-item">Projects</a>
+        <a href="../index.html#skills" class="mobile-nav-item">Skills</a>
+        <a href="../index.html#education" class="mobile-nav-item">Education</a>
+        <a href="../index.html#contact" class="mobile-nav-item">Contact</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="resume-detail section">
+      <div class="container">
+        <header class="resume-header section-header">
+          <h1 class="resume-title section-title">Voicemail & Call Categorizer (Whisper + NLP)</h1>
+          <p class="resume-description">
+            Transform raw voicemails and phone calls into structured, actionable information—automatically transcribe, extract caller details, categorize tasks, and streamline follow-up for your team.
+          </p>
+        </header>
+
+        <!-- Screenshot Section -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">App Demo</h2>
+          <div class="section-divider"></div>
+        </header>
+        <div class="section card" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <div class="centered-image">
+            <a href="../images/voicemail-categorizer-demo.png" target="_blank">
+              <img src="../images/voicemail-categorizer-demo.png" alt="Voicemail & Call Categorizer App UI" class="image-shadow">
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Overview -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Project Overview</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <p>
+            The Voicemail & Call Categorizer is a smart, privacy-first Streamlit app for businesses and teams. It transcribes voicemail or phone call audio in seconds, then automatically extracts and organizes key information such as caller location, task/request, name, and phone number. By turning unstructured audio into actionable, categorized data, this tool accelerates client response, enables task prioritization, and lays the groundwork for workflow automation.
+          </p>
+          <ul>
+            <li><strong>Multi-format Audio Support:</strong> Upload or record voicemails/calls as .wav, .mp3, or .ogg files.</li>
+            <li><strong>Instant Transcription:</strong> Leverages OpenAI Whisper to generate high-quality transcripts, locally.</li>
+            <li><strong>Entity Extraction:</strong> NLP modules extract location (city/zip), problem/task, caller name, and phone number.</li>
+            <li><strong>Smart Categorization:</strong> Messages are tagged for easy routing—by location, urgency, or problem type.</li>
+            <li><strong>Actionable Output:</strong> Structured results can feed into dashboards, CRM, or task queues.</li>
+          </ul>
+        </section>
+
+        <!-- Capabilities & Use Cases -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Capabilities & Use Cases</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section section-alt card">
+          <ul>
+            <li><strong>Automated Call Triage:</strong> Route and prioritize calls by location, type of request, or urgency.</li>
+            <li><strong>Client Follow-up:</strong> Quickly view caller info and action items in a structured format.</li>
+            <li><strong>Team Collaboration:</strong> Distribute tasks to the right team member based on skill or region.</li>
+            <li><strong>Analytics & Reporting:</strong> Aggregate call trends, top locations, or most common issues for business insights.</li>
+          </ul>
+        </section>
+
+        <!-- Technical Stack -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Technical Stack</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ul class="tech-stack">
+            <li><i class="fab fa-python"></i> Python 3.11</li>
+            <li>Streamlit (UI, audio handling, dashboard)</li>
+            <li>OpenAI Whisper (ASR, speech-to-text)</li>
+            <li>Custom NLP (spaCy, Regex, transformers for entity extraction)</li>
+            <li>PyTorch (CPU-only, for Whisper model)</li>
+            <li>Future: Integration with CRM, CSV/JSON export, company APIs</li>
+          </ul>
+        </section>
+
+        <!-- Challenges & Solutions -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Challenges & Solutions</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section section-alt card">
+          <div class="challenge">
+            <h3>Robust Entity Extraction</h3>
+            <ul>
+              <li>Used pattern matching and named entity recognition to accurately pull location, phone, and names from real-world transcripts.</li>
+              <li>Addressed edge cases: noisy backgrounds, informal speech, and missing metadata.</li>
+            </ul>
+          </div>
+          <div class="challenge">
+            <h3>Seamless, Secure Workflow</h3>
+            <ul>
+              <li>All processing is local, respecting privacy and compliance needs.</li>
+              <li>Simple UI makes it easy for non-technical users to process calls and act on them quickly.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Business Impact -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Business Impact</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ul>
+            <li>Faster, more organized client response—no calls lost in the shuffle.</li>
+            <li>Clear routing for task distribution and follow-up, improving team efficiency.</li>
+            <li>Actionable insights for business leaders, supporting smarter resource allocation.</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h2 class="footer-title">Jonathan Marcu</h2>
+          <p class="footer-subtitle">Data Scientist & Machine Learning Enthusiast</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:JonMarcu@live.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://github.com/JTMarcu" target="_blank" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Jonathan Marcu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" type="module"></script>
+  <script>
+    // Theme toggle as in your other files
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+    }
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    });
+  </script>
+</body>
+</html>
