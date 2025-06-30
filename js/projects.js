@@ -35,6 +35,13 @@ export const projects = [
     link: "projects/bellabeat.html"
   },
   {
+  title: "Voicemail & Call Categorizer",
+  description: "AI-powered Streamlit app for instant voicemail/call transcription and automated task routing. Extracts caller details, organizes requests, and streamlines client follow-up for businesses.",
+  image: "images/VM.png",
+  tags: ["Python", "Streamlit", "OpenAI Whisper", "NLP", "PyTorch", "spaCy", "Entity Extraction", "Automation"],
+  link: "projects/voicemail-transcriber.html"
+  },
+  {
     title: "Brain Tumor Detection",
     description: "Using machine learning to detect brain tumors from MRI scans.",
     image: "https://th.bing.com/th/id/OIP.fxmPWbURYvhYPuqPKFMRegHaDt?w=326&h=174&c=7&r=0&o=5&pid=1.7",

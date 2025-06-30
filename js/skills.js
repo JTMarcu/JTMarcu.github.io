@@ -51,6 +51,11 @@ export const skillCategories = [
     title: "Machine Learning & AI",
     description: "Machine learning frameworks and AI tools",
     skills: [
+      { name: "OpenAI Whisper", level: 3 },
+      { name: "spaCy", level: 4 },
+      { name: "Transformers", level: 3 },
+      { name: "NLP", level: 4 },
+      { name: "Entity Extraction", level: 4 },
       { name: "TensorFlow", level: 3 },
       { name: "Keras", level: 3 },
       { name: "LangChain", level: 3 },

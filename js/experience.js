@@ -10,7 +10,8 @@ export const experiences = [
       "Developed a Retrieval-Augmented Generation (RAG) AI Agent for small businesses to draft personalized email responses.",
       "Building a predictive model for the upcoming NCAA March Madness tournament using machine learning techniques.",
       "Built an ATS-friendly Resume Generator using Python (pandas, ReportLab) to format and structure resumes based on CSV data.",
-      "Developed Common Core Math Worksheet Generator (Flask/pandas/ReportLab) for K-5 educational resources.",      
+      "Developed Common Core Math Worksheet Generator (Flask/pandas/ReportLab) for K-5 educational resources.",
+      "Developed an AI-powered Voicemail & Call Categorizer using Streamlit, OpenAI Whisper, and NLP (spaCy, Regex) to transcribe and organize client calls for business action. Pitched for integration with stakeholder systems.",      
     ],
   },
   {
