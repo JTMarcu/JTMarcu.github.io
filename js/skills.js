@@ -4,11 +4,12 @@ export const skillCategories = [
     description: "Core programming and data manipulation skills",
     skills: [
       { name: "Python", level: 4 },
-      { name: "Pandas", level: 4 },
-      { name: "Dax/M", level: 4 },
-      { name: "Scikit-learn", level: 4 },
+      { name: "JavaScript", level: 3 },     
       { name: "SQL", level: 4 },
       { name: "R Programming", level: 3 },
+      { name: "Dax/M", level: 4 },
+      { name: "Scikit-learn", level: 4 },
+      { name: "Pandas", level: 4 },
     ],
   },
   {
@@ -17,10 +18,9 @@ export const skillCategories = [
     skills: [
       { name: "Power BI", level: 4 },
       { name: "Tableau", level: 4 },
+      { name: "Apache Superset", level: 3 },
       { name: "ReportLab", level: 4 },
-      { name: "Seaborn", level: 4 },
-      { name: "Matplotlib", level: 4 },
-      { name: "Dashboard Design", level: 4 },
+      { name: "Streamlit", level: 4 },
     ],
   },
   {
