@@ -1,5 +1,19 @@
 export const experiences = [
   {
+  title: "Co-Founder & Chief Technology Officer",
+  company: "Stealth Startup (Enterprise SaaS)",
+    period: "2024-Present",
+    description: [
+  "Built an enterprise SaaS platform from the ground up: modern web app (100+ components), reliable API (20+ endpoints), and a well-structured PostgreSQL database.",
+      "Created an assessment engine that supports multiple roles and ~150 questions with strong accuracy and clear scoring.",
+      "Added secure sign-in, admin analytics, and simple public endpoints to connect the website and the backend.",
+      "Improved delivery speed by focusing on clean, reusable components and a consistent design system.",
+      "Documented the system with clear API references, data diagrams, and setup guides to make future changes easier.",
+      "Current status: testing with a goal to launch a pilot in the next month."
+    ],
+    url: "#"
+  },
+  {
     title: "Data & Full-Stack Developer",
     company: "Freelance",
     period: "2023-Present",
@@ -56,7 +70,8 @@ export function generateExperience() {
         'Excel', 'Google Sheets', 'Data Analysis', 'Spreadsheet Automation',
         'VLOOKUP', 'Pivot Tables', 'Data Visualization', 'Reporting',
         'Process Improvement', 'Inventory Optimization', 'ETL', 'Data Cleaning',
-        'KPI Tracking', 'Macros', 'Formulas'
+        'KPI Tracking', 'Macros', 'Formulas',
+        'TypeScript', 'Next.js', 'React', 'PostgreSQL', 'JWT', 'Zustand', 'Pydantic'
       ];
       let highlighted = desc;
       keywords.forEach(word => {

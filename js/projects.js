@@ -1,5 +1,12 @@
 export const projects = [
   {
+  title: "Enterprise SaaS Platform (Stealth)",
+  description: "Co-founded and architected a full-stack platform: Next.js 15 + React 19 frontend (100+ components), FastAPI API (20+ endpoints), PostgreSQL JSONB data layer, and a Streamlit admin console. Currently in testing; pilot-ready next month.",
+  image: "images/joinhivewell_cover.jpeg",
+  tags: ["Next.js", "TypeScript", "React", "FastAPI", "Python", "PostgreSQL", "SaaS"],
+  link: "projects/hivewell.html"
+  },
+  {
   title: "Live Data Visualizer",
   description: "A local Streamlit dashboard that streams live stock prices, financial news, and weather data using MCP and FastAPI tools.",
   image: "https://th.bing.com/th/id/OIP.SN1qtTiB8wnOjKksOW7WHQHaEK?w=288&h=180&c=7&r=0&o=7&cb=iwp1&pid=1.7&rm=3",

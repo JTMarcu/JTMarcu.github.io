@@ -72,8 +72,8 @@
         <div class="project-content">
           <!-- Visualization -->
           <div class="visualization centered-image">
-            <img src="https://timesofsandiego.com/wp-content/uploads/2023/12/Brynn-Civita.jpg"
-                 alt="San Diego Rental Data Visualizations">
+      <img src="https://timesofsandiego.com/wp-content/uploads/2023/12/Brynn-Civita.jpg"
+        alt="San Diego skyline photo used as a cover image for rental analysis">
           </div>
   
           <!-- Overview Section -->
@@ -188,7 +188,7 @@
               To support <strong>scalable month-over-month analysis</strong> and automated dashboarding, I set up a <strong>local PostgreSQL server</strong> for storing and querying all scraped rental data.
             </p>
             <ul>
-              <li><strong>Python ETL Pipeline:</strong> A script ingests cleaned CSVs of monthly rental listings and loads them into a normalized <code>rental_data</code> table using <code>pandas</code> and <code>SQLAlchemy</code> (<a href="https://github.com/JTMarcu/rental_price_etl" target="_blank">see code</a>).</li>
+              <li><strong>Python ETL Pipeline:</strong> A script ingests cleaned CSVs of monthly rental listings and loads them into a normalized <code>rental_data</code> table using <code>pandas</code> and <code>SQLAlchemy</code> (<a href="https://github.com/JTMarcu/rental_price_etl" target="_blank" rel="noopener noreferrer">see code</a>).</li>
               <li><strong>Data Model:</strong> Table schema stores one record per property per month, with composite primary key <code>(property_id, month, year)</code> for easy time series analysis.</li>
               <li><strong>SQL in Jupyter:</strong> Connect via <code>psycopg2</code> or <code>sqlalchemy</code> from Jupyter Notebooks to run complex SQL queries and feed results directly into pandas for analysis and visualization.</li>
               <li><strong>BI Dashboard Integration:</strong> Power BI connects natively to PostgreSQL, auto-refreshing dashboards with the latest monthly reports—no manual CSV uploads needed.</li>
@@ -278,7 +278,7 @@
           <section class="section card">
             <h3>Interactive Analysis (Prior to Postgres Integration)</h3>
             <p>Explore the full interactive code and visualizations below:</p>
-            <iframe src="../images/may_2025_rental_analysis.html" width="100%" height="600px" frameborder="0"></iframe>
+            <iframe src="../images/may_2025_rental_analysis.html" width="100%" height="600px" frameborder="0" title="Rental analysis Jupyter notebook"></iframe>
           </section>
   
             <!-- Power BI Dashboard Embed -->
@@ -311,13 +311,13 @@
           <p class="footer-subtitle">Data Scientist & Machine Learning Enthusiast</p>
         </div>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" class="social-link" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i>
           </a>
           <a href="mailto:JonMarcu@live.com" class="social-link" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://github.com/JTMarcu" target="_blank" class="social-link" aria-label="GitHub">
+          <a href="https://github.com/JTMarcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
         </div>
