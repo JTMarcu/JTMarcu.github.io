@@ -1,17 +1,21 @@
 export const experiences = [
   {
   title: "Co-Founder & Chief Technology Officer",
-  company: "Stealth Startup (Enterprise SaaS)",
+  company: "HiveWell LLC",
     period: "2024-Present",
     description: [
-  "Built an enterprise SaaS platform from the ground up: modern web app (100+ components), reliable API (20+ endpoints), and a well-structured PostgreSQL database.",
+  "Built the HiveWell platform end-to-end: modern web app (100+ components), reliable API (20+ endpoints), and a well-structured PostgreSQL database.",
+      "Solo-built with VS Code and GitHub Copilot agents across frontend, backend, database, and deployment.",
+      "Frontend stack: Next.js 15, React 19, TypeScript, Tailwind CSS, CSS Modules.",
+      "Backend stack: Python 3.11, FastAPI, Pydantic, Uvicorn, OpenAPI/Swagger docs.",
+      "Data & infra: PostgreSQL (JSONB), SQL, Docker, GitHub Actions CI/CD, Postman.",
       "Created an assessment engine that supports multiple roles and ~150 questions with strong accuracy and clear scoring.",
       "Added secure sign-in, admin analytics, and simple public endpoints to connect the website and the backend.",
       "Improved delivery speed by focusing on clean, reusable components and a consistent design system.",
       "Documented the system with clear API references, data diagrams, and setup guides to make future changes easier.",
       "Current status: testing with a goal to launch a pilot in the next month."
     ],
-    url: "#"
+  url: "https://www.linkedin.com/company/joinhivewell/"
   },
   {
     title: "Data & Full-Stack Developer",
@@ -71,7 +75,9 @@ export function generateExperience() {
         'VLOOKUP', 'Pivot Tables', 'Data Visualization', 'Reporting',
         'Process Improvement', 'Inventory Optimization', 'ETL', 'Data Cleaning',
         'KPI Tracking', 'Macros', 'Formulas',
-        'TypeScript', 'Next.js', 'React', 'PostgreSQL', 'JWT', 'Zustand', 'Pydantic'
+        'TypeScript', 'Next.js', 'React', 'PostgreSQL', 'JWT', 'Zustand', 'Pydantic',
+        'Tailwind CSS', 'VS Code', 'GitHub Copilot', 'Docker', 'GitHub Actions', 'CI/CD',
+        'OpenAPI', 'Swagger', 'Uvicorn', 'JSONB', 'Postman'
       ];
       let highlighted = desc;
       keywords.forEach(word => {

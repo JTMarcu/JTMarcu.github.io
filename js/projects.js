@@ -1,9 +1,9 @@
 export const projects = [
   {
-  title: "Enterprise SaaS Platform (Stealth)",
-  description: "Co-founded and architected a full-stack platform: Next.js 15 + React 19 frontend (100+ components), FastAPI API (20+ endpoints), PostgreSQL JSONB data layer, and a Streamlit admin console. Currently in testing; pilot-ready next month.",
+  title: "HiveWell Platform",
+  description: "Co-founded and built a full-stack SaaS platform: Next.js frontend, FastAPI API (20+ endpoints), PostgreSQL JSONB data layer, and a Streamlit admin console. Testing now; pilot targeted next month.",
   image: "images/joinhivewell_cover.jpeg",
-  tags: ["Next.js", "TypeScript", "React", "FastAPI", "Python", "PostgreSQL", "SaaS"],
+  tags: ["Next.js", "TypeScript", "React", "Tailwind CSS", "FastAPI", "Python", "Pydantic", "PostgreSQL", "JSONB", "Docker", "GitHub Actions", "Streamlit", "SaaS"],
   link: "projects/hivewell.html"
   },
   {

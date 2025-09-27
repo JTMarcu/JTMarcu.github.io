@@ -46,6 +46,7 @@ export const skillCategories = [
       { name: "Flask", level: 4 },
       { name: "FastAPI", level: 4 },
       { name: "Next.js", level: 3 },
+      { name: "Tailwind CSS", level: 3 },
       { name: "Gradio", level: 3 },
       { name: "TypeScript", level: 3 },
     ],
@@ -75,6 +76,9 @@ export const skillCategories = [
       { name: "PDF Generation", level: 4 },
       { name: "Data Cleaning", level: 4 },
       { name: "Automation", level: 4 },
+      { name: "GitHub Actions", level: 3 },
+      { name: "VS Code", level: 4 },
+      { name: "GitHub Copilot", level: 3 },
     ],
   },
 ];
