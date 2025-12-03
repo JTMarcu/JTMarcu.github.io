@@ -82,7 +82,7 @@ a:hover {
 
 /* Utility Classes */
 .section {
-  padding: 0rem 0;
+  padding: 100px 0;
   scroll-margin-top: 100px;
 }
 
@@ -116,6 +116,7 @@ a:hover {
 .button-outline {
   border-color: var(--primary-color);
   color: var(--primary-color);
+  padding: 0.5rem 1rem;
 }
 
 .button-outline:hover {
@@ -302,7 +303,7 @@ a:hover {
   border-radius: 2rem;
   font-size: 0.875rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .section-title {
@@ -410,11 +411,13 @@ a:hover {
   background: var(--card-background);
   border-radius: 0.75rem;
   border: 1px solid var(--border-color);
+  text-align: center;
 }
 
 .meta-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
   margin-bottom: 0.75rem;
@@ -534,8 +537,7 @@ a:hover {
 .hero-banner {
   width: 100%;
   height: auto;
-  max-height: 260px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
   margin-top: 12px;
 }
