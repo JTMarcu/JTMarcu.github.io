@@ -1,9 +1,9 @@
 export const projects = [
   {
-  title: "HiveWell Platform",
-  description: "Co-founded and built a full-stack SaaS platform: Next.js frontend, FastAPI API (20+ endpoints), PostgreSQL JSONB data layer, and a Streamlit admin console. Testing now; pilot targeted next month.",
+  title: "HiveWell™ Culture Assessment Platform",
+  description: "Production-ready enterprise SaaS platform with 100+ React components, 42-table PostgreSQL database (3,093+ assessment records), 20+ API endpoints, real-time analytics dashboard (9 tabs, 8 chart types), and automated PDF reporting (100% success rate). Built solo with multi-agent architecture.",
   image: "images/joinhivewell_cover.jpeg",
-  tags: ["Next.js", "TypeScript", "React", "Tailwind CSS", "FastAPI", "Python", "Pydantic", "PostgreSQL", "JSONB", "Docker", "GitHub Actions", "Streamlit", "SaaS"],
+  tags: ["Next.js 16", "React 19", "TypeScript 5", "Tailwind CSS", "Zustand", "Recharts", "FastAPI", "Python", "Pydantic", "PostgreSQL", "Railway", "Docker", "Vercel", "SaaS"],
   link: "projects/hivewell.html"
   },
   {
