@@ -88,13 +88,20 @@
         </header>
         <section class="section card">
           <p>
-            I architected and built a pre-production enterprise SaaS platform from concept through Railway deployment, creating a comprehensive workplace culture assessment and certification system. The platform features a sophisticated multi-tier architecture: a modern <strong>Next.js 16 frontend</strong> with 100+ React components using section-based architecture for maximum reusability, a robust <strong>FastAPI backend</strong> with 20+ documented endpoints and JWT authentication, and a <strong>PostgreSQL 14+ database</strong> with 42 tables managing 3,093+ assessment records.
+            I architected and built a production-ready enterprise SaaS platform from concept through Railway deployment, creating a comprehensive workplace culture assessment and certification system. The platform features a modern <strong>Next.js 16 frontend</strong> with 100+ React components using section-based architecture for maximum reusability, a robust <strong>FastAPI backend</strong> with 20+ documented endpoints and JWT authentication, and a <strong>PostgreSQL 14+ database</strong> with 42 tables managing 3,093+ assessment records.
           </p>
+
+          <p><strong>Core Features:</strong></p>
+          <ul>
+            <li><strong>Multi-Role Assessment Engine:</strong> 8 distinct assessment types across 164 questions supporting Individual Contributor, People Leader, Decision Maker, and HR roles with 97% scoring validation accuracy</li>
+            <li><strong>Real-Time Analytics Dashboard:</strong> 3 main pages with 9 tabs of data visualization, 8 chart types, 10-second auto-refresh, advanced filtering (company, partner, date ranges)</li>
+            <li><strong>Automated PDF Reporting:</strong> 6-page stakeholder reports generated via ReportLab with 100% success rate, token-based secure downloads, email delivery via Resend API</li>
+            <li><strong>Lead Management System:</strong> Contact form integration, "Drop a Hint" referral system, duplicate email support, 100% submission success rate</li>
+            <li><strong>Blog Management:</strong> Full CRUD operations via admin panel, 35 posts with Railway volume storage (148MB+ images surviving redeploys)</li>
+          </ul>
+
           <p>
-            The system includes a multi-role assessment engine (8 distinct assessment types across 164 questions with 97% scoring validation accuracy), comprehensive admin dashboard with real-time analytics (9 tabs, 8 chart types, 10-second auto-refresh), automated PDF report generation (6-page stakeholder reports, 100% success rate), and lead management system with duplicate email support.
-          </p>
-          <p>
-            <strong>Current Status:</strong> Production deployment live at www.joinhivewell.com. Backend on Railway (Docker + managed PostgreSQL + 5GB persistent volume), frontend successfully deployed. Platform ready for partner onboarding and pilot programs.
+            <strong>Current Status:</strong> Production platform live at www.joinhivewell.com. Backend deployed to Railway (Docker + managed PostgreSQL), frontend successfully deployed. Ready for partner onboarding and pilot programs.
           </p>
         </section>
 
@@ -269,7 +276,7 @@
             <li><strong>Migrations:</strong> Custom migration scripts with rollback capabilities</li>
             <li><strong>Backend Hosting:</strong> Railway (Docker + managed PostgreSQL + auto-backups)</li>
             <li><strong>Volume Storage:</strong> Railway 5GB (148MB+ blog images, survives redeploys)</li>
-            <li><strong>Frontend Hosting:</strong> Vercel (deployment pending Q1 2026)</li>
+            <li><strong>Frontend Hosting:</strong> Vercel (production deployment live)</li>
             <li><strong>Containerization:</strong> Docker (custom Dockerfile with ReportLab dependencies)</li>
             <li><strong>CI/CD:</strong> Git workflow (feature → dev → main with validation gates)</li>
           </ul>

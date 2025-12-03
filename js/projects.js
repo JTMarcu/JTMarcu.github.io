@@ -1,7 +1,7 @@
 export const projects = [
   {
   title: "HiveWell™ Culture Assessment Platform",
-  description: "Production-ready enterprise SaaS platform with 100+ React components, 42-table PostgreSQL database (3,093+ assessment records), 20+ API endpoints, real-time analytics dashboard (9 tabs, 8 chart types), and automated PDF reporting (100% success rate). Built solo with multi-agent architecture.",
+  description: "Production SaaS application live at joinhivewell.com. Full-stack platform with 100+ React components, 42-table PostgreSQL database, 20+ API endpoints, real-time analytics dashboard (9 tabs, 8 chart types), and automated PDF reporting (100% success rate). Built solo from concept to deployment.",
   image: "images/hivewell.png",
   tags: ["Next.js 16", "React 19", "TypeScript 5", "Tailwind CSS", "Zustand", "Recharts", "FastAPI", "Python", "Pydantic", "PostgreSQL", "Railway", "Docker", "Vercel", "SaaS"],
   link: "projects/hivewell.html"
