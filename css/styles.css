@@ -381,13 +381,72 @@ a:hover {
 }
 
 .project-header {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 1.5rem;
 }
 
 .project-title {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
   line-height: 1.2;
+  font-weight: 700;
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.project-hero {
+  margin: 2rem 0;
+}
+
+.project-meta-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--card-background);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.meta-item i {
+  color: var(--primary-color);
+}
+
+.project-summary {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--background-color);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0.5rem;
+}
+
+.project-summary p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text-color);
 }
 
 .project-description {
