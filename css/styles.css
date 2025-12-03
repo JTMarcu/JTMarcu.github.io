@@ -383,6 +383,7 @@ a:hover {
 .project-header {
   margin-bottom: 3rem;
   margin-top: 1.5rem;
+  text-align: center;
 }
 
 .project-title {
