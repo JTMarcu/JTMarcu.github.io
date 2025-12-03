@@ -327,6 +327,77 @@ a:hover {
   transition: all 0.3s ease;
 }
 
+/* Project Detail Pages */
+.project-detail .container {
+  max-width: 1000px;
+}
+
+.project-detail .section {
+  padding: 2rem 0;
+}
+
+.project-detail .section:first-of-type {
+  padding-top: 1rem;
+}
+
+.project-detail .card {
+  margin-bottom: 1.5rem;
+}
+
+.project-detail .section-header {
+  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.project-detail .section-header:first-of-type {
+  margin-top: 0;
+}
+
+.project-detail h3 {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.project-detail h3:first-child {
+  margin-top: 0;
+}
+
+.project-detail ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-detail li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.project-detail p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.project-header {
+  margin-bottom: 2rem;
+}
+
+.project-title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+}
+
 /* Projects Grid */
 .projects-grid {
   display: grid;
@@ -417,45 +488,155 @@ a:hover {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
 }
 
 .stat-card {
   text-align: center;
-  padding: 1.25rem;
-  background: var(--card-background);
-  border: 1px solid var(--border-color);
+  padding: 1.5rem 1rem;
+  background: var(--background-color);
+  border: 2px solid var(--border-color);
   border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.stat-card p {
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  margin: 0;
+  font-weight: 500;
 }
 
 .architecture-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 .arch-card {
-  background: var(--background-color);
-  border: 1px solid var(--border-color);
+  background: var(--card-background);
+  border: 2px solid var(--border-color);
   border-radius: 0.75rem;
-  padding: 1.25rem;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.arch-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+
+.arch-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arch-card h3 i {
+  color: var(--primary-color);
+}
+
+.arch-card ul {
+  margin-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.arch-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .roadmap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 .roadmap-phase {
-  background: var(--background-color);
-  border: 1px solid var(--border-color);
+  background: var(--card-background);
+  border: 2px solid var(--border-color);
   border-radius: 0.75rem;
-  padding: 1.25rem;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.roadmap-phase:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+
+.roadmap-phase h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.roadmap-phase ul {
+  margin-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.roadmap-phase li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.roadmap-phase strong {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 .mt-1 { margin-top: 1rem; }
+
+.tech-stack {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.tech-stack li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.7;
+}
+
+.tech-stack li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.tech-stack strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
 
 .project-tags {
   display: flex;
