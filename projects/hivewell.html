@@ -68,7 +68,7 @@
               <span class="meta-item"><i class="fas fa-calendar"></i> 2024 - Present</span>
             </div>
             <div class="meta-row">
-              <span class="badge">Status: Production-Ready</span>
+              <span class="badge">Pre-Production (Pilot Launch Q1 2026)</span>
               <a href="https://www.joinhivewell.com" target="_blank" rel="noopener noreferrer" class="button button-outline">www.joinhivewell.com</a>
             </div>
             <div class="meta-row">
@@ -77,7 +77,7 @@
           </div>
           
           <div class="project-summary">
-            <p>Full-stack SaaS platform built from concept to production deployment. Features 100+ React components, 42-table PostgreSQL database (3,093+ assessment records), 20+ API endpoints, real-time analytics dashboard (9 tabs, 8 chart types), and automated 6-page PDF reporting (100% success rate).</p>
+            <p>Pre-production enterprise SaaS platform built from concept to Railway deployment. Backend live with Docker + managed PostgreSQL (3,093+ assessment records across 42 tables). Features Next.js 16 frontend (100+ React components), FastAPI backend (20+ API endpoints), real-time analytics dashboard (9 tabs, 8 chart types), automated PDF reporting (100% success rate), and multi-role assessment engine (164 questions, 97% validation accuracy). Frontend deployment to Vercel pending for Q1 2026 pilot launch.</p>
           </div>
         </header>
 
@@ -88,7 +88,13 @@
         </header>
         <section class="section card">
           <p>
-            I architected and built a production-ready enterprise SaaS platform from concept to deployment, supporting workplace culture assessments and certification workflows. The system features a sophisticated multi-tier architecture: a modern Next.js 16 frontend with 100+ React components and section-based reusability, a robust FastAPI backend with 20+ documented endpoints and JWT authentication, and a PostgreSQL 14+ database with 42 tables managing 3,093+ assessment records. The platform includes a comprehensive admin dashboard with real-time analytics (9 tabs, 8 chart types, 10-second auto-refresh), automated PDF report generation (6-page stakeholder reports, 100% success rate), and multi-role assessment engine supporting 8 distinct assessment types across 164 questions with 97% scoring validation accuracy. Deployed on Railway with Docker containerization, managed database, and 5GB persistent volume storage; frontend deployment to Vercel pending for Q1 2026 pilot launch.
+            I architected and built a pre-production enterprise SaaS platform from concept through Railway deployment, creating a comprehensive workplace culture assessment and certification system. The platform features a sophisticated multi-tier architecture: a modern <strong>Next.js 16 frontend</strong> with 100+ React components using section-based architecture for maximum reusability, a robust <strong>FastAPI backend</strong> with 20+ documented endpoints and JWT authentication, and a <strong>PostgreSQL 14+ database</strong> with 42 tables managing 3,093+ assessment records.
+          </p>
+          <p>
+            The system includes a multi-role assessment engine (8 distinct assessment types across 164 questions with 97% scoring validation accuracy), comprehensive admin dashboard with real-time analytics (9 tabs, 8 chart types, 10-second auto-refresh), automated PDF report generation (6-page stakeholder reports, 100% success rate), and lead management system with duplicate email support.
+          </p>
+          <p>
+            <strong>Current Status:</strong> Backend deployed live on Railway (Docker + managed PostgreSQL + 5GB persistent volume). Frontend deployment to Vercel pending for Q1 2026 pilot launch with first partner onboarding.
           </p>
         </section>
 
@@ -102,10 +108,10 @@
             <div class="stat-card"><h3>42</h3><p>Database Tables</p></div>
             <div class="stat-card"><h3>3,093+</h3><p>Assessment Records</p></div>
             <div class="stat-card"><h3>20+</h3><p>API Endpoints</p></div>
-            <div class="stat-card"><h3>164</h3><p>Questions</p></div>
             <div class="stat-card"><h3>9</h3><p>Analytics Tabs</p></div>
             <div class="stat-card"><h3>8</h3><p>Chart Types</p></div>
-            <div class="stat-card"><h3>97%</h3><p>Validation Accuracy</p></div>
+            <div class="stat-card"><h3>123</h3><p>CSS Variables</p></div>
+            <div class="stat-card"><h3>5</h3><p>Mobile Breakpoints</p></div>
           </div>
         </section>
 
@@ -118,40 +124,40 @@
             <div class="arch-card">
               <h3><i class="fas fa-laptop-code"></i> Next.js 16 Frontend</h3>
               <ul>
-                <li>Next.js 16 (App Router, Turbopack dev server)</li>
-                <li>React 19 (Server Components, Suspense, use hook)</li>
-                <li>TypeScript 5 (strict mode, 0 compilation errors)</li>
-                <li>Tailwind CSS + CSS Modules + 123 custom properties</li>
-                <li>Zustand state management (4 stores with persistence)</li>
-                <li>Recharts (8 chart types), Framer Motion animations</li>
-                <li>Section-based architecture (100+ reusable components)</li>
-                <li>Mobile-responsive design (5 breakpoints: 375px-1920px)</li>
+                <li>Next.js 16.0.3 (App Router, Turbopack dev server)</li>
+                <li>React 19 (Server Components, Suspense)</li>
+                <li>TypeScript 5 (strict mode, 0 errors)</li>
+                <li>123 CSS custom properties (94% design system adoption)</li>
+                <li>Zustand (4 stores: assessment, admin, auth, global)</li>
+                <li>Recharts (8 chart types), Framer Motion</li>
+                <li>100+ section-based reusable components</li>
+                <li>5 breakpoints (375px-1920px mobile-responsive)</li>
               </ul>
             </div>
             <div class="arch-card">
               <h3><i class="fas fa-server"></i> FastAPI Backend</h3>
               <ul>
-                <li>FastAPI 0.104+ with async/await patterns</li>
-                <li>Python 3.11 (ASGI server via Uvicorn)</li>
-                <li>Pydantic 2.5+ for request/response validation</li>
-                <li>20+ RESTful endpoints with OpenAPI/Swagger docs</li>
-                <li>JWT authentication with role-based access (4 roles)</li>
+                <li>FastAPI 0.104+ (async/await patterns, Python 3.11)</li>
+                <li>Pydantic 2.5+ (request/response validation)</li>
+                <li>20+ RESTful endpoints (OpenAPI/Swagger auto-docs)</li>
+                <li>JWT authentication (4 roles: admin, partner, assessor, public)</li>
+                <li>Multi-role assessment engine (164 questions, 97% accuracy)</li>
                 <li>ReportLab PDF generation (6-page reports, 100% success)</li>
-                <li>Resend API integration (email delivery, domain verified)</li>
-                <li>Multi-role assessment engine (8 types, 164 questions)</li>
+                <li>Resend API (email delivery, joinhivewell.com verified)</li>
+                <li>Uvicorn ASGI server (production deployment)</li>
               </ul>
             </div>
             <div class="arch-card">
-              <h3><i class="fas fa-chart-line"></i> Data & Infrastructure</h3>
+              <h3><i class="fas fa-database"></i> Data & Infrastructure</h3>
               <ul>
-                <li>PostgreSQL 14+ (42 tables, 3,093+ records)</li>
-                <li>UUID primary keys (distributed system ready)</li>
-                <li>JSONB columns for flexible data structures</li>
-                <li>psycopg2 connection pooling, migration system</li>
-                <li>Railway deployment (Docker + managed PostgreSQL)</li>
-                <li>5GB persistent volume storage (blog images)</li>
-                <li>Admin dashboard: 3 pages, 9 tabs, 8 chart types</li>
-                <li>Real-time analytics with 10-second auto-refresh</li>
+                <li>PostgreSQL 14+ (42 tables, 3,093+ records, UUID keys)</li>
+                <li>JSONB columns (flexible assessment configurations)</li>
+                <li>psycopg2 connection pooling (10-100 connections)</li>
+                <li>Migration system with rollback capabilities</li>
+                <li>Railway (Docker + managed PostgreSQL, auto-backups)</li>
+                <li>5GB persistent volume (148MB+ blog images, survives redeploys)</li>
+                <li>Admin dashboard (3 pages, 9 tabs, 8 chart types)</li>
+                <li>Real-time analytics (10-second auto-refresh)</li>
               </ul>
             </div>
           </div>
@@ -237,45 +243,44 @@
         <section class="section card">
           <h3>Frontend Technologies</h3>
           <ul class="tech-stack">
-            <li><strong>Framework:</strong> Next.js 16 (App Router, Turbopack), React 19 (Server Components, Suspense, use hook)</li>
-            <li><strong>Language:</strong> TypeScript 5 (strict mode, 0 compilation errors)</li>
+            <li><strong>Framework:</strong> Next.js 16.0.3 (App Router, Turbopack), React 19 (Server Components, Suspense)</li>
+            <li><strong>Language:</strong> TypeScript 5 (strict mode, 0 errors)</li>
             <li><strong>Styling:</strong> Tailwind CSS, CSS Modules, 123 CSS custom properties (94% design system adoption)</li>
-            <li><strong>State Management:</strong> Zustand (4 stores: assessment, admin, auth, global with persistence)</li>
+            <li><strong>State Management:</strong> Zustand (4 stores: assessment, admin, auth, global)</li>
             <li><strong>Forms & Validation:</strong> React Hook Form, Zod schema validation</li>
-            <li><strong>Data Visualization:</strong> Recharts (8 chart types: line, bar, heatmap, role distribution)</li>
-            <li><strong>Animation:</strong> Framer Motion + custom HiveMotion system (depth reveals, mask wipes)</li>
+            <li><strong>Data Visualization:</strong> Recharts (8 chart types: line, bar, heatmap, distribution)</li>
+            <li><strong>Animation:</strong> Framer Motion + HiveMotion system (depth reveals, mask wipes)</li>
             <li><strong>Icons:</strong> Lucide React, Font Awesome</li>
           </ul>
           <h3 class="mt-1">Backend Technologies</h3>
           <ul class="tech-stack">
             <li><strong>Framework:</strong> FastAPI 0.104+ (async ASGI, OpenAPI 3.0 auto-docs)</li>
             <li><strong>Language:</strong> Python 3.11 (async/await patterns, type hints)</li>
-            <li><strong>Validation:</strong> Pydantic 2.5+ (request/response models, data validation)</li>
+            <li><strong>Validation:</strong> Pydantic 2.5+ (request/response models)</li>
             <li><strong>Authentication:</strong> python-jose (JWT tokens), passlib (password hashing)</li>
-            <li><strong>Email Service:</strong> Resend API (transactional emails, domain verified: hello@joinhivewell.com)</li>
-            <li><strong>PDF Generation:</strong> ReportLab (6-page stakeholder reports, 100% success rate)</li>
-            <li><strong>Server:</strong> Uvicorn (ASGI production server with hot reload in dev)</li>
+            <li><strong>Email Service:</strong> Resend API (hello@joinhivewell.com verified)</li>
+            <li><strong>PDF Generation:</strong> ReportLab (6-page reports, 100% success rate)</li>
+            <li><strong>Server:</strong> Uvicorn (ASGI production server)</li>
           </ul>
           <h3 class="mt-1">Database & Infrastructure</h3>
           <ul class="tech-stack">
-            <li><strong>Database:</strong> PostgreSQL 14+ (42 tables, UUID primary keys, JSONB columns, 3,093+ records)</li>
-            <li><strong>ORM/Driver:</strong> Raw SQL + psycopg2 (direct connection pooling for performance)</li>
-            <li><strong>Migrations:</strong> Custom migration scripts with rollback capabilities and version control</li>
-            <li><strong>Backend Hosting:</strong> Railway (Docker container, managed PostgreSQL, automatic daily backups)</li>
-            <li><strong>Storage:</strong> Railway 5GB persistent volume (blog images, survives redeploys)</li>
-            <li><strong>Frontend Hosting:</strong> Vercel (deployment pending for Q1 2026 pilot launch)</li>
+            <li><strong>Database:</strong> PostgreSQL 14+ (42 tables, UUID keys, JSONB columns, 3,093+ records)</li>
+            <li><strong>Driver:</strong> psycopg2 (connection pooling: 10-100 connections)</li>
+            <li><strong>Migrations:</strong> Custom migration scripts with rollback capabilities</li>
+            <li><strong>Backend Hosting:</strong> Railway (Docker + managed PostgreSQL + auto-backups)</li>
+            <li><strong>Volume Storage:</strong> Railway 5GB (148MB+ blog images, survives redeploys)</li>
+            <li><strong>Frontend Hosting:</strong> Vercel (deployment pending Q1 2026)</li>
             <li><strong>Containerization:</strong> Docker (custom Dockerfile with ReportLab dependencies)</li>
             <li><strong>CI/CD:</strong> Git workflow (feature → dev → main with validation gates)</li>
-            <li><strong>Email Domain:</strong> joinhivewell.com (DNS verified for Resend API)</li>
           </ul>
           <h3 class="mt-1">Development Tools</h3>
           <ul class="tech-stack">
-            <li><strong>Editor:</strong> VS Code with GitHub Copilot (multi-agent architecture: 10 specialized agents)</li>
-            <li><strong>Version Control:</strong> Git + GitHub (feature branch strategy, squash merges)</li>
-            <li><strong>API Testing:</strong> Postman, curl, FastAPI /docs (Swagger UI), /redoc (ReDoc)</li>
-            <li><strong>Database Tools:</strong> psql CLI, TablePlus GUI, pgAdmin</li>
-            <li><strong>Package Managers:</strong> npm (frontend dependencies), pip (backend packages)</li>
-            <li><strong>Quality Gates:</strong> TypeScript compiler (0 errors), ESLint (0 new errors), Python pytest</li>
+            <li><strong>Editor:</strong> VS Code + GitHub Copilot (10 specialized agents)</li>
+            <li><strong>Version Control:</strong> Git + GitHub (feature branch strategy)</li>
+            <li><strong>API Testing:</strong> Postman, curl, FastAPI /docs (Swagger UI)</li>
+            <li><strong>Database Tools:</strong> psql CLI, TablePlus GUI</li>
+            <li><strong>Package Managers:</strong> npm (frontend), pip (backend)</li>
+            <li><strong>Quality Gates:</strong> TypeScript (0 errors), ESLint, Python pytest</li>
           </ul>
         </section>
 
