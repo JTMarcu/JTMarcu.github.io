@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HiveWell™ Culture Assessment Platform | Jonathan Marcu</title>
-  <meta name="description" content="Production-ready enterprise SaaS platform: 100+ React components, 42-table PostgreSQL database (3,093+ assessment records), 20+ API endpoints, real-time analytics (9 tabs, 8 charts), automated PDF reporting (100% success). Built solo with multi-agent architecture.">
+  <meta name="description" content="Production-ready enterprise SaaS platform: 100+ React components, 42-table PostgreSQL database, 20+ API endpoints, real-time analytics (9 tabs, 8 charts), automated PDF reporting (100% success). Built solo with multi-agent architecture.">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'%3E%3C/rect%3E%3Ctext x='50%25' y='52%25' font-family='Arial' font-size='34' text-anchor='middle' fill='%23fff'%3EJM%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -78,7 +78,7 @@
           </div>
           
           <div class="project-summary">
-            <p>Production SaaS platform launched November 23, 2025 at www.joinhivewell.com. Built solo in <strong>10 months</strong> (February - November 2025): Full-stack deployment with Next.js 16 frontend (100+ React components), FastAPI backend on Railway (Docker + managed PostgreSQL with 3,093+ assessment records across 42 tables), real-time analytics dashboard (9 tabs, 8 chart types), automated PDF reporting (100% success rate), and multi-role assessment engine (164 questions, 97% validation accuracy).</p>
+            <p>Production SaaS platform launched November 23, 2025 at www.joinhivewell.com. Built solo in <strong>5 months</strong> (July - November 2025): Full-stack deployment with Next.js 16 frontend (100+ React components), FastAPI backend on Railway (Docker + managed PostgreSQL with 42 tables), real-time analytics dashboard (9 tabs, 8 chart types), automated PDF reporting (100% success rate), and multi-role assessment engine (164 questions).</p>
           </div>
         </header>
 
@@ -89,13 +89,13 @@
         </header>
         <section class="section card">
           <p>
-            I architected and built a production-ready enterprise SaaS platform from concept through Railway deployment, creating a comprehensive workplace culture assessment and certification system. The platform features a modern <strong>Next.js 16 frontend</strong> with 100+ React components using section-based architecture for maximum reusability, a robust <strong>FastAPI backend</strong> with 20+ documented endpoints and JWT authentication, and a <strong>PostgreSQL 14+ database</strong> with 42 tables managing 3,093+ assessment records.
+            I architected and built a production-ready enterprise SaaS platform from concept through Railway deployment, creating a comprehensive workplace culture assessment and certification system. The platform features a modern <strong>Next.js 16 frontend</strong> with 100+ React components using section-based architecture for maximum reusability, a robust <strong>FastAPI backend</strong> with 20+ documented endpoints and JWT authentication, and a <strong>PostgreSQL 14+ database</strong> with 42 tables.
           </p>
 
           <p><strong>Core Features:</strong></p>
           <ul>
             <li><strong>Multi-Role Assessment Engine:</strong> Sophisticated assessment system with 8 distinct types (4 culture + 4 pilot) across 164 questions supporting Individual Contributor, People Leader, Decision Maker, and HR roles. Features 3-tier response weighting (0/1/2 points), dynamic question routing, real-time progress tracking via Zustand state persistence, and 97% scoring validation accuracy ensuring consistent, reliable results.</li>
-            <li><strong>Real-Time Analytics Dashboard:</strong> Comprehensive analytics with 3 main pages and 9 tabs featuring 17 data visualizations using Recharts. Includes 8 chart types (line, bar, heatmap, distribution, trends, time series, role analysis, geographic), 10-second auto-refresh for live monitoring, advanced filtering (company selector, partner selector, date range picker), and optimized aggregation queries handling 3,093+ records with sub-2s page loads.</li>
+            <li><strong>Real-Time Analytics Dashboard:</strong> Comprehensive analytics with 3 main pages and 9 tabs featuring 17 data visualizations using Recharts. Includes 8 chart types (line, bar, heatmap, distribution, trends, time series, role analysis, geographic), 10-second auto-refresh for live monitoring, advanced filtering (company selector, partner selector, date range picker), and optimized aggregation queries with sub-2s page loads.</li>
             <li><strong>Automated PDF Reporting:</strong> Professional 6-page stakeholder reports generated via ReportLab in Docker environment (custom Dockerfile with build-essential, libfreetype6-dev, pkg-config dependencies). Features company branding, scoring breakdowns, pillar analysis, token-based secure downloads (no direct file URLs), and email delivery via Resend API with HTML templates. Achieved 100% generation success rate across all production tests.</li>
             <li><strong>Lead Management System:</strong> Complete lead capture with contact form submissions (16-column database schema), "Drop a Hint" referral system (15-column schema), duplicate email support for multi-assessment tracking, email validation and sanitization, admin panel for lead management, and real-time submission tracking with 100% success rate.</li>
             <li><strong>Blog Management:</strong> Full CRUD operations via admin panel with Railway 5GB persistent volume storage ensuring image survival across redeploys. Features image upload to /app/static/blog-images, dynamic routing at /resources/blog/[slug], 35 published posts with 148MB+ image content (43 images), and SEO-optimized content management.</li>
@@ -112,10 +112,9 @@
         </header>
         <section class="section section-alt card">
           <div class="stats-grid">
-            <div class="stat-card"><h3>10 Months</h3><p>Development Time</p></div>
+            <div class="stat-card"><h3>5 Months</h3><p>Development Time</p></div>
             <div class="stat-card"><h3>100+</h3><p>React Components</p></div>
             <div class="stat-card"><h3>42</h3><p>Database Tables</p></div>
-            <div class="stat-card"><h3>3,093+</h3><p>Assessment Records</p></div>
             <div class="stat-card"><h3>20+</h3><p>API Endpoints</p></div>
             <div class="stat-card"><h3>164</h3><p>Assessment Questions</p></div>
             <div class="stat-card"><h3>97%</h3><p>Scoring Accuracy</p></div>
@@ -158,7 +157,7 @@
             <div class="arch-card">
               <h3><i class="fas fa-database"></i> Data & Infrastructure</h3>
               <ul>
-                <li>PostgreSQL 14+ (42 tables, 3,093+ records, UUID keys)</li>
+                <li>PostgreSQL 14+ (42 tables, UUID keys)</li>
                 <li>JSONB columns (flexible assessment configurations)</li>
                 <li>psycopg2 connection pooling (10-100 connections)</li>
                 <li>Migration system with rollback capabilities</li>
@@ -178,7 +177,7 @@
         <section class="section section-alt card">
           <h3>Database & Data Engineering</h3>
           <ul>
-            <li>Designed and implemented 42-table relational schema supporting multi-company, multi-partner workflows with 3,093+ assessment records</li>
+            <li>Designed and implemented 42-table relational schema supporting multi-company, multi-partner workflows</li>
             <li>Built UUID-based architecture for distributed system scalability and future multi-region deployment readiness</li>
             <li>Engineered assessment scoring algorithm with 3-tier response weighting achieving 97% validation accuracy</li>
             <li>Created flexible JSONB storage for dynamic question formats without schema migrations, enabling rapid iteration</li>
@@ -272,7 +271,7 @@
           </ul>
           <h3 class="mt-1">Database & Infrastructure</h3>
           <ul class="tech-stack">
-            <li><strong>Database:</strong> PostgreSQL 14+ (42 tables supporting multi-tenant architecture, UUID keys for distributed system scalability, JSONB columns for flexible schemas, 3,093+ records)</li>
+            <li><strong>Database:</strong> PostgreSQL 14+ (42 tables supporting multi-tenant architecture, UUID keys for distributed system scalability, JSONB columns for flexible schemas)</li>
             <li><strong>Driver:</strong> psycopg2 (connection pooling: 10-100 connections for high concurrency)</li>
             <li><strong>Migrations:</strong> Custom migration scripts with rollback capabilities for safe schema evolution</li>
             <li><strong>Backend Hosting:</strong> Railway (Docker containerization for consistent environments, managed PostgreSQL with automatic daily backups, zero-downtime deployments)</li>
@@ -300,7 +299,7 @@
           <h3>Platform Capabilities</h3>
           <ul>
             <li><strong>Assessment Coverage:</strong> 8 distinct role-based assessments (164 total questions) supporting Individual Contributor, People Leader, Decision Maker, and HR roles</li>
-            <li><strong>Data Collection:</strong> 3,093+ assessment records with comprehensive lead generation and contact management</li>
+            <li><strong>Data Collection:</strong> Comprehensive lead generation and contact management system</li>
             <li><strong>User Roles:</strong> 4 distinct permission levels (public users, assessors, partners, admin) with JWT-based access control</li>
             <li><strong>Automated Reporting:</strong> 6-page PDF stakeholder reports with scoring breakdowns, token-based secure downloads, email delivery</li>
             <li><strong>Real-Time Analytics:</strong> 9-tab dashboard with 8 chart types, 10-second auto-refresh, advanced filtering (company, partner, date ranges)</li>
@@ -310,7 +309,7 @@
             <li><strong>Code Quality:</strong> 0 TypeScript compilation errors, 0 new ESLint errors (87 legacy warnings documented and managed)</li>
             <li><strong>Validation Accuracy:</strong> 97% assessment scoring validation through 3-tier response weighting algorithm</li>
             <li><strong>System Reliability:</strong> 100% PDF generation success rate (10/10 backend tests), 100% email delivery via Resend API</li>
-            <li><strong>Database Scale:</strong> 3,093+ records across 42 production tables with UUID architecture for distributed system readiness</li>
+            <li><strong>Database Scale:</strong> 42 production tables with UUID architecture for distributed system readiness</li>
             <li><strong>Component Library:</strong> 100+ reusable React components with section-based architecture enabling rapid page composition</li>
           </ul>
           <h3 class="mt-1">Development Efficiency</h3>
@@ -332,7 +331,7 @@
           <h3 class="mt-1">Launch Success Metrics (Post-Nov 23, 2025)</h3>
           <ul>
             <li><strong>Platform Stability:</strong> 100% backend uptime on Railway since launch, zero critical incidents</li>
-            <li><strong>Data Collection:</strong> 3,093+ assessment records collected with 100% successful database writes</li>
+            <li><strong>Data Collection:</strong> Assessment records collected with 100% successful database writes</li>
             <li><strong>Email Delivery:</strong> 100% success rate via Resend API, zero bounces or delivery failures</li>
             <li><strong>PDF Generation:</strong> 100% report generation success across all stakeholder downloads</li>
             <li><strong>Growth Readiness:</strong> Infrastructure validated for partner onboarding and pilot program expansion</li>
@@ -360,7 +359,7 @@
           
           <div class="challenge-item mt-1">
             <h3><i class="fas fa-chart-line"></i> Challenge 3: Real-Time Analytics Performance</h3>
-            <p><strong>Problem:</strong> Dashboard slow with 3,093+ records, especially with multiple chart renders.</p>
+            <p><strong>Problem:</strong> Dashboard slow with large datasets, especially with multiple chart renders.</p>
             <p><strong>Solution:</strong> Optimized PostgreSQL queries with proper indexing, implemented connection pooling (10-100 connections), added 10-second auto-refresh instead of constant polling, used React memo for chart components, aggregation queries for large datasets.</p>
             <p><strong>Result:</strong> Sub-2s page loads, smooth real-time updates across all 9 analytics tabs.</p>
           </div>
