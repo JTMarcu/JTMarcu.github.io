@@ -96,6 +96,13 @@ export const projects = [
   image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
   tags: ["Python", "Streamlit", "FastAPI", "OpenAI", "Ollama", "PDF", "Automation", "Resume"],
   link: "projects/job-dashboard.html"
+  },
+  {
+  title: "Olist Marketplace Analytics",
+  description: "End-to-end analytics engineering pipeline transforming 100k+ raw e-commerce orders into production-ready data marts using dbt and Google BigQuery with Medallion Architecture.",
+  image: "images/olist_lineage.png",
+  tags: ["dbt", "BigQuery", "SQL", "Data Engineering", "Analytics Engineering", "Medallion Architecture", "Star Schema"],
+  link: "projects/olist-marketplace.html"
   }
 ];
 

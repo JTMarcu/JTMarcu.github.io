@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>March Madness 2025 Prediction - Jonathan Marcu</title>
+  <meta name="description" content="March Madness 2025 prediction model using machine learning by Jonathan Marcu.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <nav class="container">
+      <a href="../index.html" class="logo">Jonathan Marcu</a>
+      <div class="contact-location">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <span>San Diego, CA</span>
+      </div>
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a href="../index.html#about" class="nav-item">About</a>
+        <a href="../index.html#projects" class="nav-item">Projects</a>
+        <a href="../index.html#skills" class="nav-item">Skills</a>
+        <a href="../index.html#experience" class="nav-item">Experience</a>
+        <a href="../index.html#education" class="nav-item">Education</a>
+        <a href="../index.html#contact" class="nav-item">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="container">
+        <a href="../index.html#about" class="mobile-nav-item">About</a>
+        <a href="../index.html#projects" class="mobile-nav-item">Projects</a>
+        <a href="../index.html#skills" class="mobile-nav-item">Skills</a>
+        <a href="../index.html#experience" class="mobile-nav-item">Experience</a>
+        <a href="../index.html#education" class="mobile-nav-item">Education</a>
+        <a href="../index.html#contact" class="mobile-nav-item">Contact</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Project Section -->
+    <section class="project-detail section">
+      <div class="container">
+        <header class="project-header section-header">
+          <h1 class="project-title section-title">March Madness 2025 Prediction</h1>
+          <p class="project-description">Comprehensive analysis and prediction model for March Madness 2025 using machine learning</p>
+          <a href="#jupyter-notebook" class="button button-primary button-notebook">View Jupyter Notebook</a>
+        </header>
+        <div class="project-pdf"></div>
+        <div class="project-content">
+          <div class="project-image centered-image">
+            <img src="https://www.kaggle.com/competitions/91497/images/header" alt="March Madness Visualizations" class="image-shadow">
+          </div>
+
+          <!-- Prediction Web App Section -->
+          <header class="section-header" id="prediction-web-app">
+            <h2 class="section-title" style="margin-top: 40px;">Prediction Web App</h2>
+            <div class="section-divider"></div>
+          </header>
+          <iframe src="../apps/prediction-web-app/src/index.html" width="100%" height="500px" frameborder="0"></iframe>
+<!-- Overview Section -->
+<header class="section-header">
+  <h2 class="section-title" style="margin-top: 40px;">Overview</h2>
+  <div class="section-divider"></div>
+</header>
+<section class="section card">
+  <div class="visualization centered-image">
+    <img src="https://www.ncaa.com/_flysystem/public-s3/nav/countdown/icons/MM-B%26W.png" alt="March Madness Insights" style="max-height: 80px;">
+  </div>
+  <h3>March Madness Prediction Model Using Machine Learning</h3>
+  <p>Developed a predictive model to forecast NCAA basketball tournament outcomes using historical game data. This end-to-end solution leverages detailed box score statistics from both regular seasons and tournaments (2010-2024) to predict 2025 matchups. Key components:</p>
+  <ul>
+    <li>Combined men's and women's basketball data (117,000+ games)</li>
+    <li>Engineered 12 advanced team statistics including offensive efficiency and scoring margin</li>
+    <li>Implemented Random Forest classifier with hyperparameter tuning</li>
+    <li>Achieved 0.753 AUC score and 67% accuracy in validation</li>
+    <li>Generated probabilistic predictions for 2025 tournament bracket</li>
+  </ul>
+  <p><strong>Technologies:</strong> Python, Scikit-learn, Pandas, NumPy, Seaborn</p>
+  <p>[GitHub] [Live Demo] [Project Report]</p>
+</section>
+
+<!-- Data Preparation & Feature Engineering Section -->
+<header class="section-header">
+  <h2 class="section-title" style="margin-top: 40px;">Data Preparation & Feature Engineering</h2>
+  <div class="section-divider"></div>
+</header>
+<section class="section card">
+  <h3>Structured Multi-Source Basketball Data</h3>
+  <p>Processed 4 distinct datasets containing 34 game metrics:</p>
+  <ul>
+    <li>Aggregated team statistics across seasons using SQL-like operations</li>
+    <li>Created symmetrical features for both winners/losers using perspective flipping</li>
+    <li>Engineered advanced metrics:</li>
+  </ul>
+  <div class="code-block">
+    <pre>
+"WinPct", "ScoreMargin", "OffEff = (Points/Possessions)*100", 
+"DefEff", "ShootingPercentages", "ReboundDifferentials"
+    </pre>
+  </div>
+  <p>Implemented possessions calculation:</p>
+  <div class="code-block">
+    <pre>Possessions = FGA - OReb + TO + 0.44*FTA</pre>
+  </div>
+  <ul>
+    <li>Handled class imbalance through stratified sampling</li>
+    <li>Visualized key trends using Seaborn/Matplotlib (score distributions, seasonal trends)</li>
+  </ul>
+</section>
+
+<!-- Model Development Section -->
+<header class="section-header">
+  <h2 class="section-title" style="margin-top: 40px;">Model Development</h2>
+  <div class="section-divider"></div>
+</header>
+<section class="section card">
+  <h3>Optimized Random Forest Classifier</h3>
+  <p>Built predictive pipeline using machine learning best practices:</p>
+  <ul>
+    <li>RandomizedSearchCV for hyperparameter tuning (10 iterations, 5-fold CV)</li>
+    <li>Evaluated using probabilistic metrics: Brier Score, Log Loss</li>
+    <li>Feature importance analysis revealed key predictors:</li>
+    <ul>
+      <li>Offensive Efficiency Difference (23%)</li>
+      <li>Win Percentage Differential (19%)</li>
+      <li>Scoring Margin Gap (15%)</li>
+    </ul>
+  </ul>
+  <h3>Validation Strategy</h3>
+  <ul>
+    <li>Time-based split: 2010-2023 training, 2024 validation</li>
+    <li>Class-weighted evaluation to handle natural imbalance</li>
+    <li>Neutral court assumption for tournament predictions</li>
+  </ul>
+</section>
+
+<!-- Results & Validation Section -->
+<header class="section-header">
+  <h2 class="section-title" style="margin-top: 40px;">Results & Validation</h2>
+  <div class="section-divider"></div>
+</header>
+<section class="section card">
+  <h3>Model Performance Metrics</h3>
+  <table class="data-table">
+    <caption>Performance Metrics</caption>
+    <tr>
+      <th>Metric</th>
+      <th>Training</th>
+      <th>Validation</th>
+    </tr>
+    <tr>
+      <td>Brier Score</td>
+      <td>0.182</td>
+      <td>0.199</td>
+    </tr>
+    <tr>
+      <td>AUC-ROC</td>
+      <td>0.812</td>
+      <td>0.753</td>
+    </tr>
+    <tr>
+      <td>Accuracy</td>
+      <td>71.4%</td>
+      <td>67.2%</td>
+    </tr>
+    <tr>
+      <td>Log Loss</td>
+      <td>0.521</td>
+      <td>0.578</td>
+    </tr>
+  </table>
+  <h3>Key Insights</h3>
+  <ul>
+    <li>Model shows strong calibration (Brier <0.2)</li>
+    <li>Handles close games effectively (64% accuracy on ≤5pt margins)</li>
+    <li>Women's tournament predictions slightly outperform men's (AUC 0.78 vs 0.72)</li>
+    <li>Offensive efficiency difference is strongest single predictor</li>
+  </ul>
+</section>
+
+<!-- Future Enhancements Section -->
+<header class="section-header">
+  <h2 class="section-title" style="margin-top: 40px;">Future Enhancements</h2>
+  <div class="section-divider"></div>
+</header>
+<section class="section card">
+  <h3>Roadmap for Improved Performance</h3>
+  <ul>
+    <li>Incorporate advanced metrics:
+      <ul>
+        <li>Player-level statistics</li>
+        <li>Conference strength adjustments</li>
+        <li>Injury reports</li>
+      </ul>
+    </li>
+    <li>Implement temporal weighting system:</li>
+    <div class="code-block">
+      <pre>recent_games_weight = 1 + (current_season - game_season)*0.1</pre>
+    </div>
+    <li>Experiment with ensemble methods:
+      <ul>
+        <li>Gradient Boosted Trees (XGBoost)</li>
+        <li>Neural networks with temporal awareness</li>
+      </ul>
+    </li>
+    <li>Add explainability components:
+      <ul>
+        <li>SHAP value visualizations</li>
+        <li>"Model Confidence" indicators in predictions</li>
+      </ul>
+    </li>
+    <li>Develop simulation system:
+      <ul>
+        <li>Monte Carlo bracket simulations</li>
+        <li>Upset probability estimates</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+
+          <!-- Jupyter Notebook Section -->
+          <header class="section-header" id="jupyter-notebook">
+            <h2 class="section-title" style="margin-top: 40px;">Jupyter Notebook</h2>
+            <div class="section-divider"></div>
+          </header>
+          <section class="section card">
+            <h3>Interactive Analysis</h3>
+            <p>Explore the full analysis in the Jupyter Notebook below:</p>
+            <iframe src="../images/madness_2025.html" width="100%" height="600px" frameborder="0"></iframe>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h2 class="footer-title">Jonathan Marcu</h2>
+          <p class="footer-subtitle">Data Scientist & Machine Learning Enthusiast</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:JonMarcu@live.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/JTMarcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="current-year"></span> Jonathan Marcu. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js" type="module"></script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+      themeToggleMobile.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    });
+
+    themeToggleMobile.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    });
+  </script>
+</body>
+</html>
