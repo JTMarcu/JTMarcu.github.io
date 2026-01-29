@@ -10,6 +10,7 @@ export const skillCategories = [
       { name: "Dax/M", level: 4 },
       { name: "Scikit-learn", level: 4 },
       { name: "Pandas", level: 4 },
+      { name: "Data Modeling", level: 4 },
     ],
   },
   {
@@ -36,6 +37,7 @@ export const skillCategories = [
       { name: "Docker", level: 3 },
       { name: "Railway", level: 4 },
       { name: "Vercel", level: 3 },
+      { name: "dbt", level: 3 },
       { name: "Data Pipelines", level: 3 },
       { name: "Git", level: 4 },
     ],
