@@ -14,6 +14,13 @@ export const projects = [
   link: "projects/live-data-visualizer.html"
   },
   {
+  title: "AI Job Search Engine",
+  description: "Semantic job discovery engine over 100K US postings using multi-vector FAISS search, GPT-powered cross-title matching, geo-distance filtering, and conversational refinement. Built as a founding engineer take-home challenge.",
+  image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
+  tags: ["Python", "FAISS", "OpenAI", "Streamlit", "NLP", "Semantic Search", "GPT-4o-mini", "Embeddings"],
+  link: "projects/ai-job-search.html"
+  },
+  {
     title: "NCAA March Madness Prediction Model",
     description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
     image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",

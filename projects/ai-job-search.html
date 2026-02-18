@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Job Search Engine - Jonathan Marcu</title>
+  <meta name="description" content="An AI-powered semantic job discovery engine using multi-vector FAISS search, GPT cross-title matching, geo-distance filtering, and conversational refinement over 100K US job postings.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'%3E%3C/rect%3E%3Ctext x='50%25' y='52%25' font-family='Arial' font-size='34' text-anchor='middle' fill='%23fff'%3EJM%3C/text%3E%3C/svg%3E">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <nav class="container">
+      <a href="../index.html" class="logo">Jonathan Marcu</a>
+      <div class="contact-location">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <span>San Diego, CA</span>
+      </div>
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a href="../index.html#about" class="nav-item">About</a>
+        <a href="../index.html#experience" class="nav-item">Experience</a>
+        <a href="../index.html#projects" class="nav-item">Projects</a>
+        <a href="../index.html#skills" class="nav-item">Skills</a>
+        <a href="../index.html#education" class="nav-item">Education</a>
+        <a href="../index.html#contact" class="nav-item">Contact</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="container">
+        <a href="../index.html#about" class="mobile-nav-item">About</a>
+        <a href="../index.html#experience" class="mobile-nav-item">Experience</a>
+        <a href="../index.html#projects" class="mobile-nav-item">Projects</a>
+        <a href="../index.html#skills" class="mobile-nav-item">Skills</a>
+        <a href="../index.html#education" class="mobile-nav-item">Education</a>
+        <a href="../index.html#contact" class="mobile-nav-item">Contact</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="project-detail section">
+      <div class="container">
+        <!-- Title and Description -->
+        <header class="section-header">
+          <h1 class="section-title">AI Job Search Engine</h1>
+          <p class="section-description">
+            A semantic job discovery engine built for a founding engineer take-home challenge. Uses multi-vector FAISS search,
+            GPT-powered cross-title matching, geo-distance filtering, and conversational refinement to help users find
+            relevant jobs from 100K US postings using natural language.
+          </p>
+        </header>
+
+        <!-- Overview -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 20px;">Overview</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <p>
+            Modern job search is broken — job descriptions are messy, requirements are implied rather than labeled,
+            and users think in <strong>intent</strong> ("something senior but not management", "remote-friendly startups")
+            rather than keyword filters. This engine was built to solve that.
+          </p>
+          <p>
+            Given a dataset of <strong>100,000 US job postings</strong> scraped from company career pages — each with
+            raw text, GPT-extracted structured fields, and three pre-computed 1536-dimensional embeddings — the system
+            delivers intelligent, natural-language job discovery with conversational refinement across multiple turns.
+          </p>
+          <p>
+            Built in <strong>~16 hours</strong> across 4 days as a take-home engineering challenge for a startup's
+            founding engineer role. Total API cost during development: <strong>~$0.005</strong>.
+          </p>
+        </section>
+
+        <!-- Key Innovations -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Key Innovations</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <h3>Multi-Query Cross-Title Matching</h3>
+          <p>
+            Traditional semantic search embeds the user's query as <strong>one vector</strong> — if the user says
+            "data engineer", it only matches that exact phrasing. This system:
+          </p>
+          <ol>
+            <li><strong>GPT extracts related job titles</strong> that need similar skills but use different words</li>
+            <li><strong>Batch-embeds all variants</strong> in a single API call (negligible extra cost)</li>
+            <li><strong>Searches FAISS with each variant</strong>, keeping the <strong>MAX score</strong> per candidate</li>
+          </ol>
+          <p>
+            <em>Example:</em> <code>"someone who manages projects"</code> → primary: "project manager" + related:
+            ["program manager", "scrum master", "delivery manager", "TPM"] → returns Scrum Masters, Project Managers,
+            <strong>and</strong> Program Managers in one result set.
+          </p>
+
+          <h3 style="margin-top: 25px;">Geo-Distance Filtering</h3>
+          <p>
+            Instead of string-matching city names (which fails: "San Diego" ≠ "San Francisco" even though both contain "San"),
+            the system uses <strong>haversine distance</strong> with a 50-mile radius:
+          </p>
+          <ul>
+            <li>Pre-computed coordinates for 1,000 US cities via Photon geocoder</li>
+            <li>Jobs within 50 miles of the requested city pass the filter</li>
+            <li>"San Diego" matches Chula Vista (7mi) and Carlsbad (32mi), but <strong>not</strong> LA (111mi) or SF (458mi)</li>
+          </ul>
+
+          <h3 style="margin-top: 25px;">Conversational Refinement</h3>
+          <p>
+            Multi-turn queries accumulate history and re-synthesize the full search intent each turn — not just additive filters:
+          </p>
+          <ol>
+            <li><strong>Turn 1:</strong> "data science jobs" → searches broadly</li>
+            <li><strong>Turn 2:</strong> "at social good non-profits" → GPT sees Turn 1 context, synthesizes "data science at mission-driven orgs"</li>
+            <li><strong>Turn 3:</strong> "make it remote" → GPT sees Turn 1+2, synthesizes "remote data science at social good orgs"</li>
+          </ol>
+        </section>
+
+        <!-- Architecture -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Architecture</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <div class="code-block">
+            <pre>
+User Query ("data engineer in San Diego")
+      │
+      ▼
+┌─────────────────────┐
+│    Query Parser      │  GPT-4o-mini extracts:
+│                      │  • search_text, related_titles
+│                      │  • filters (location, remote, salary, seniority)
+│                      │  • per-query embedding weights
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  Multi-Query Embed   │  Batch embed: search_text + all related_titles
+│  (1 API call)        │  text-embedding-3-small (1536d)
+└──────────┬──────────┘
+           │
+           ▼
+┌──────────────────────────────────────────┐
+│       Multi-Vector FAISS Search          │
+│                                          │
+│   ┌──────────┐ ┌──────────┐ ┌─────────┐ │
+│   │ Explicit │ │ Inferred │ │ Company │ │
+│   │  (0.45)  │ │  (0.30)  │ │  (0.25) │ │
+│   └────┬─────┘ └────┬─────┘ └────┬────┘ │
+│        └──────┬──────┘─────┬──────┘      │
+│               ▼            ▼             │
+│     MAX score per candidate across       │
+│     all query variants → weighted merge  │
+└───────────────────┬──────────────────────┘
+                    │
+                    ▼
+          ┌─────────────────┐
+          │  Post-Filtering  │  Geo-distance, remote,
+          │                  │  salary, seniority
+          └────────┬────────┘
+                   │
+                   ▼
+            Ranked Results</pre>
+          </div>
+        </section>
+
+        <!-- How Search Works -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">How Search Works</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ol>
+            <li><strong>Query Parsing:</strong> GPT-4o-mini analyzes the natural language query and extracts: focused search text, 3–5 related alternative job titles, structured filters (remote, location, salary, seniority, industry), and per-query weight tuning for the three embedding channels.</li>
+            <li><strong>Batch Embedding:</strong> The primary search text + all related titles are embedded in a <strong>single API call</strong> via <code>text-embedding-3-small</code> (1536 dimensions).</li>
+            <li><strong>Multi-Vector Search:</strong> Each embedding vector is searched against 3 FAISS indices:
+              <ul>
+                <li><strong>Explicit</strong> (0.45 weight): Matches job title, listed skills, certifications</li>
+                <li><strong>Inferred</strong> (0.30 weight): Matches implied qualifications, related roles</li>
+                <li><strong>Company</strong> (0.25 weight): Matches company characteristics, industry, mission</li>
+              </ul>
+            </li>
+            <li><strong>Score Aggregation:</strong> For each candidate job, we keep the <strong>MAX</strong> score across all query variants per index, then compute the weighted sum.</li>
+            <li><strong>Post-Filtering:</strong> Hard filters applied after scoring — geo-distance (50mi radius via haversine), remote flag, salary ranges, seniority with alias expansion.</li>
+            <li><strong>Ranking:</strong> Final results sorted by combined score, top-K returned with job cards showing title, company, location, salary, skills, and description snippet.</li>
+          </ol>
+        </section>
+
+        <!-- Tech Stack -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Tech Stack</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ul>
+            <li><strong>Query Understanding:</strong> GPT-4o-mini for intent parsing, related title extraction, and conversational re-synthesis</li>
+            <li><strong>Embeddings:</strong> <code>text-embedding-3-small</code> (1536d) — pre-computed for 100K jobs, real-time for queries</li>
+            <li><strong>Vector Search:</strong> FAISS <code>IndexFlatIP</code> (brute-force inner product) — 3 separate indices for explicit, inferred, and company embeddings</li>
+            <li><strong>Data Processing:</strong> pandas + NumPy for ETL from 8.36 GB JSONL → Parquet + .npy arrays</li>
+            <li><strong>Geo Filtering:</strong> Haversine distance with pre-computed coordinates for 1,000 US cities (Photon geocoder)</li>
+            <li><strong>Web UI:</strong> Streamlit with custom-branded theme, job cards, and conversational interface</li>
+            <li><strong>Language:</strong> Python 3.11+</li>
+          </ul>
+        </section>
+
+        <!-- Results & Performance -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Results &amp; Performance</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ul>
+            <li><strong>95% Precision@5</strong> across evaluated queries (18/19 relevant results in top 5)</li>
+            <li><strong>~$0.00017 per query</strong> — the $10 budget supports ~58,000 queries</li>
+            <li><strong>~50ms search latency</strong> on 100K vectors (exact brute-force search)</li>
+            <li><strong>Cross-title recall:</strong> "someone who manages projects" surfaces Scrum Masters, Project Managers, <em>and</em> Program Managers</li>
+            <li><strong>Geo-aware:</strong> "jobs in San Diego" returns only nearby cities (Chula Vista, Carlsbad), not all of California</li>
+            <li><strong>Vague intent handling:</strong> "I want to help people with their finances" → financial advisor, financial planner, wealth manager</li>
+          </ul>
+        </section>
+
+        <!-- Design Trade-offs -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Design Trade-offs</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ul>
+            <li><strong>FAISS brute-force over IVF/HNSW:</strong> 100K vectors is small enough for exact search (~50ms). Simpler, no training required, exact results.</li>
+            <li><strong>GPT-4o-mini over GPT-4o:</strong> ~10× cheaper for query parsing. Adequate for intent extraction with structured JSON output.</li>
+            <li><strong>Multi-query embedding over single-query:</strong> Embeds related titles separately so "data engineer" also matches "ETL developer". One batch API call → negligible extra cost.</li>
+            <li><strong>Post-filtering over pre-filtering:</strong> Avoids partitioned indices. At 100K scale, over-fetch + filter is fast and never misses semantically relevant results.</li>
+            <li><strong>Re-synthesis over incremental filters:</strong> Each refinement turn re-synthesizes full intent from conversation history. More robust for complex multi-turn queries.</li>
+            <li><strong>3 separate indices over concatenated:</strong> Allows dynamic per-query weight tuning. Company-focused queries boost company weight; skill queries boost explicit weight.</li>
+          </ul>
+        </section>
+
+        <!-- Project Structure -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Project Structure</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <div class="code-block">
+            <pre>
+├── app.py                  # Streamlit web GUI with branded theme
+├── demo.py                 # CLI entry point (5 queries + refinement flows)
+├── demo.ipynb              # Jupyter notebook demo with outputs
+├── Makefile                # make setup / demo / app / geocache
+├── requirements.txt        # Python dependencies
+├── scripts/
+│   ├── setup.sh            # One-liner setup (macOS/Linux)
+│   ├── setup.ps1           # One-liner setup (Windows)
+│   └── build_geo_cache.py  # Geocode cities → geo_cache.json
+├── src/
+│   ├── config.py           # Settings, OpenAI client, token tracker
+│   ├── data_processor.py   # JSONL → parquet + .npy pipeline
+│   ├── index_builder.py    # .npy → FAISS indices
+│   ├── query_parser.py     # GPT-4o-mini intent + related titles
+│   ├── search_engine.py    # Multi-vector search + geo-filtering
+│   ├── conversation.py     # Multi-turn refinement state machine
+│   └── demo.py             # Demo logic (queries + refinement)
+└── data/                   # Generated by data pipeline
+    ├── jobs.jsonl           # Raw dataset (8.36 GB, 100K postings)
+    ├── metadata.parquet     # Structured fields for 100K jobs
+    ├── *_embeddings.npy     # 3 × (100K × 1536) float32 arrays
+    ├── faiss_*.index        # 3 FAISS IndexFlatIP indices
+    └── geo_cache.json       # Lat/lon for 1,000 US cities</pre>
+          </div>
+        </section>
+
+        <!-- Challenges -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Challenges &amp; Solutions</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ul>
+            <li><strong>Scale &amp; Data Wrangling:</strong> Processing 8.36 GB of messy, inconsistent JSONL data into clean Parquet + NumPy arrays with aligned row indices across metadata and three embedding matrices.</li>
+            <li><strong>Cross-Title Recall:</strong> Single-vector search misses synonymous job titles. Solved by having GPT generate related titles and batch-embedding all variants in one API call for near-zero extra cost.</li>
+            <li><strong>Location Ambiguity:</strong> String-matching "San" matches both "San Diego" and "San Francisco". Solved with haversine geo-distance filtering using pre-computed coordinates for 1,000 US cities.</li>
+            <li><strong>Conversational Context:</strong> Simple filter accumulation breaks on complex multi-turn queries. Solved by re-synthesizing the full intent from conversation history each turn.</li>
+            <li><strong>Cost Control:</strong> Kept total API spend under $0.01 for all development and testing by using GPT-4o-mini and batch embedding strategies.</li>
+          </ul>
+        </section>
+
+        <!-- Future Improvements -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Future Improvements</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ul>
+            <li>Hybrid re-ranking with BM25/TF-IDF text search fused via Reciprocal Rank Fusion</li>
+            <li>Negative filtering using embedding distance to exclude "not X" terms</li>
+            <li>Result explanations showing which embedding channel and related title contributed most</li>
+            <li>IVF or HNSW indices for production scale (millions of jobs)</li>
+            <li>Skills knowledge graph for expanded matching (e.g., "Python" → pandas, Django, FastAPI)</li>
+            <li>Saved searches, alerts, and per-user conversation history</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h2 class="footer-title">Jonathan Marcu</h2>
+          <p class="footer-subtitle">Data Scientist & Machine Learning Enthusiast</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/jon-marcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:JonMarcu@live.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/JTMarcu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="current-year"></span> Jonathan Marcu. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js" type="module"></script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+      themeToggleMobile.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    });
+
+    themeToggleMobile.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+      themeToggleMobile.innerHTML = theme === 'dark' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    });
+  </script>
+</body>
+</html>
