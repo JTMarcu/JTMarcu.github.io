@@ -7,13 +7,6 @@ export const projects = [
   link: "projects/hivewell.html"
   },
   {
-  title: "Live Data Visualizer",
-  description: "A local Streamlit dashboard that streams live stock prices, financial news, and weather data using MCP and FastAPI tools.",
-  image: "https://th.bing.com/th/id/OIP.SN1qtTiB8wnOjKksOW7WHQHaEK?w=288&h=180&c=7&r=0&o=7&cb=iwp1&pid=1.7&rm=3",
-  tags: ["Python", "Streamlit", "FastAPI", "Altair", "Live Data", "MCP"],
-  link: "projects/live-data-visualizer.html"
-  },
-  {
   title: "AI Job Search Engine",
   description: "Semantic job discovery engine over 100K US postings using multi-vector FAISS search, GPT-powered cross-title matching, geo-distance filtering, and conversational refinement. Built as a founding engineer take-home challenge.",
   image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
@@ -21,11 +14,11 @@ export const projects = [
   link: "projects/ai-job-search.html"
   },
   {
-    title: "NCAA March Madness Prediction Model",
-    description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Machine Learning", "Sports Analytics", "Scikit-learn", "Data Visualization"],
-    link: "projects/march-madness.html"
+  title: "Olist Marketplace Analytics",
+  description: "End-to-end analytics engineering pipeline transforming 100k+ raw e-commerce orders into production-ready data marts using dbt and Google BigQuery with Medallion Architecture.",
+  image: "images/olist_lineage.png",
+  tags: ["dbt", "BigQuery", "SQL", "Data Engineering", "Analytics Engineering", "Medallion Architecture", "Star Schema"],
+  link: "projects/olist-marketplace.html"
   },
   {
   title: "Rental Price Optimization Tool",
@@ -33,20 +26,27 @@ export const projects = [
   image: "https://timesofsandiego.com/wp-content/uploads/2023/12/Brynn-Civita.jpg",
   tags: ["Python", "Selenium", "BeautifulSoup", "Pandas", "PostgreSQL", "SQLAlchemy", "psycopg2", "Jupyter", "Data Science", "Data Visualization", "Power BI", "Tableau", "Machine Learning"],
   link: "projects/rental_price.html"
-  }, 
-  {
-    title: "FoodHub Order Analysis",
-    description: "Analyzing data to understand the demand of different restaurants and enhance business and customer experience.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Pandas", "Seaborn", "Data Analysis", "Visualization"],
-    link: "projects/foodhub.html"
   },
   {
-    title: "BellaBeat Capstone Project",
-    description: "Analyzing user data from a fitness tracker to understand activity levels, sleep patterns, and heart rate variability.",
-    image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=400&h=200",
-    tags: ["R Programming", "Tidyverse", "Data Cleaning", "Visualization"],
-    link: "projects/bellabeat.html"
+    title: "Gandalf: Tolkien Lore RAG Chatbot",
+    description: "A Retrieval-Augmented Generation chatbot grounded in Tolkien's core legendarium. Combines FAISS vector search across three books with Qwen2.5-7B-Instruct for canonical, chapter-referenced answers — all in Gandalf's voice.",
+    image: "https://i.pinimg.com/474x/d0/a4/66/d0a4666833bad03c01a24b52c02a2aca--gandalf-the-hobbit.jpg",
+    tags: ["Python", "RAG", "LangChain", "FAISS", "Qwen2.5-7B", "Hugging Face", "Gradio", "CI/CD"],
+    link: "projects/gandalf-bot.html"
+  },
+  {
+  title: "Live Data Visualizer",
+  description: "A local Streamlit dashboard that streams live stock prices, financial news, and weather data using MCP and FastAPI tools.",
+  image: "https://th.bing.com/th/id/OIP.SN1qtTiB8wnOjKksOW7WHQHaEK?w=288&h=180&c=7&r=0&o=7&cb=iwp1&pid=1.7&rm=3",
+  tags: ["Python", "Streamlit", "FastAPI", "Altair", "Live Data", "MCP"],
+  link: "projects/live-data-visualizer.html"
+  },
+  {
+  title: "Job Dashboard + Resume Builder",
+  description: "Local-first platform to search jobs, tailor resumes using AI, and manage applications with MCP-powered tools.",
+  image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
+  tags: ["Python", "Streamlit", "FastAPI", "OpenAI", "Ollama", "PDF", "Automation", "Resume"],
+  link: "projects/job-dashboard.html"
   },
   {
   title: "Voicemail & Call Categorizer",
@@ -54,6 +54,13 @@ export const projects = [
   image: "images/VM.png",
   tags: ["Python", "Streamlit", "OpenAI Whisper", "NLP", "PyTorch", "spaCy", "Entity Extraction", "Automation"],
   link: "projects/voicemail-transcriber.html"
+  },
+  {
+    title: "NCAA March Madness Prediction Model",
+    description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
+    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
+    tags: ["Python", "Machine Learning", "Sports Analytics", "Scikit-learn", "Data Visualization"],
+    link: "projects/march-madness.html"
   },
   {
     title: "Brain Tumor Detection",
@@ -68,20 +75,6 @@ export const projects = [
     image: "https://www.vuassistance.com/wp-content/uploads/2021/10/IMG-20211008-WA0009-800x500.jpg",
     tags: ["Python", "PyTorch", "Deep Learning", "Medical Imaging", "Data Science"],
     link: "projects/dermatology.html"
-  }, 
-  {
-    title: "AWS Flashcards",
-    description: "Flashcards app to help study for AWS exams. Built with Flask and Python, it provides an interactive way to learn AWS concepts.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Flask", "AWS", "Education", "Interactive UI"],
-    link: "projects/flashcards.html"
-  },
-  {
-    title: "Gandalf: Tolkien Lore RAG Chatbot",
-    description: "A Retrieval-Augmented Generation chatbot grounded in Tolkien's core legendarium. Combines FAISS vector search across three books with Qwen2.5-7B-Instruct for canonical, chapter-referenced answers — all in Gandalf's voice.",
-    image: "https://i.pinimg.com/474x/d0/a4/66/d0a4666833bad03c01a24b52c02a2aca--gandalf-the-hobbit.jpg",
-    tags: ["Python", "RAG", "LangChain", "FAISS", "Qwen2.5-7B", "Hugging Face", "Gradio", "CI/CD"],
-    link: "projects/gandalf-bot.html"
   },
   {
     title: "Shinkansen Bullet Train Passenger Satisfaction Prediction",
@@ -98,16 +91,27 @@ export const projects = [
     link: "projects/amazon.html"
   },
   {
-  title: "Job Dashboard + Resume Builder",
-  description: "Local-first platform to search jobs, tailor resumes using AI, and manage applications with MCP-powered tools.",
-  image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&h=200",
-  tags: ["Python", "Streamlit", "FastAPI", "OpenAI", "Ollama", "PDF", "Automation", "Resume"],
-  link: "projects/job-dashboard.html"
+    title: "FoodHub Order Analysis",
+    description: "Analyzing data to understand the demand of different restaurants and enhance business and customer experience.",
+    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&h=200",
+    tags: ["Python", "Pandas", "Seaborn", "Data Analysis", "Visualization"],
+    link: "projects/foodhub.html"
   },
   {
-  title: "Olist Marketplace Analytics",
-  description: "End-to-end analytics engineering pipeline transforming 100k+ raw e-commerce orders into production-ready data marts using dbt and Google BigQuery with Medallion Architecture.",
-  image: "images/olist_lineage.png",
+    title: "BellaBeat Capstone Project",
+    description: "Analyzing user data from a fitness tracker to understand activity levels, sleep patterns, and heart rate variability.",
+    image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=400&h=200",
+    tags: ["R Programming", "Tidyverse", "Data Cleaning", "Visualization"],
+    link: "projects/bellabeat.html"
+  },
+  {
+    title: "AWS Flashcards",
+    description: "Flashcards app to help study for AWS exams. Built with Flask and Python, it provides an interactive way to learn AWS concepts.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&h=200",
+    tags: ["Python", "Flask", "AWS", "Education", "Interactive UI"],
+    link: "projects/flashcards.html"
+  }
+];
   tags: ["dbt", "BigQuery", "SQL", "Data Engineering", "Analytics Engineering", "Medallion Architecture", "Star Schema"],
   link: "projects/olist-marketplace.html"
   }

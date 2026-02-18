@@ -31,7 +31,8 @@ export const experiences = [
       "Building a predictive model for the upcoming NCAA March Madness tournament using machine learning techniques.",
       "Built an ATS-friendly Resume Generator using Python (pandas, ReportLab) to format and structure resumes based on CSV data.",
       "Developed Common Core Math Worksheet Generator (Flask/pandas/ReportLab) for K-5 educational resources.",
-      "Developed an AI-powered Voicemail & Call Categorizer using Streamlit, OpenAI Whisper, and NLP (spaCy, Regex) to transcribe and organize client calls for business action. Pitched for integration with stakeholder systems.",      
+      "Developed an AI-powered Voicemail & Call Categorizer using Streamlit, OpenAI Whisper, and NLP (spaCy, Regex) to transcribe and organize client calls for business action. Pitched for integration with stakeholder systems.",
+      "Built an AI-powered semantic job search engine over 100K US postings using multi-vector FAISS search, GPT-4o-mini cross-title matching, haversine geo-distance filtering, and conversational refinement — achieving 95% Precision@5.",
     ],
   },
   {
@@ -72,7 +73,8 @@ export function generateExperience() {
       const keywords = [
         'Python', 'SQL', 'Tableau', 'Power BI', 'Flask', 'Google Cloud', 
         'RAG', 'FastAPI', 'ReportLab', 'Machine Learning', 'pandas',
-        'Streamlit', 'MCP', 'Dashboard', 'Data Pipeline',
+        'Streamlit', 'MCP', 'Dashboard', 'Data Pipeline', 'FAISS',
+        'GPT-4o-mini', 'Semantic Search', 'OpenAI', 'NumPy',
         'Excel', 'Google Sheets', 'Data Analysis', 'Spreadsheet Automation',
         'VLOOKUP', 'Pivot Tables', 'Data Visualization', 'Reporting',
         'Process Improvement', 'Inventory Optimization', 'ETL', 'Data Cleaning',
