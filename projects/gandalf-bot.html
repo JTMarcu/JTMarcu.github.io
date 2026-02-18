@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAG Gandalf Chatbot - Jonathan Marcu</title>
-  <meta name="description" content="A 'Lord of the Rings' expert chatbot built using LangChain and Hugging Face by Jonathan Marcu.">
+  <title>Gandalf: Tolkien Lore RAG Chatbot - Jonathan Marcu</title>
+  <meta name="description" content="A Retrieval-Augmented Generation chatbot grounded in Tolkien's legendarium, powered by FAISS, Qwen2.5-7B-Instruct, and Gradio.">
   <link rel="stylesheet" href="../css/styles.css">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -59,10 +59,20 @@
       <div class="container">
         <!-- Title and Description -->
         <header class="section-header">
-          <h1 class="section-title">Gandalf: A Middle-earth Chatbot</h1>
+          <h1 class="section-title">Gandalf: Tolkien Lore RAG Chatbot 🧙</h1>
           <p class="section-description">
-            A Tolkien-themed expert chatbot built using LangChain, FAISS, and the Mistral-7B-Instruct model, deployed via Gradio on Hugging Face Spaces.
+            A Retrieval-Augmented Generation chatbot grounded in J.R.R. Tolkien's core legendarium — 
+            combining semantic vector search over the full text with the <strong>Qwen2.5-7B-Instruct</strong> LLM
+            to deliver canonical, chapter-referenced answers in Gandalf's voice.
           </p>
+          <div style="margin-top: 15px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://huggingface.co/spaces/CupaTroopa/gandalf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+              <i class="fas fa-rocket"></i> Live Demo
+            </a>
+            <a href="https://github.com/JTMarcu/Gandalf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
         </header>
 
         <!-- Embedded Gradio App -->
@@ -75,10 +85,8 @@
             title="Gandalf Chatbot App">
           </iframe>
         </div>
-        
 
         <script>
-          // Listen for messages from the iframe
           window.addEventListener('message', (event) => {
             if (event.data.type === 'resize' && event.data.height) {
               const iframe = document.getElementById('gradio-iframe');
@@ -86,16 +94,12 @@
             }
           });
 
-          // Adjust iframe height dynamically based on viewport size
           function adjustIframeHeight() {
             const iframe = document.getElementById('gradio-iframe');
             const viewportHeight = window.innerHeight;
-
-            // Set iframe height to 80% of the viewport height for better responsiveness
             iframe.style.height = `${Math.max(viewportHeight * 0.8, 450)}px`;
           }
 
-          // Call the function on page load and window resize
           window.addEventListener('load', adjustIframeHeight);
           window.addEventListener('resize', adjustIframeHeight);
         </script>
@@ -107,53 +111,52 @@
         </header>
         <section class="section card">
           <p>
-            Ask Gandalf the Grey anything! This chatbot is trained on the full texts of <em>The Hobbit</em>, <em>The Lord of the Rings</em>, and <em>The Silmarillion</em> to respond with wisdom (or wit) drawn from Tolkien's legendarium.
+            Gandalf is a <strong>Retrieval-Augmented Generation (RAG)</strong> chatbot grounded in J.R.R. Tolkien's core legendarium:
           </p>
+          <ul>
+            <li>📘 <strong>The Hobbit</strong> (1937)</li>
+            <li>📗 <strong>The Lord of the Rings</strong> (1954–1955)</li>
+            <li>📙 <strong>The Silmarillion</strong> (1977)</li>
+          </ul>
           <p>
-            Built with LangChain and a FAISS vector database, the chatbot retrieves relevant context and uses the <code>mistralai/Mistral-7B-Instruct</code> model for generation. The Gradio interface is hosted live via Hugging Face Spaces, enabling anyone to seek counsel from the Grey Wizard himself.
+            It searches across all three books simultaneously via FAISS vector search, retrieves the most relevant 
+            text chunks with book/chapter metadata, and feeds them to <strong>Qwen2.5-7B-Instruct</strong> via the 
+            HuggingFace Inference API to generate in-character, citation-backed answers.
           </p>
         </section>
 
         <!-- Features -->
         <header class="section-header">
-          <h2 class="section-title" style="margin-top: 40px;">Features</h2>
+          <h2 class="section-title" style="margin-top: 40px;">Key Features</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
           <ul>
-            <li><strong>Retrieval-Augmented Generation:</strong> Combines traditional search with neural text generation for accurate responses.</li>
-            <li><strong>Multi-book Indexing:</strong> Incorporates <em>The Hobbit</em>, <em>LotR</em>, and <em>The Silmarillion</em> PDFs.</li>
-            <li><strong>Custom Metadata:</strong> Displays source chapter and book for each answer.</li>
-            <li><strong>Gandalf-style Fallback:</strong> When no answer is found, the model responds with wizardly flair.</li>
-            <li><strong>Hosted UI:</strong> Powered by Gradio and live on Hugging Face Spaces.</li>
+            <li><strong>Multi-Book RAG:</strong> Searches across all three books simultaneously via FAISS for comprehensive answers.</li>
+            <li><strong>Source Citations:</strong> Every answer includes the book name and chapter reference from the retrieved context.</li>
+            <li><strong>Gandalf Persona:</strong> Responds with ancient wisdom, poetic cadence, and occasional wit — fully in character.</li>
+            <li><strong>Graceful Fallbacks:</strong> When the model can't find an answer, it returns an in-character Gandalf quote instead.</li>
+            <li><strong>Middle-earth Themed UI:</strong> Dark parchment theme with Cinzel &amp; Crimson Text fonts and gold accents.</li>
+            <li><strong>Auto-Deploy CI/CD:</strong> Push to <code>main</code> → GitHub Action syncs to HuggingFace Spaces automatically.</li>
           </ul>
         </section>
 
-        <!-- Technologies Used -->
+        <!-- Tech Stack -->
         <header class="section-header">
-          <h2 class="section-title" style="margin-top: 40px;">Technologies Used</h2>
+          <h2 class="section-title" style="margin-top: 40px;">Tech Stack</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
           <ul>
-            <li><strong>LangChain:</strong> RAG pipeline and orchestration</li>
-            <li><strong>FAISS:</strong> For fast vector-based document retrieval</li>
-            <li><strong>Sentence Transformers:</strong> <code>all-MiniLM-L6-v2</code> for chunk embeddings</li>
-            <li><strong>Mistral-7B-Instruct:</strong> Hosted via Hugging Face Inference API</li>
-            <li><strong>Gradio:</strong> Interactive frontend</li>
-            <li><strong>Python:</strong> Core programming language</li>
+            <li><strong>Embeddings:</strong> <code>sentence-transformers/all-MiniLM-L6-v2</code></li>
+            <li><strong>Vector Store:</strong> FAISS (via <code>langchain-community</code>)</li>
+            <li><strong>LLM:</strong> <code>Qwen/Qwen2.5-7B-Instruct</code> via HuggingFace Inference API (<code>chat_completion()</code>)</li>
+            <li><strong>Web UI:</strong> Gradio 5 Blocks API with a custom <code>gr.themes.Base</code> Middle-earth theme</li>
+            <li><strong>PDF Parsing:</strong> <code>pdfminer.six</code> via LangChain's <code>PyPDFLoader</code></li>
+            <li><strong>Orchestration:</strong> LangChain RAG pipeline</li>
+            <li><strong>CI/CD:</strong> GitHub Actions → <code>huggingface_hub.upload_folder()</code> auto-deploy</li>
+            <li><strong>Language:</strong> Python 3.10+</li>
           </ul>
-        </section>
-
-        <!-- Challenges -->
-        <header class="section-header">
-          <h2 class="section-title" style="margin-top: 40px;">Challenges</h2>
-          <div class="section-divider"></div>
-        </header>
-        <section class="section card">
-          <p>
-            A key challenge was parsing and chunking large PDFs in a way that preserved semantic meaning and chapter boundaries. Integrating metadata (book, chapter name) into each vector entry was essential for meaningful context and traceability. Deployment also required optimizing the interface for a Hugging Face-hosted environment.
-          </p>
         </section>
 
         <!-- How It Works -->
@@ -163,10 +166,46 @@
         </header>
         <section class="section card">
           <ol>
-            <li><strong>Chapter Detection:</strong> Each book PDF is split into chunks with chapter metadata via custom LangChain logic.</li>
-            <li><strong>Embeddings:</strong> Each chunk is embedded with <code>sentence-transformers/all-MiniLM-L6-v2</code> and stored in a FAISS index.</li>
-            <li><strong>Answer Generation:</strong> Relevant chunks are retrieved and passed to the Mistral-7B-Instruct model to generate a response.</li>
+            <li><strong>Embed the Question:</strong> The user's query is vectorized with <code>all-MiniLM-L6-v2</code>.</li>
+            <li><strong>Retrieve Context:</strong> FAISS returns the most relevant text chunks (500 chars each) with book/chapter metadata.</li>
+            <li><strong>Generate Answer:</strong> The context + question are sent to Qwen2.5-7B-Instruct via <code>InferenceClient.chat_completion()</code> with a Gandalf persona system prompt.</li>
+            <li><strong>Cite Sources:</strong> The response includes the book name and chapter from the top retrieved chunk.</li>
+            <li><strong>Fallback:</strong> If the model says "I don't know", a random in-character Gandalf quote is returned instead.</li>
           </ol>
+        </section>
+
+        <!-- Challenges -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Challenges &amp; Solutions</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <ul>
+            <li><strong>PDF Chunking with Metadata:</strong> Parsing and splitting large PDFs while preserving semantic meaning and chapter boundaries required custom LangChain logic to embed book/chapter metadata into each vector entry.</li>
+            <li><strong>Model Selection:</strong> Iterated from Mistral-7B-Instruct to Qwen2.5-7B-Instruct for improved response quality, better instruction following, and more consistent English-only output.</li>
+            <li><strong>Deployment Optimization:</strong> Configured CI/CD with GitHub Actions to auto-sync only essential files to HuggingFace Spaces, keeping the deployment lean.</li>
+            <li><strong>Persona Consistency:</strong> Careful prompt engineering ensures Gandalf stays in character — responding only in English with poetic cadence, even for edge-case queries.</li>
+          </ul>
+        </section>
+
+        <!-- Architecture -->
+        <header class="section-header">
+          <h2 class="section-title" style="margin-top: 40px;">Project Architecture</h2>
+          <div class="section-divider"></div>
+        </header>
+        <section class="section card">
+          <div class="code-block">
+            <pre>
+Gandalf/
+├── app.py                  # Gradio web app (local &amp; HF Spaces entry point)
+├── config.py               # Constants, prompts, model settings, UI theme
+├── indexer.py              # Unified PDF → FAISS indexing pipeline
+├── requirements.txt        # Python dependencies
+├── gandalf_index/          # FAISS vectorstore (index.faiss + index.pkl)
+├── .github/workflows/
+│   └── sync-to-hf.yml     # Auto-sync to HuggingFace Spaces
+└── README.md</pre>
+          </div>
         </section>
 
         <!-- Future Enhancements -->
@@ -176,9 +215,11 @@
         </header>
         <section class="section card">
           <ul>
-            <li>Support for audio questions and TTS Gandalf voice responses.</li>
-            <li>Integration with additional texts like Unfinished Tales and HoMe volumes.</li>
-            <li>Enhanced document viewer to show original text alongside answers.</li>
+            <li>Chat history / multi-turn conversation support</li>
+            <li>Support for <em>Unfinished Tales</em> and <em>The Letters of J.R.R. Tolkien</em></li>
+            <li>Gandalf-style voice synthesis (TTS)</li>
+            <li>Source text preview alongside answers</li>
+            <li>Streaming responses for faster perceived latency</li>
           </ul>
         </section>
       </div>

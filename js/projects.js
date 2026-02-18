@@ -70,10 +70,10 @@ export const projects = [
     link: "projects/flashcards.html"
   },
   {
-    title: "RAG Gandalf Chatbot",
-    description: "A 'Lord of the Rings' expert chatbot built using Retrieval-Augmented Generation (RAG) techniques, LangChain, and Hugging Face.",
+    title: "Gandalf: Tolkien Lore RAG Chatbot",
+    description: "A Retrieval-Augmented Generation chatbot grounded in Tolkien's core legendarium. Combines FAISS vector search across three books with Qwen2.5-7B-Instruct for canonical, chapter-referenced answers — all in Gandalf's voice.",
     image: "https://i.pinimg.com/474x/d0/a4/66/d0a4666833bad03c01a24b52c02a2aca--gandalf-the-hobbit.jpg",
-    tags: ["Python", "LangChain", "FAISS", "Hugging Face", "Gradio", "AI"],
+    tags: ["Python", "RAG", "LangChain", "FAISS", "Qwen2.5-7B", "Hugging Face", "Gradio", "CI/CD"],
     link: "projects/gandalf-bot.html"
   },
   {
