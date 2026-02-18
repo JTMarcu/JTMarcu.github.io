@@ -112,10 +112,6 @@ export const projects = [
     link: "projects/flashcards.html"
   }
 ];
-  tags: ["dbt", "BigQuery", "SQL", "Data Engineering", "Analytics Engineering", "Medallion Architecture", "Star Schema"],
-  link: "projects/olist-marketplace.html"
-  }
-];
 
 export function generateProjects() {
   const projectsGrid = document.querySelector('.projects-grid');
