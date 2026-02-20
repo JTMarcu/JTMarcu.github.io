@@ -14,7 +14,7 @@ export const projects = [
   link: "projects/ai-job-search.html"
   },
   {
-  title: "Olist Marketplace Analytics",
+  title: "E-Commerce Marketplace Analytics",
   description: "End-to-end analytics engineering pipeline transforming 100k+ raw e-commerce orders into production-ready data marts using dbt and Google BigQuery with Medallion Architecture.",
   image: "images/olist_lineage.png",
   tags: ["dbt", "BigQuery", "SQL", "Data Engineering", "Analytics Engineering", "Medallion Architecture", "Star Schema"],
