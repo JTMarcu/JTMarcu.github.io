@@ -58,219 +58,156 @@
       <div class="container">
         <header class="project-header">
           <h1 class="project-title">March Madness 2026 Prediction</h1>
-          <p class="project-subtitle">Multi-Model Ensemble for NCAA Tournament Prediction &bull; Kaggle Competition</p>
+          <p class="project-subtitle">Kaggle Competition &bull; $50K Prize Pool</p>
 
           <div class="project-meta-section">
             <div class="meta-row">
-              <span class="meta-item"><i class="fas fa-trophy"></i> Kaggle: March Machine Learning Mania 2026</span>
+              <span class="meta-item"><i class="fas fa-trophy"></i> <a href="https://www.kaggle.com/competitions/march-machine-learning-mania-2026" target="_blank" rel="noopener noreferrer">March Machine Learning Mania 2026</a></span>
               <span class="meta-item"><i class="fas fa-calendar"></i> March 2026</span>
             </div>
             <div class="meta-row">
-              <a href="#bracket-app" class="button button-primary">Interactive Bracket</a>
+              <a href="#bracket-app" class="button button-primary">Try the Bracket</a>
               <a href="#jupyter-notebook" class="button button-outline">View Notebook</a>
             </div>
           </div>
-
-          <div class="project-summary">
-            <p>Built an end-to-end prediction system for the $50K Kaggle March Machine Learning Mania 2026 competition. Engineered 7+ advanced features from 16 seasons of NCAA data (2010&ndash;2025), trained an ensemble of XGBoost, LightGBM, and Logistic Regression models with spline-calibrated probabilities, and deployed an interactive bracket predictor with a FastAPI backend and real-time matchup explorer.</p>
-          </div>
         </header>
 
-        <!-- Overview -->
+        <!-- What I Built -->
         <header class="section-header">
-          <h2 class="section-title">Overview</h2>
+          <h2 class="section-title">What I Built</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
-          <p>Predicting NCAA tournament outcomes is one of the most popular applied ML challenges&mdash;a 68-team single-elimination bracket with enormous variance. This project tackles the <a href="https://www.kaggle.com/competitions/march-machine-learning-mania-2026" target="_blank" rel="noopener noreferrer">Kaggle March Machine Learning Mania 2026</a> competition, scored on Mean Squared Error (Brier score) of predicted win probabilities.</p>
-          <p>Key highlights of the 2026 system:</p>
-          <ul>
-            <li>Processed <strong>34 raw datasets</strong> covering both men's and women's tournaments (2010&ndash;2025)</li>
-            <li>Engineered <strong>7 difference features</strong> per matchup: seed, point differential, offensive efficiency, win percentage, Elo rating, FG%, and FT%</li>
-            <li>Trained <strong>3 model families</strong> (Logistic Regression, XGBoost, LightGBM) with separate men's/women's pipelines</li>
-            <li>Best ensemble achieves <strong>holdout MSE of 0.1571</strong> (60% LR + 20% XGB + 20% LGBM)</li>
-            <li>Built interactive bracket predictor with FastAPI + Streamlit dashboards for real-time tracking</li>
-            <li>Generated <strong>11 diverse Kaggle submissions</strong> ranging from simple baselines to tuned ensembles</li>
-          </ul>
-          <p><strong>Technologies:</strong> Python, XGBoost, LightGBM, Scikit-learn, Pandas, NumPy, Statsmodels, FastAPI, Streamlit</p>
+          <p>
+            Every year Kaggle runs a March Madness prediction contest where you submit win probabilities for every possible NCAA tournament matchup. You're scored on how well-calibrated your probabilities are (Brier score / MSE) &mdash; not just whether you picked the right winner, but whether your 70% picks actually win about 70% of the time.
+          </p>
+          <p>
+            I built a system that processes 16 seasons of NCAA game data (2010&ndash;2025, both men's and women's), engineers features from raw box scores, trains three different model types, and blends them into a single set of predictions. I then submitted 11 different strategies to Kaggle to test what actually works.
+          </p>
+          <p>
+            I also built an interactive bracket predictor (below) so anyone can explore the model's picks, compare matchups, or override them with their own.
+          </p>
+          <p><strong>Stack:</strong> Python, XGBoost, LightGBM, Scikit-learn, Pandas, FastAPI, Streamlit</p>
         </section>
 
         <!-- Interactive Bracket -->
         <header class="section-header" id="bracket-app">
-          <h2 class="section-title">Interactive Bracket Predictor</h2>
+          <h2 class="section-title">Interactive Bracket</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
-          <p>Explore the model's predictions through the interactive bracket below. Auto-fill the bracket with model picks, randomize outcomes weighted by probability, compare any two teams head-to-head, or click individual matchups to override with your own picks. Toggle between men's and women's tournaments.</p>
+          <p>Click any team to pick them as the winner. Use <strong>Auto-Fill</strong> to let the model fill the whole bracket, or <strong>Random</strong> to weight outcomes by probability. The <strong>Matchup Explorer</strong> in the sidebar lets you compare any two teams head-to-head. Toggle between men's and women's tournaments.</p>
           <iframe src="../apps/prediction-web-app/src/index.html" width="100%" height="850px" frameborder="0" style="border-radius: 8px; border: 1px solid var(--border-color);" title="March Madness 2026 interactive bracket predictor"></iframe>
         </section>
 
-        <!-- Feature Engineering -->
+        <!-- How It Works -->
         <header class="section-header">
-          <h2 class="section-title">Feature Engineering</h2>
+          <h2 class="section-title">How It Works</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
-          <h3>From Raw Box Scores to Predictive Features</h3>
-          <p>Raw game data is converted into per-team, per-season statistics using a symmetric perspective-flipping approach&mdash;each game generates two rows (one from each team's perspective), enabling clean aggregation.</p>
-
-          <h3>Engineered Features</h3>
+          <h3>Feature Engineering</h3>
+          <p>
+            Each matchup is represented as the <em>difference</em> between two teams across 7 stats. The raw game data goes through a perspective-flipping step &mdash; every game generates two rows (one from each team's point of view) &mdash; which makes aggregation cleaner.
+          </p>
           <table class="data-table">
-            <caption>Feature Pipeline</caption>
-            <tr><th>Feature</th><th>Description</th></tr>
-            <tr><td>Seed Difference</td><td>Tournament seed numbers (lower = better)</td></tr>
-            <tr><td>Point Differential</td><td>Average scoring margin across regular season</td></tr>
-            <tr><td>Offensive Efficiency</td><td>(Points / Possessions) &times; 100</td></tr>
+            <tr><th>Feature</th><th>What It Captures</th></tr>
+            <tr><td>Seed</td><td>Selection committee's ranking (lower = better)</td></tr>
+            <tr><td>Point Differential</td><td>Average scoring margin over the regular season</td></tr>
+            <tr><td>Offensive Efficiency</td><td>Points per possession &times; 100</td></tr>
             <tr><td>Win Percentage</td><td>Regular season win rate</td></tr>
-            <tr><td>Elo Rating</td><td>Custom Elo with margin-of-victory multiplier and season carry-over</td></tr>
-            <tr><td>FG%</td><td>Field goal shooting percentage</td></tr>
-            <tr><td>FT%</td><td>Free throw shooting percentage</td></tr>
+            <tr><td>Elo Rating</td><td>Custom rating with margin-of-victory adjustments and season carry-over</td></tr>
+            <tr><td>FG%</td><td>Field goal shooting accuracy</td></tr>
+            <tr><td>FT%</td><td>Free throw shooting accuracy</td></tr>
           </table>
+          <p>I also explored GLM team quality scores, late-season momentum, strength of schedule, and coach tournament history &mdash; they didn't improve holdout performance enough to justify the added complexity.</p>
 
-          <h3>Additional Signals (Explored)</h3>
+          <h3 style="margin-top: 25px;">Models</h3>
+          <p>I trained three model types and blended them. Each runs separately for men's and women's tournaments since they have different dynamics:</p>
           <ul>
-            <li><strong>GLM Team Quality:</strong> Logistic regression on team IDs within tournament-eligible games, producing a regularized quality z-score per team per season</li>
-            <li><strong>Last-14-Day Momentum:</strong> Win rate in final two weeks of regular season</li>
-            <li><strong>Strength of Schedule:</strong> Average opponent win percentage</li>
-            <li><strong>Coach Tournament Experience:</strong> Count of prior NCAA tournament appearances by the current head coach</li>
+            <li><strong>Logistic Regression</strong> (60% weight) &mdash; stable, well-calibrated out of the box. Tuned regularization: C=0.25 for men, C=0.15 for women.</li>
+            <li><strong>XGBoost</strong> (20% weight) &mdash; picks up non-linear feature interactions. Uses a custom Cauchy loss function that's robust to blowout-margin outliers.</li>
+            <li><strong>LightGBM</strong> (20% weight) &mdash; adds ensemble diversity. Tuned via randomized search.</li>
           </ul>
+          <p>The final probabilities are clipped to [0.025, 0.975] so no single wrong pick destroys the Brier score.</p>
 
-          <div class="code-block">
-            <pre>
-Possessions = FGA - OR + TO + 0.475 * FTA
-OffEff = (Points / Possessions) * 100
-Elo Update = K * MOV_mult * (actual - expected)
-            </pre>
-          </div>
+          <h3 style="margin-top: 25px;">Validation</h3>
+          <p>Training on 2010&ndash;2024, holdout on 2025. The best ensemble hit <strong>MSE 0.1571</strong> on holdout &mdash; solid for tournament prediction where upsets are inherently unpredictable.</p>
         </section>
 
-        <!-- Model Development -->
+        <!-- What I Learned -->
         <header class="section-header">
-          <h2 class="section-title">Model Development</h2>
+          <h2 class="section-title">What I Learned</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
-          <h3>Multi-Model Ensemble Strategy</h3>
-          <p>Rather than relying on a single model, the system trains three complementary model families and blends their outputs:</p>
-
-          <table class="data-table">
-            <caption>Model Registry</caption>
-            <tr><th>Model</th><th>Role</th><th>Configuration</th></tr>
-            <tr><td>Logistic Regression</td><td>Stable baseline, well-calibrated probabilities</td><td>C=0.25 (men), C=0.15 (women), StandardScaler</td></tr>
-            <tr><td>XGBoost</td><td>Non-linear interactions, custom Cauchy loss</td><td>depth=2, n=200, &gamma;=5, subsample=0.35</td></tr>
-            <tr><td>LightGBM</td><td>Ensemble diversity, fast iteration</td><td>Tuned via RandomizedSearchCV</td></tr>
-          </table>
-
-          <h3>Key Modeling Decisions</h3>
           <ul>
-            <li><strong>Separate M/W models:</strong> Men's and women's tournaments have different dynamics; separate pipelines consistently outperformed combined training</li>
-            <li><strong>Cauchy loss for XGBoost:</strong> Heavy-tailed loss function robust to blowout outliers in point differential regression</li>
-            <li><strong>Spline calibration:</strong> UnivariateSpline maps raw point differential predictions to well-calibrated win probabilities via binned averaging</li>
-            <li><strong>Prediction clipping:</strong> All probabilities clipped to [0.025, 0.975] to avoid extreme Brier score penalties</li>
-          </ul>
-
-          <h3>Validation Strategy</h3>
-          <ul>
-            <li>Time-based split: 2010&ndash;2024 training, 2025 holdout validation</li>
-            <li>Repeated 5-fold cross-validation (3 repeats) for XGBoost iteration tuning</li>
-            <li>Evaluated on MSE (Brier score), log loss, and accuracy</li>
-          </ul>
-        </section>
-
-        <!-- Results -->
-        <header class="section-header">
-          <h2 class="section-title">Results &amp; Submissions</h2>
-          <div class="section-divider"></div>
-        </header>
-        <section class="section card">
-          <h3>Submission Performance</h3>
-          <table class="data-table">
-            <caption>Kaggle Submission History (11 submissions)</caption>
-            <tr><th>Submission</th><th>Strategy</th><th>Holdout MSE</th></tr>
-            <tr><td>3-Model Ensemble (Best)</td><td>60% LR + 20% XGB + 20% LGBM, 7 features</td><td><strong>0.1571</strong></td></tr>
-            <tr><td>Split LR &mdash; 7 Features</td><td>LR with tuned C, FGPct + FTPct added</td><td>0.1579</td></tr>
-            <tr><td>Ensemble LR + XGB</td><td>50/50 average of LR-6 + XGB-6</td><td>&mdash;</td></tr>
-            <tr><td>Split XGBoost &mdash; 6 Features</td><td>XGBClassifier, depth=2, regularized</td><td>&mdash;</td></tr>
-            <tr><td>Split LR &mdash; 6 Features</td><td>Original baseline, seed + PD + OffEff + WinPct + quality + Elo</td><td>&mdash;</td></tr>
-          </table>
-
-          <h3>Key Insights</h3>
-          <ul>
-            <li>The 3-model ensemble consistently outperforms any single model</li>
-            <li>Adding FG% and FT% to the feature set improved MSE from baseline</li>
-            <li>Separate men's/women's pipelines with different regularization strengths outperform combined training</li>
-            <li>Logistic Regression contributes the most stable signal (60% weight in the best ensemble)</li>
-            <li>Spline calibration on XGBoost point-differential predictions reduces Brier score</li>
+            <li><strong>Simple models go a long way.</strong> Logistic regression with good features was hard to beat. The gradient-boosted models helped at the margins, but the biggest gains came from better feature engineering, not model complexity.</li>
+            <li><strong>Calibration matters more than accuracy.</strong> The competition scores probability quality, not just correct picks. A model that says "65%" and is right 65% of the time beats a model that says "90%" and is right 75% of the time.</li>
+            <li><strong>Men's and women's tournaments are different.</strong> Combined training consistently underperformed separate pipelines with different regularization strengths. The dynamics are genuinely different.</li>
+            <li><strong>More submissions = more learning.</strong> Submitting 11 variants (from a 4-feature baseline to a 3-model ensemble) taught me more about what matters than any single model could have.</li>
           </ul>
         </section>
 
         <!-- Architecture -->
         <header class="section-header">
-          <h2 class="section-title">System Architecture</h2>
+          <h2 class="section-title">Beyond the Model</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
-          <h3>Full-Stack Prediction Platform</h3>
-          <p>Beyond the Kaggle submission, the project includes a complete application stack:</p>
-
+          <p>This isn't just a notebook &mdash; it's a full application. The codebase is a modular Python package with separate modules for data loading, feature engineering, model training, and bracket simulation. On top of that:</p>
           <div class="architecture-cards">
             <div class="arch-card">
-              <h3><i class="fas fa-database"></i> Data Pipeline</h3>
+              <h3><i class="fas fa-server"></i> FastAPI Backend</h3>
               <ul>
-                <li>34 Kaggle CSV datasets</li>
-                <li>Modular <code>src/</code> package (data_loader, features, models)</li>
-                <li>Automated feature engineering pipeline</li>
-                <li>Export models to <code>pickle</code> for serving</li>
+                <li>REST API for predictions and bracket simulation</li>
+                <li>Pydantic request/response validation</li>
+                <li>Loads trained models on startup</li>
               </ul>
             </div>
             <div class="arch-card">
-              <h3><i class="fas fa-server"></i> Backend</h3>
+              <h3><i class="fas fa-chart-line"></i> Streamlit Dashboard</h3>
               <ul>
-                <li>FastAPI REST API with Pydantic models</li>
-                <li>Bracket simulation engine (deterministic + probabilistic)</li>
-                <li>Model auto-training on startup</li>
-                <li>Actual results tracking with live comparison</li>
+                <li>Multi-page app for exploring model performance</li>
+                <li>Live accuracy tracking as real games are played</li>
+                <li>Head-to-head matchup comparisons</li>
               </ul>
             </div>
             <div class="arch-card">
-              <h3><i class="fas fa-chart-line"></i> Dashboards</h3>
+              <h3><i class="fas fa-basketball-ball"></i> Bracket Predictor</h3>
               <ul>
-                <li>Streamlit multi-page dashboard</li>
-                <li>Interactive SVG bracket visualizer</li>
-                <li>Matchup explorer with head-to-head probabilities</li>
-                <li>Real-time model accuracy tracking</li>
+                <li>Interactive SVG bracket (the one above)</li>
+                <li>Click-to-pick with cascading updates</li>
+                <li>Client-side simulation for static hosting</li>
               </ul>
             </div>
           </div>
         </section>
 
-        <!-- Evolution -->
+        <!-- 2025 vs 2026 -->
         <header class="section-header">
-          <h2 class="section-title">Evolution from 2025</h2>
+          <h2 class="section-title">2025 vs 2026</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
-          <p>This project represents a significant leap from the 2025 version:</p>
+          <p>I also entered this competition last year. Here's what changed:</p>
           <table class="data-table">
-            <caption>Year-over-Year Improvements</caption>
             <tr><th>Aspect</th><th>2025</th><th>2026</th></tr>
             <tr><td>Models</td><td>Single Random Forest</td><td>3-model ensemble (LR + XGB + LGBM)</td></tr>
-            <tr><td>Features</td><td>12 basic box score stats</td><td>7 engineered difference features + Elo, GLM quality, momentum</td></tr>
-            <tr><td>Calibration</td><td>None</td><td>Spline-based probability calibration</td></tr>
-            <tr><td>Architecture</td><td>Single notebook</td><td>Modular Python package + FastAPI + Streamlit</td></tr>
-            <tr><td>Deployment</td><td>Static predictions</td><td>Interactive bracket predictor + live result tracking</td></tr>
-            <tr><td>Submissions</td><td>1</td><td>11 diverse strategies</td></tr>
+            <tr><td>Features</td><td>12 raw box score stats</td><td>7 engineered difference features + Elo</td></tr>
+            <tr><td>Calibration</td><td>None</td><td>Spline calibration + clipping</td></tr>
+            <tr><td>Codebase</td><td>Single notebook</td><td>Modular Python package + API + dashboard</td></tr>
+            <tr><td>Submissions</td><td>1</td><td>11</td></tr>
           </table>
         </section>
 
         <!-- Jupyter Notebook -->
         <header class="section-header" id="jupyter-notebook">
-          <h2 class="section-title">Jupyter Notebook</h2>
+          <h2 class="section-title">Notebook</h2>
           <div class="section-divider"></div>
         </header>
         <section class="section card">
-          <h3>Full Analysis</h3>
-          <p>Explore the complete data exploration, feature engineering, and modeling pipeline in the notebook below:</p>
+          <p>The full analysis &mdash; data exploration, feature engineering, model training, and evaluation &mdash; is in the notebook below:</p>
           <iframe src="../images/madness_2026.html" width="100%" height="600px" frameborder="0" title="March Madness 2026 model notebook"></iframe>
         </section>
       </div>
