@@ -1,56 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction App</title>
-    <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>March Madness 2026 Bracket Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/bracket.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏀</text></svg>">
 </head>
 <body>
-    <div class="container">
-        <h1>2025 March Madness Match-ups</h1>
-        
-        <!-- Dropdown to select CSV version -->
-        <select id="csvVersion">
-            <option value="madness_pred.csv">Madness Model 3.0</option>
-            <option value="madness_pred1.csv">Madness Model 1.0</option>
-            <option value="madness_pred2.csv">Madness Model 2.0</option>
-            <option value="w_madness_pred.csv">Women's Madness Model</option> <!-- New option -->
-        </select>
 
-        <select id="team1">
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <select id="team2">
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <button id="predictButton">Predict Winner</button>
-        <div class="result" id="result"></div>
-        <div class="error" id="error"></div>
-        
-        <!-- New Section for Model Information -->
-        <div class="model-info">
-            <h2>Madness Model 3.0</h2>
-            <p>Trained on 2010-2023 data, validated on 2024 stats, and includes partial 2025 season data.</p>
-        </div>
+<div class="app">
+
+  <!-- ═══ Sidebar ═══ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="icon">🏀</span>
+      <h1>March Madness<span class="subtitle">2026 Bracket Predictor</span></h1>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script src="scripts/app.js"></script>
-    <script>
-        // Theme toggle functionality
-        const currentTheme = localStorage.getItem('theme') || 'light';
 
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
+    <!-- Gender toggle -->
+    <div class="sidebar-section">
+      <label>Tournament</label>
+      <div class="toggle-group">
+        <button class="active" data-gender="M">Men's</button>
+        <button data-gender="W">Women's</button>
+      </div>
+    </div>
 
-        // Listen for changes in the main site's theme
-        window.addEventListener('storage', (event) => {
-            if (event.key === 'theme') {
-                const newTheme = event.newValue;
-                document.documentElement.setAttribute('data-theme', newTheme);
-            }
-        });
-    </script>
+    <!-- Season select -->
+    <div class="sidebar-section">
+      <label>Season</label>
+      <select id="season-select"></select>
+    </div>
+
+    <!-- Actions -->
+    <div class="sidebar-section">
+      <label>Actions</label>
+      <div class="action-buttons">
+        <button class="btn btn-primary" id="btn-auto">
+          <span class="btn-icon">⚡</span>Auto-Fill
+        </button>
+        <button class="btn btn-secondary" id="btn-random">
+          <span class="btn-icon">🎲</span>Random
+        </button>
+        <button class="btn btn-secondary" id="btn-reset">
+          <span class="btn-icon">↺</span>Reset
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-panel">
+      <h3>Bracket Stats</h3>
+      <div class="stat-row">
+        <span class="label">Games decided</span>
+        <span class="value" id="stat-decided">0/63</span>
+      </div>
+      <div class="stat-row">
+        <span class="label">Upsets</span>
+        <span class="value" id="stat-upsets">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="label">Your picks</span>
+        <span class="value" id="stat-overrides">0</span>
+      </div>
+    </div>
+
+    <!-- Model info -->
+    <div class="model-badge">
+      <span class="badge-icon">🤖</span>
+      <span><strong>3-Model Ensemble</strong><br>60% LR + 20% XGBoost + 20% LightGBM</span>
+    </div>
+
+    <!-- Matchup Explorer -->
+    <div class="sidebar-section" style="margin-top: auto; border-top: 1px solid var(--border); padding-top: 14px;">
+      <label>Matchup Explorer</label>
+      <div class="explorer-grid" style="display:flex; flex-direction:column; gap:6px;">
+        <select id="explore-team-a"><option>Select team…</option></select>
+        <span class="explorer-vs" style="text-align:center;">vs</span>
+        <select id="explore-team-b"><option>Select team…</option></select>
+        <button class="btn btn-primary" id="btn-explore" style="width:100%;">Compare</button>
+      </div>
+
+      <div id="explorer-result" class="hidden" style="margin-top:10px;">
+        <div class="explorer-result">
+          <div class="explorer-team">
+            <div class="name" id="explore-name-a"></div>
+            <div class="prob" id="explore-prob-a"></div>
+          </div>
+          <div class="explorer-vs">vs</div>
+          <div class="explorer-team">
+            <div class="name" id="explore-name-b"></div>
+            <div class="prob" id="explore-prob-b"></div>
+          </div>
+        </div>
+        <div class="explorer-bar">
+          <div class="explorer-bar-fill" id="explore-bar-fill" style="width:50%;"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══ Main ═══ -->
+  <main class="main">
+    <header class="header">
+      <h2 id="header-title">NCAA Tournament</h2>
+      <div class="champion-display empty" id="champion-display">
+        <span>🏆</span>
+        <span id="champion-name">Pick a champion</span>
+      </div>
+    </header>
+
+    <div class="bracket-viewport" id="bracket-viewport">
+      <!-- SVG bracket rendered here by bracket.js -->
+    </div>
+  </main>
+</div>
+
+<!-- Tooltip -->
+<div class="tooltip" id="tooltip"></div>
+
+<!-- Loading overlay -->
+<div class="loading-overlay" id="loading-overlay">
+  <div class="spinner"></div>
+  <div class="loading-text">Loading…</div>
+</div>
+
+<!-- Scripts -->
+<script src="scripts/simulator.js"></script>
+<script src="scripts/bracket.js"></script>
+
 </body>
 </html>
