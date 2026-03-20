@@ -56,10 +56,10 @@ export const projects = [
   link: "projects/voicemail-transcriber.html"
   },
   {
-    title: "NCAA March Madness Prediction Model",
-    description: "Building a predictive model for the NCAA March Madness tournament using machine learning techniques.",
+    title: "March Madness 2026 Prediction System",
+    description: "Multi-model ensemble (XGBoost + LightGBM + LR) predicting NCAA tournament outcomes for the $50K Kaggle competition. 7 engineered features, spline-calibrated probabilities, interactive bracket predictor, and 11 Kaggle submissions.",
     image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=200",
-    tags: ["Python", "Machine Learning", "Sports Analytics", "Scikit-learn", "Data Visualization"],
+    tags: ["Python", "XGBoost", "LightGBM", "Scikit-learn", "FastAPI", "Streamlit", "Sports Analytics"],
     link: "projects/march-madness.html"
   },
   {
