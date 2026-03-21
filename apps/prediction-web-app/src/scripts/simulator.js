@@ -7,7 +7,9 @@
 
 let _menData = null;
 let _womenData = null;
-let _predictions = null;
+let _allPredictions = null; // full multi-model data
+let _predictions = null;   // active model's predictions
+let _activeModel = null;
 
 async function loadData() {
   const base = getBasePath();
@@ -18,7 +20,16 @@ async function loadData() {
   ]);
   _menData = men;
   _womenData = women;
-  _predictions = preds;
+
+  // Support both old flat format and new multi-model format
+  if (preds.models && preds.predictions) {
+    _allPredictions = preds;
+    _activeModel = preds.default || preds.models[0].id;
+    _predictions = preds.predictions[_activeModel];
+  } else {
+    _allPredictions = null;
+    _predictions = preds;
+  }
 }
 
 function getBasePath() {
@@ -197,5 +208,20 @@ const API = {
   async simulate(gender, season, mode, overrides = {}) {
     if (!_predictions) await loadData();
     return simulateBracket(gender, mode, overrides);
+  },
+
+  getModels() {
+    if (!_allPredictions) return [];
+    return _allPredictions.models;
+  },
+
+  getActiveModel() {
+    return _activeModel;
+  },
+
+  setModel(modelId) {
+    if (!_allPredictions || !_allPredictions.predictions[modelId]) return;
+    _activeModel = modelId;
+    _predictions = _allPredictions.predictions[modelId];
   },
 };

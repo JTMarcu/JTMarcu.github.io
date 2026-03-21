@@ -116,6 +116,7 @@ class BracketApp {
     try {
       this.seasons = await API.getSeasons();
       this.populateSeasons();
+      this.populateModels();
       this.bindEvents();
       await this.loadBracket();
     } catch (e) {
@@ -138,6 +139,37 @@ class BracketApp {
     }
     this.season = list.filter(s => s !== 2020).at(-1) || list.at(-1);
     sel.value = this.season;
+  }
+
+  populateModels() {
+    const sel = document.getElementById('model-select');
+    if (!sel) return;
+    sel.innerHTML = '';
+    const models = API.getModels();
+    if (!models.length) {
+      sel.closest('.sidebar-section').style.display = 'none';
+      return;
+    }
+    const active = API.getActiveModel();
+    for (const m of models) {
+      const opt = document.createElement('option');
+      opt.value = m.id;
+      opt.textContent = m.name;
+      opt.title = m.desc;
+      sel.appendChild(opt);
+    }
+    sel.value = active;
+    this.updateModelBadge();
+  }
+
+  updateModelBadge() {
+    const models = API.getModels();
+    const active = API.getActiveModel();
+    const m = models.find(x => x.id === active);
+    const badge = document.getElementById('model-badge-text');
+    if (badge && m) {
+      badge.innerHTML = `<strong>${m.name}</strong><br>${m.desc}`;
+    }
   }
 
   bindEvents() {
@@ -173,6 +205,16 @@ class BracketApp {
     });
 
     document.getElementById('btn-explore').addEventListener('click', () => this.runExplorer());
+
+    const modelSel = document.getElementById('model-select');
+    if (modelSel) {
+      modelSel.addEventListener('change', e => {
+        API.setModel(e.target.value);
+        this.updateModelBadge();
+        this.overrides = {};
+        this.loadBracket();
+      });
+    }
   }
 
   async loadBracket(mode = 'deterministic') {

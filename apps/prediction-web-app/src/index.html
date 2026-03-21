@@ -35,6 +35,12 @@
       <select id="season-select"></select>
     </div>
 
+    <!-- Model select -->
+    <div class="sidebar-section">
+      <label>Model</label>
+      <select id="model-select"></select>
+    </div>
+
     <!-- Actions -->
     <div class="sidebar-section">
       <label>Actions</label>
@@ -69,9 +75,9 @@
     </div>
 
     <!-- Model info -->
-    <div class="model-badge">
+    <div class="model-badge" id="model-badge">
       <span class="badge-icon">🤖</span>
-      <span><strong>3-Model Ensemble</strong><br>60% LR + 20% XGBoost + 20% LightGBM</span>
+      <span id="model-badge-text"><strong>3-Model Ensemble</strong><br>60% LR + 20% XGB + 20% LGBM, 7 feat</span>
     </div>
 
     <!-- Matchup Explorer -->
